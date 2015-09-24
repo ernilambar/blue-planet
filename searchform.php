@@ -2,7 +2,7 @@
 /**
  * The template for displaying search forms in Blue Planet
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 ?>
 <?php

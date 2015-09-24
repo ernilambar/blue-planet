@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 /**

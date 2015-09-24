@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>

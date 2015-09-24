@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>

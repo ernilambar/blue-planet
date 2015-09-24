@@ -2,7 +2,7 @@
 /**
  * Template Name: Content-Sidebar
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>

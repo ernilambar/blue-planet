@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 /**
@@ -22,7 +22,7 @@
  * @uses blue_planet_admin_header_style()
  * @uses blue_planet_admin_header_image()
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 function blue_planet_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'blue_planet_custom_header_args', array(

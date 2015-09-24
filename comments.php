@@ -7,7 +7,7 @@
  * handled by a callback to blue_planet_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 /*

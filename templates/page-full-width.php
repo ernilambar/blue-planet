@@ -2,7 +2,7 @@
 /**
  * Template Name: Full Width
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>

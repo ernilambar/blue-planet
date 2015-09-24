@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Blue Planet
+ * @package Blue_Planet
  * @since Blue Planet 1.0.0
  */
 

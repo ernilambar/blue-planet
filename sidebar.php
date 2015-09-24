@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 ?>
 <?php

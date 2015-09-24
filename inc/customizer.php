@@ -6,7 +6,7 @@ require get_template_directory() . '/inc/customizer-includes/helper.php';
 /**
  * Blue Planet Theme Customizer
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 /**

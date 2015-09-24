@@ -8,7 +8,7 @@ define( 'BS_SHORT_NAME', 'bsk' );
 /**
  * Blue Planet functions and definitions
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :

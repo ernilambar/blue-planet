@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>

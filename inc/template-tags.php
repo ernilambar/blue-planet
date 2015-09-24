@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 if ( ! function_exists( 'blue_planet_paging_nav' ) ) :

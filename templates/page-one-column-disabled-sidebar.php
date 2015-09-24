@@ -2,7 +2,7 @@
 /**
  * Template Name: One Column Disabled Sidebar
  *
- * @package Blue Planet
+ * @package Blue_Planet
  */
 
 get_header(); ?>
