@@ -11,7 +11,7 @@ class BP_Social_Widget  extends WP_Widget {
                     'description'   => __( 'Display Social links in your sidebar', 'blue-planet' )
                 );
 
-        $this-> WP_Widget('bp-social', '[Blue Planet]   '.__('Social Widget', 'blue-planet'), $opts);
+        parent::__construct('bp-social', '[Blue Planet]   '.__('Social Widget', 'blue-planet'), $opts);
     }
 
 
