@@ -200,28 +200,6 @@ if ( ! function_exists( 'blue_planet_custom_css' ) ) :
 endif; // blue_planet_custom_css
 add_action( 'wp_head', 'blue_planet_custom_css' );
 
-
-
-/**
- * Redirect WordPress Feeds To FeedBurner
- */
-if ( ! function_exists( 'blue_planet_rss_redirect' ) ) :
-    function blue_planet_rss_redirect() {
-        $feed_url = blueplanet_get_option('feed_url');
-
-        if ( ! empty( $feed_url ) ) {
-            $url = 'Location: '.esc_url( $feed_url ) ;
-            if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
-            {
-                header($url);
-                header('HTTP/1.1 302 Temporary Redirect');
-            }
-        }
-    }
-endif; // blue_planet_rss_redirect
-
-add_action('template_redirect', 'blue_planet_rss_redirect');
-
 if ( ! function_exists( 'blue_planet_copyright_text_content' ) ) :
     // Copyright text in footer
     function blue_planet_copyright_text_content(){
@@ -231,7 +209,7 @@ if ( ! function_exists( 'blue_planet_copyright_text_content' ) ) :
         }
         echo '<div class="copyright">' . apply_filters( 'blue_planet_filter_copyright_text_content', esc_html( $copyright_text ) ) . '</div>';
     }
-endif; // blue_planet_copyright_text_content
+endif;
 
 add_action('blue_planet_credits', 'blue_planet_copyright_text_content');
 
