@@ -75,38 +75,13 @@ endif; // blue_planet_setup
 add_action( 'after_setup_theme', 'blue_planet_setup' );
 
 /**
- * Load scripts and styles required for admin side
- */
-if (!function_exists('blue_planet_register_admin_scripts_styles')) :
-    function blue_planet_register_admin_scripts_styles() {
-        global $pagenow;
-
-        if ( $pagenow =="themes.php" &&  isset($_REQUEST['page']) &&  'theme_options' == $_REQUEST['page']  ){
-            wp_enqueue_style( 'wp-color-picker' );
-            wp_enqueue_style('thickbox');
-
-            wp_enqueue_script('media-upload');
-            wp_enqueue_script('thickbox');
-
-            wp_enqueue_style('blue-planet-admin-styles-common',get_template_directory_uri(). '/css/admin.css' );
-
-            wp_enqueue_script('blue-planet-cookies-script', get_template_directory_uri().'/js/jquery.cookie.js',
-                    array('jquery', 'jquery-ui-tabs','media-upload','thickbox'));
-            wp_enqueue_script('blue-planet-admin-script', get_template_directory_uri().'/js/admin.js',
-                    array('jquery', 'jquery-ui-tabs','media-upload','thickbox','blue-planet-cookies-script','wp-color-picker'));
-        }
-    }
-endif;
-add_action( 'admin_enqueue_scripts', 'blue_planet_register_admin_scripts_styles' );
-
-/**
  * Register widgetized area and update sidebar with default widgets.
  */
 function blue_planet_widgets_init() {
 	register_sidebar( array(
         'name'          => __( 'Sidebar', 'blue-planet' ),
         'id'            => 'sidebar-1',
-        'description'   => __( 'Default Sidebar', 'blue-planet' ),
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'blue-planet' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h1 class="widget-title">',

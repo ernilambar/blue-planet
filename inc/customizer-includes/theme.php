@@ -65,35 +65,6 @@
       )
     );
 
-  $feedburner_url = '';
-  if ( isset( $temp_option['feedburner_url'] ) && ! empty( $temp_option['feedburner_url'] )  ) {
-    $feedburner_url = $temp_option['feedburner_url'];
-  }
-
-  if ( '' != $feedburner_url ) {
-    // feedburner_url
-    $wp_customize->add_setting( 'blueplanet_options[feedburner_url]',
-       array(
-          'default'              => $new_defaults['feedburner_url'],
-          // 'type'                 => 'option',
-          'capability'           => 'edit_theme_options',
-          'sanitize_callback'    => 'esc_url_raw',
-          'sanitize_js_callback' => 'esc_url',
-       )
-    );
-    $wp_customize->add_control(
-        'blueplanet_options[feedburner_url]',
-        array(
-          'label'       => __( 'Feedburner URL', 'blue-planet' ),
-          'description' => __( 'Enter FeedbBurner URL.', 'blue-planet' ),
-          'section'     => 'blue_planet_options_general',
-          'settings'    => 'blueplanet_options[feedburner_url]',
-          'type'        => 'text',
-          'priority'    => 25,
-        )
-      );
-  } // end if
-
   // search_placeholder
   $wp_customize->add_setting( 'blueplanet_options[search_placeholder]',
      array(

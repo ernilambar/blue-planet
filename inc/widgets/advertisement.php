@@ -11,7 +11,7 @@ class BP_Advertisement_Widget  extends WP_Widget {
                     'description'   => __( 'Widget for displaying ads', 'blue-planet' )
                 );
 
-        parent::__construct('bp-advertisement', '[Blue Planet]   '.__('Advertisement Widget', 'blue-planet'), $opts);
+        parent::__construct( 'bp-advertisement', __( ' Blue Planet Advertisement', 'blue-planet' ), $opts);
     }
 
 

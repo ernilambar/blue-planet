@@ -61,7 +61,7 @@
     //
     ?>
     <nav role="navigation" class="blueplanet-nav" id="site-navigation">
-        <a title="Skip to content" href="#content" class="assistive-text"><?php _e('Skip to content', 'blue-planet'); ?></a>
+        <a href="#content" class="screen-reader-text"><?php _e('Skip to content', 'blue-planet'); ?></a>
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) :?>
 
