@@ -1,0 +1,42 @@
+== Changelog ==
+
+Version 2.0
+* Remove Settings API implementation for theme options and port it to Customizer API
+
+Version 1.1.1
+* Change goto top implementation approach to optimize performance
+* Remove duplicate Edit link
+
+Version 1.1
+* Fix duplicate title (Backward compatibility of title-tag)
+* Remove background color of text widget
+
+Version 1.0.9
+* Add `title-tag` support
+* Setttings API is fully implemented for theme options
+* Bug fix: Blank slider when no images present in secondary slider
+* Other minor bug fixes
+
+Version 1.0.8
+* Bug fix: front page issue of Main slider
+* Bug fix: Secondary slider invisible in front page when static page is set as front page
+* Bug fix: Skype button link
+* Other minor bug fixes
+
+Version 1.0.7.3
+* Bug of header image fixed
+
+Version 1.0.7
+* Bug fixes
+* Filters added
+* Child theme compatible
+
+Version 1.0.6
+* Bugfix: Child theme not working [URL modified for including parent CSS and JS files]
+
+Version 1.0.5
+* Theme live at WordPress.org
+
+Version 1.0.0
+* Initial Submission to WordPress.org
+
