@@ -97,8 +97,6 @@ function blueplanet_get_default_options(){
 			'slider_caption_2'             => '1',
 			'transition_delay_2'           => 4,
 			'transition_length_2'          => 1,
-			'javascript_header'            => '',
-			'javascript_footer'            => '',
 			'social_facebook'              => '',
 			'social_twitter'               => '',
 			'social_googleplus'            => '',

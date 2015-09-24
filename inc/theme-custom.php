@@ -63,43 +63,6 @@ if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
     }
 endif; // blue_planet_layout_setup_class
 
-if ( ! function_exists( 'blue_planet_add_scripts_footer' ) ) :
-    // Add script to footer
-    function blue_planet_add_scripts_footer(){
-        $javascript_footer = blueplanet_get_option('javascript_footer');
-
-        if( !empty( $javascript_footer  ) ){
-            ?>
-            <script type='text/javascript'>
-            /* <![CDATA[ */
-            <?php echo esc_js( $javascript_footer ) ;?>
-             /* ]]> */
-            </script>
-            <?php
-        }
-    }
-endif; // blue_planet_add_scripts_footer
-
-add_action('wp_footer', 'blue_planet_add_scripts_footer',100 );
-
-if ( ! function_exists( 'blue_planet_add_scripts_header' ) ) :
-    // Add script to Header
-    function blue_planet_add_scripts_header(){
-        $javascript_header = blueplanet_get_option('javascript_header');
-
-        if( !empty( $javascript_header  ) ){
-            ?>
-            <script type='text/javascript'>
-            /* <![CDATA[ */
-            <?php echo esc_js( $javascript_header ) ;?>
-             /* ]]> */
-            </script>
-            <?php
-        }
-    }
-endif; // blue_planet_add_scripts_header
-add_action('wp_head', 'blue_planet_add_scripts_header',100);
-
 if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
     //Changing Read More text
     function blue_planet_excerpt_readmore($more) {
