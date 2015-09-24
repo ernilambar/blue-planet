@@ -186,12 +186,6 @@ endif;
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 
 /**
- * Conversion of theme settings
- * @todo: Remove this in next version
- */
-require get_template_directory() . '/inc/conversion.php';
-
-/**
  * Include customizer settings.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -220,11 +214,6 @@ require get_template_directory() . '/inc/extras.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Setup for theme options.
- */
-require get_template_directory() . '/admin/setup.php';
 
 /**
  * Load Theme Widgets.

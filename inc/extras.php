@@ -37,35 +37,14 @@ add_filter( 'body_class', 'blue_planet_body_classes' );
 
 if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 //Messgae to show in the Featured Image Meta box
-function blue_planet_featured_image_instruction( $content ) {
-    $content .= '<strong>'.__( 'Recommended image sizes', 'blue-planet' ).'</strong><br/>';
-    $content .= '<br/>'.__( 'Secondary Slider : 720px X 350px', 'blue-planet' );
+function blue_planet_featured_image_instruction( $content, $post_id ) {
+
+		if ( 'post' === get_post_type( $post_id ) ) {
+	    $content .= '<strong>'.__( 'Recommended image sizes', 'blue-planet' ).'</strong><br/>';
+	    $content .= '<br/>'.__( 'Secondary Slider : 720px X 350px', 'blue-planet' );
+		}
+
     return $content;
 }
 endif; // blue_planet_featured_image_instruction
-add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction');
-//////////////
-
-if ( ! function_exists( 'blue_planet_sanitize_hex_color' ) ) :
-	function blue_planet_sanitize_hex_color( $color ) {
-		if ( '' === $color )
-			return '';
-
-		// 3 or 6 hex digits, or the empty string.
-		if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
-			return $color;
-
-		return null;
-	}
-endif; // blue_planet_sanitize_hex_color
-
-
-if ( ! function_exists( 'blue_planet_dumb_css_sanitize' ) ) :
-	function blue_planet_dumb_css_sanitize( $css ) {
-		$css = str_replace( '<=', '<=', $css );
-		$css = wp_kses_split( $css, array(), array() );
-		$css = str_replace( '>', '>', $css );
-		$css = strip_tags( $css );
-		return $css;
-	}
-endif; // blue_planet_dumb_css_sanitize
+add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction', 10, 2 );
