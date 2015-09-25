@@ -61,11 +61,7 @@ class BP_Social_Widget  extends WP_Widget {
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title ; ?>" />
     </p>
 
-    <p><?php echo _e('This widget will display social links from BS Theme Options.','blue-planet');  ?></p>
-    <p><?php printf('<a href="%s">%s</a>',
-            admin_url('themes.php?page=theme_options'),
-            __('Click here to update links.','blue-planet')
-        ); ?></p>
+    <p><?php echo _e('This widget will display social links from Theme Options.','blue-planet');  ?></p>
 
 <?php }
 

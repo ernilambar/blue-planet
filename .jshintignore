@@ -1,1 +1,4 @@
 js/html5shiv.js
+js/respond.min.js
+thirdparty/meanmenu/jquery.meanmenu.min.js
+thirdparty/nivoslider/jquery.nivo.slider.pack.js
