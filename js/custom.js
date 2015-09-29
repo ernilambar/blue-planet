@@ -2,10 +2,10 @@
 
 	'use strict';
 
-	$( document ).ready( function( $ ){
+	$( document ).ready( function( $ ) {
 
 		// Mean menu.
-		$( 'nav#site-navigation' ).meanmenu({
+		$( 'nav#site-navigation' ).meanmenu( {
 			meanScreenWidth: '640'
 		} );
 
@@ -13,7 +13,7 @@
 		if ( $( '.scrollup' ).length > 0 ) {
 
 			$( window ).scroll( function() {
-				if ($( this ).scrollTop() > 100) {
+				if ( $( this ).scrollTop() > 100 ) {
 					$( '.scrollup' ).fadeIn();
 				} else {
 					$( '.scrollup' ).fadeOut();
