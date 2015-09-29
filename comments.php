@@ -42,6 +42,7 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
+
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use blue_planet_comment() to format the comments.
 				 * If you want to override this in a child theme, then you can
