@@ -1,7 +1,10 @@
 <?php
 /**
+ * Template part for displaying single posts.
+ *
  * @package Blue_Planet
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -37,16 +40,15 @@
 			/* translators: used between list items, there is a space after the comma */
 			$tag_list = get_the_tag_list( '', __( ', ', 'blue-planet' ) );
 
-			if (!empty($category_list)) {
-				echo '<span class="bp-category">'.$category_list.'</span>';
-			}
-			if (!empty($tag_list)) {
-				echo '<span class="bp-tags">'.$tag_list.'</span>';
-			}
+		if ( ! empty( $category_list ) ) {
+			echo '<span class="bp-category">'.$category_list.'</span>'; // WPCS: XSS OK.
+		}
+		if ( ! empty( $tag_list ) ) {
+			echo '<span class="bp-tags">'.$tag_list.'</span>'; // WPCS: XSS OK.
+		}
+			?>
 
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 
 	<?php do_action( 'blue_planet_author_box' ); ?>
