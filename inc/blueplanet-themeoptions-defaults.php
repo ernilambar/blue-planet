@@ -1,81 +1,98 @@
 <?php
 /**
+ * Theme defaults.
+ *
+ * Set the default values for all the settings. If no user-defined values is available for any setting, these defaults will be used.
+ *
  * @package Blue_Planet
- * @since Blue Planet 1.0.0
- */
-
-/**
- * Set the default values for all the settings. If no user-defined values
- * is available for any setting, these defaults will be used.
  */
 
 global $blueplanet_options_settings;
 
 $blueplanet_options_settings = get_option( 'blueplanet_options' );
 
+/**
+ * Get theme option.
+ *
+ * @since 1.0.0
+ *
+ * @param string $key Option key.
+ * @return mixed Option value.
+ */
+function blueplanet_get_option( $key ) {
 
-function blueplanet_get_option( $key ){
+	$defaults = blueplanet_get_default_options();
+	$options = blueplanet_get_option_all();
 
-  $defaults = blueplanet_get_default_options();
-  $options = blueplanet_get_option_all();
+	$output = '';
 
-  $output = '';
+	if ( array_key_exists( $key,  $defaults ) ) {
+		$output = $defaults[ $key ];
+	}
 
-  if ( array_key_exists( $key,  $defaults ) ) {
-    $output = $defaults[ $key ];
-  }
+	if ( array_key_exists( $key,  $options ) ) {
+		$output = $options[ $key ];
+	}
+	return $output;
 
-  if ( array_key_exists( $key,  $options ) ) {
-    $output = $options[ $key ];
-  }
-  return $output;
-
-
-
-	// Set default value first
-	if ( is_array( $defaults ) && isset( $defaults[$key] ) ) {
-		$output = $defaults[$key];
+	// Set default value first.
+	if ( is_array( $defaults ) && isset( $defaults[ $key ] ) ) {
+		$output = $defaults[ $key ];
 	}
 
 	// Has any value?
-	if ( is_array( $blueplanet_options_settings ) && isset( $blueplanet_options_settings[$key] ) ) {
-		$output = $blueplanet_options_settings[$key];
+	if ( is_array( $blueplanet_options_settings ) && isset( $blueplanet_options_settings[ $key ] ) ) {
+		$output = $blueplanet_options_settings[ $key ];
 	}
 
 	return $output;
 
 }
 
-function blueplanet_get_option_all(){
+/**
+ * Get all theme options.
+ *
+ * @since 1.0.0
+ *
+ * @return array Theme options.
+ */
+function blueplanet_get_option_all() {
 
-  $defaults = blueplanet_get_default_options();
+	$defaults = blueplanet_get_default_options();
 
-  $output = get_theme_mod( 'blueplanet_options', $defaults );
+	$output = get_theme_mod( 'blueplanet_options', $defaults );
 
-  $output = array_merge( $defaults, $output );
+	$output = array_merge( $defaults, $output );
 
-  return $output;
+	return $output;
 
 }
 
-function blueplanet_get_default_options(){
+/**
+ * Get default theme options.
+ *
+ * @since 1.0.0
+ *
+ * @return array Default theme options.
+ */
+function blueplanet_get_default_options() {
 
 	$defaults = array(
 			'custom_favicon'               => '',
 			'custom_css'                   => '',
 			'flg_enable_goto_top'          => '0',
 			'banner_background_color'      => '#00ADB3',
-			'search_placeholder'           => __( 'Search here...', 'blue-planet' ),
+			'search_placeholder'           => esc_html__( 'Search here...', 'blue-planet' ),
 			'flg_hide_search_box'          => '1',
 			'flg_hide_social_icons'        => '0',
 			'flg_enable_footer_widgets'    => '0',
 			'number_of_footer_widgets'     => '3',
-			'copyright_text'               => __( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
+			'copyright_text'               => esc_html__( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
 			'flg_hide_powered_by'          => '1',
 			'flg_hide_footer_social_icons' => '0',
 			'default_layout'               => 'right-sidebar',
 			'content_layout'               => 'excerpt',
-			'read_more_text'               => __( 'Read more', 'blue-planet' ),
+			'read_more_text'               => esc_html__( 'Read more', 'blue-planet' ),
 			'excerpt_length'               => '50',
 			'slider_status'                => 'none',
 			'transition_effect'            => 'fade',
@@ -117,16 +134,16 @@ function blueplanet_get_default_options(){
 			'social_stumbleupon'           => '',
 			'social_digg'                  => '',
 
-      'reset_theme_settings'                  => 0,
-  );
+	  'reset_theme_settings'                  => 0,
+	);
 
-  for( $i = 1; $i <= 5 ; $i++ ){
-    $defaults[ 'main_slider_image_' . $i ]   = '';
-    $defaults[ 'main_slider_url_' . $i ]     = '';
-    $defaults[ 'main_slider_caption_' . $i ] = '';
-    $defaults[ 'main_slider_new_tab_' . $i ] = 0;
-  }
+	for ( $i = 1; $i <= 5 ; $i++ ) {
+		$defaults[ 'main_slider_image_' . $i ]   = '';
+		$defaults[ 'main_slider_url_' . $i ]     = '';
+		$defaults[ 'main_slider_caption_' . $i ] = '';
+		$defaults[ 'main_slider_new_tab_' . $i ] = 0;
+	}
 
-  return $defaults;
+	return $defaults;
 
 }
