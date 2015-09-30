@@ -7,13 +7,13 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
+	<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo esc_attr( blue_planet_layout_setup_class() ); ?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'blue-planet' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'blue-planet' ), '<span>' . get_search_query() . '</span>' ); // WPCS: XSS OK. ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
