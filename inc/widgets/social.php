@@ -63,7 +63,7 @@ class BP_Social_Widget  extends WP_Widget {
 		}
 		echo '</div>';
 
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 
