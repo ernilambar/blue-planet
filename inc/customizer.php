@@ -1,13 +1,12 @@
 <?php
-
-// Customizer helper functions
-require get_template_directory() . '/inc/customizer-includes/helper.php';
-
 /**
- * Blue Planet Theme Customizer
+ * Theme Customizer.
  *
  * @package Blue_Planet
  */
+
+// Customizer helper functions.
+require get_template_directory() . '/inc/customizer-includes/helper.php';
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -16,24 +15,24 @@ require get_template_directory() . '/inc/customizer-includes/helper.php';
  */
 function blue_planet_customize_register( $wp_customize ) {
 
-  $new_defaults = blueplanet_get_default_options();
-  $options = blueplanet_get_option_all();
+	$new_defaults = blueplanet_get_default_options();
+	$options = blueplanet_get_option_all();
 
-  $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-  $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-  $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-  // Custom Controls
-  require get_template_directory() . '/inc/customizer-includes/controls.php';
+	// Custom Controls.
+	require get_template_directory() . '/inc/customizer-includes/controls.php';
 
-  // Theme Settings
-  require get_template_directory() . '/inc/customizer-includes/theme.php';
+	// Theme Settings.
+	require get_template_directory() . '/inc/customizer-includes/theme.php';
 
-  // Slider Settings
-  require get_template_directory() . '/inc/customizer-includes/slider.php';
+	// Slider Settings.
+	require get_template_directory() . '/inc/customizer-includes/slider.php';
 
-  // Reset Settings
-  require get_template_directory() . '/inc/customizer-includes/reset.php';
+	// Reset Settings.
+	require get_template_directory() . '/inc/customizer-includes/reset.php';
 
 }
 
