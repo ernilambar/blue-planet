@@ -8,19 +8,17 @@
  */
 
 if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function blue_planet_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'blue-planet' ); ?></h1>
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 */
+	function blue_planet_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+		?>
+		<nav class="navigation paging-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'blue-planet' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -34,134 +32,71 @@ function blue_planet_paging_nav() {
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
-}
+	}
 endif;
 
 if ( ! function_exists( 'blue_planet_post_nav' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- *
- * @return void
- */
-function blue_planet_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+	/**
+	 * Display navigation to next/previous post when applicable.
+	 */
+	function blue_planet_post_nav() {
+		// Don't print empty markup if there's nowhere to navigate.
+		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+		$next     = get_adjacent_post( false, '', false );
 
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'blue-planet' ); ?></h1>
+		if ( ! $next && ! $previous ) {
+			return;
+		}
+		?>
+		<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'blue-planet' ); ?></h1>
 		<div class="nav-links">
 
 			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'blue-planet' ) ); ?>
-			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'blue-planet' ) ); ?>
+			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'blue-planet' ) ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
-}
+	}
 endif;
 
-if ( ! function_exists( 'blue_planet_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function blue_planet_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-
-	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-		<div class="comment-body">
-			<?php _e( 'Pingback:', 'blue-planet' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
-
-	<?php else : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'blue-planet' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-				</div><!-- .comment-author -->
-
-				<div class="comment-metadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'blue-planet' ), get_comment_date(), get_comment_time() ); ?>
-						</time>
-					</a>
-					<?php edit_comment_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-metadata -->
-
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blue-planet' ); ?></p>
-				<?php endif; ?>
-			</footer><!-- .comment-meta -->
-
-			<div class="comment-content">
-				<?php comment_text(); ?>
-			</div><!-- .comment-content -->
-
-			<?php
-				comment_reply_link( array_merge( $args, array(
-					'add_below' => 'div-comment',
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-					'before'    => '<div class="reply">',
-					'after'     => '</div>',
-				) ) );
-			?>
-		</article><!-- .comment-body -->
-
-	<?php
-	endif;
-}
-endif; // ends check for blue_planet_comment()
-
 if ( ! function_exists( 'blue_planet_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function blue_planet_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function blue_planet_posted_on() {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'blue-planet' ),
+			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+				esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), $time_string // WPCS: XSS OK.
+			),
+			sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			)
+		); // WPCS: XSS OK.
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
+			echo '<span class="comments">';
+			echo '<a href="'.esc_url( get_comments_link() ).'">';
+			echo comments_number( __( '0 comment','blue-planet' ), __( '1 comment','blue-planet' ), __( '% comments','blue-planet' ) );
+			echo '</a>';
+			echo '</span>';
+		endif;
+
+		edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' );
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'blue-planet' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')) ),
-			$time_string
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		)
-	);
-	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
-		echo '<span class="comments">';
-		echo '<a href="'.get_comments_link().'">';
-		echo comments_number( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
-		echo "</a>";
-		echo '</span>';
-	endif;
-
-	edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' );
-}
 endif;
 
 /**
@@ -180,7 +115,7 @@ function blue_planet_categorized_blog() {
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so blue_planet_categorized_blog should return true.
 		return true;
 	} else {

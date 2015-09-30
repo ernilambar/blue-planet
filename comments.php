@@ -39,15 +39,11 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-
-				/*
-				 * Loop through and list the comments. Tell wp_list_comments()
-				 * to use blue_planet_comment() to format the comments.
-				 * If you want to override this in a child theme, then you can
-				 * define blue_planet_comment() and that will be used instead.
-				 * See blue_planet_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments( array( 'callback' => 'blue_planet_comment' ) );
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 42,
+				) );
 			?>
 		</ol><!-- .comment-list -->
 
