@@ -1,95 +1,158 @@
 <?php
+/**
+ * Custom Customizer Controls.
+ *
+ * @package Blue_Planet
+ */
 
-if ( ! class_exists( 'WP_Customize_Control' ) )
-  return NULL;
+if ( ! class_exists( 'WP_Customize_Control' ) ) {
+	return null; }
 
 
 /**
- * Customize Control for Heading
+ * Customize Control for Heading.
+ *
+ * @since 1.0.0
+ *
+ * @see WP_Customize_Control
  */
 class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 
-  public $type = 'heading';
+	/**
+	 * Control type.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $type = 'heading';
 
-  public function render_content() {
+	/**
+	 * Render content.
+	 *
+	 * @since 1.0.0
+	 */
 
-    ?>
+	public function render_content() {
+	?>
       <h3 class="bp-customize-heading"><?php echo esc_html( $this->label ); ?></h3><!-- .bp-customize-heading -->
     <?php
-  }
-
+	}
 }
 
 
 /**
- * Customize Control for Message
+ * Customize Control for Message.
+ *
+ * @since 1.0.0
+ *
+ * @see WP_Customize_Control
  */
 class Blue_Planet_Customize_Message_Control extends WP_Customize_Control {
 
-  public $type = 'message';
+	/**
+	 * Control type.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $type = 'message';
 
-  public function render_content() {
-
-    ?>
-      <div class="bp-customize-message">
-        <?php echo $this->description; ?>
-      </div> <!-- .bp-customize-message -->
-    <?php
-  }
-
+	/**
+	 * Render content.
+	 *
+	 * @since 1.0.0
+	 */
+	public function render_content() {
+	?>
+	<?php if ( ! empty( $this->label ) ) : ?>
+		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+	<?php endif; ?>
+	<?php if ( ! empty( $this->description ) ) : ?>
+		<span class="description customize-control-description bp-customize-message"><?php echo $this->description; ?></span>
+	<?php endif; ?>
+   <?php
+	}
 }
 
 /**
- * Customize Control for Taxonomy Select
+ * Customize Control for Taxonomy Select.
+ *
+ * @since 1.0.0
+ *
+ * @see WP_Customize_Control
  */
 class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 
-  public $type = 'dropdown-taxonomies';
+	/**
+	 * Control type.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $type = 'dropdown-taxonomies';
 
-  public $taxonomy = '';
+	/**
+	 * Taxonomy.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $taxonomy = '';
 
+	/**
+	 * Constructor.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
+	 * @param string               $id      Control ID.
+	 * @param array                $args    Optional. Arguments to override class property defaults.
+	 */
+	public function __construct( $manager, $id, $args = array() ) {
 
-  public function __construct( $manager, $id, $args = array() ) {
+		$our_taxonomy = 'category';
+		if ( isset( $args['taxonomy'] ) ) {
+			$taxonomy_exist = taxonomy_exists( esc_attr( $args['taxonomy'] ) );
+			if ( true === $taxonomy_exist ) {
+				$our_taxonomy = esc_attr( $args['taxonomy'] );
+			}
+		}
+		$args['taxonomy'] = $our_taxonomy;
+		$this->taxonomy = esc_attr( $our_taxonomy );
 
-    $our_taxonomy = 'category';
-    if ( isset( $args['taxonomy'] ) ) {
-      $taxonomy_exist = taxonomy_exists( esc_attr( $args['taxonomy'] ) );
-      if ( true === $taxonomy_exist ) {
-        $our_taxonomy = esc_attr( $args['taxonomy'] );
-      }
-    }
-    $args['taxonomy'] = $our_taxonomy;
-    $this->taxonomy = esc_attr( $our_taxonomy );
+		parent::__construct( $manager, $id, $args );
+	}
 
-    parent::__construct( $manager, $id, $args );
-  }
+	/**
+	 * Render content.
+	 *
+	 * @since 1.0.0
+	 */
+	public function render_content() {
 
-  public function render_content() {
+		$tax_args = array(
+		'hierarchical' => 0,
+		'taxonomy'     => $this->taxonomy,
+		);
+		$all_taxonomies = get_categories( $tax_args );
 
-    $tax_args = array(
-      'hierarchical' => 0,
-      'taxonomy'     => $this->taxonomy,
-    );
-    $all_taxonomies = get_categories( $tax_args );
-
-    ?>
+	?>
     <label>
       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
          <select <?php echo $this->link(); ?>>
             <?php
-              printf('<option value="%s" %s>%s</option>', '', selected($this->value(), '', false),__( 'Select', 'blue-planet' ) );
-             ?>
-            <?php if ( ! empty( $all_taxonomies ) ): ?>
-              <?php foreach ( $all_taxonomies as $key => $tax ): ?>
+			  printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ),__( 'Select', 'blue-planet' ) );
+				?>
+            <?php if ( ! empty( $all_taxonomies ) ) :  ?>
+				<?php foreach ( $all_taxonomies as $key => $tax ) :  ?>
                 <?php
-                  printf('<option value="%s" %s>%s</option>', $tax->term_id, selected($this->value(), $tax->term_id, false), $tax->name );
-                 ?>
-              <?php endforeach ?>
-           <?php endif ?>
+				  printf( '<option value="%s" %s>%s</option>', $tax->term_id, selected( $this->value(), $tax->term_id, false ), $tax->name );
+					?>
+				<?php endforeach ?>
+			<?php endif ?>
          </select>
 
     </label>
     <?php
-  }
-
+	}
 }
