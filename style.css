@@ -1477,17 +1477,21 @@ a.readmore:hover{
   background-color: #234961;
 }
 
-/*Goto top*/
+/* Goto top */
 .scrollup{
-    width:40px;
-    height:40px;
-    opacity:0.6;
-    position:fixed;
-    bottom:50px;
-    right:30px;
-    display:none;
-    outline: none;
-    border:none;
-    text-indent:-9999px;
-    background: url('images/icon_top.png') no-repeat;
+  width:40px;
+  height:40px;
+  opacity:0.6;
+  position:fixed;
+  bottom:50px;
+  right:30px;
+  display:none;
+  outline: none;
+  border:none;
+  text-indent:-9999px;
+  background: url('images/icon_top.png') no-repeat;
+}
+a.scrollup:active,
+a.scrollup:focus{
+  outline: none;
 }
