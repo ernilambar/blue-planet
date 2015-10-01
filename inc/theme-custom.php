@@ -588,9 +588,11 @@ if ( ! function_exists( 'blue_planet_header_add_favicon' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_header_add_favicon() {
-		$custom_favicon = blueplanet_get_option( 'custom_favicon' );
-		if ( ! empty( $custom_favicon ) ) {
-			echo '<link rel="shortcut icon" href="' . esc_url( $custom_favicon ) . '" />';
+		if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) {
+			$custom_favicon = blueplanet_get_option( 'custom_favicon' );
+			if ( ! empty( $custom_favicon ) ) {
+				echo '<link rel="shortcut icon" href="' . esc_url( $custom_favicon ) . '" />';
+			}
 		}
 	}
 
