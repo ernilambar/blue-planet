@@ -612,23 +612,3 @@ if ( ! function_exists( 'blue_planet_add_editor_styles' ) ) :
 endif;
 
 add_action( 'init', 'blue_planet_add_editor_styles' );
-
-if ( ! function_exists( 'blue_planet_add_iehack_scripts' ) ) :
-
-	/**
-	 * Load IE hack scripts.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_add_iehack_scripts() {
-	?>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
-      <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-    <![endif]-->
-    <?php
-	}
-endif;
-
-add_action( 'wp_head', 'blue_planet_add_iehack_scripts' );

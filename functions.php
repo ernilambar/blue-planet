@@ -9,8 +9,6 @@ define( 'BS_THEME_NAME', 'Blue Planet' );
 define( 'BS_THEME_SLUG', 'blue-planet' );
 define( 'BS_THEME_VERSION', '2.0' );
 define( 'BS_SHORT_NAME', 'bsk' );
-?>
-<?php
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :
 	/**
@@ -147,13 +145,21 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		if ( 'none' !== $slider_status || 'none' !== $slider_status_2 ) {
 			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
-			wp_enqueue_script( 'nivo-slider-script',get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array( 'jquery' ),'3.2', true );
+			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array( 'jquery' ), '3.2', true );
 		}
 
 		wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
-		wp_enqueue_script( 'meanmenu-script',get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array( 'jquery' ),'2.0.6', true );
+		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array( 'jquery' ),'2.0.6', true );
 
-		wp_enqueue_script( 'blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array( 'jquery' ),'1.1.1', true );
+		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom.js', array( 'jquery' ),'1.1.1', true );
+
+		// Scripts for IE hack.
+		global $wp_scripts;
+		wp_enqueue_script( 'blue-planet-html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.6', false );
+		$wp_scripts->add_data( 'blue-planet-html5shiv', 'conditional', 'lt IE 9' );
+		wp_enqueue_script( 'blue-planet-respond', get_template_directory_uri() . '/js/respond.min.js', array(), '1.1.0', false );
+		$wp_scripts->add_data( 'blue-planet-respond', 'conditional', 'lt IE 9' );
+
 	}
 
 endif;

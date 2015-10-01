@@ -6,6 +6,7 @@
  *
  * @package Blue_Planet
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
