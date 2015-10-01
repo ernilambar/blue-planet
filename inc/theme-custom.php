@@ -216,13 +216,12 @@ if ( ! function_exists( 'blue_planet_footer_powered_by' ) ) :
 	function blue_planet_footer_powered_by() {
 		$flg_hide_powered_by = blueplanet_get_option( 'flg_hide_powered_by' );
 		if ( 1 !== $flg_hide_powered_by ) {  ?>
-            <div class="footer-powered-by">
-                <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
-                <span class="sep"> | </span>
-                <?php printf( __( 'Theme: %1$s by %2$s.', 'blue-planet' ), '<a href="http://wordpress.org/themes/blue-planet">Blue Planet</a>', '<a href="http://www.nilambar.net" rel="designer">Nilambar Sharma</a>' ); ?>
-            </div>
-
-        <?php } // End if.
+      <div class="footer-powered-by">
+          <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
+          <span class="sep"> | </span>
+          <?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="http://www.nilambar.net" rel="designer">Nilambar Sharma</a>' ); ?>
+      </div>
+    <?php }
 		return;
 	}
 endif;
