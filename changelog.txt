@@ -1,7 +1,11 @@
 == Changelog ==
 
-Version 2.0.1
+Version 2.0.1 - ( 1 Oct 2015 )
 * Fix PHP4 constructor issue
+* Back compat for favicon feature
+* Completely remove Settings API
+* Remove unnecessary files
+* Follow WordPress Coding Standard
 
 Version 2.0
 * Remove Settings API implementation for theme options and port it to Customizer API
