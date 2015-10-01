@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.0.2 - ( 1 Oct 2015 )
+* Fix text domain issue
+
 Version 2.0.1 - ( 1 Oct 2015 )
 * Fix PHP4 constructor issue
 * Back compat for favicon feature
