@@ -6,7 +6,7 @@
 	$( document ).ready( function( $ ) {
 
 		// Secondary slider.
-		var controlNav = ( '1'=== BP_OPTIONS.control_nav_2 ) ? true : false;
+		var controlNav = ( '1' === BP_OPTIONS.control_nav_2 ) ? true : false;
 		var directionNav = ( '1' === BP_OPTIONS.direction_nav_2 ) ? true : false;
 		var pauseTime = BP_OPTIONS.transition_delay_2 * 1000;
 		var animSpeed = BP_OPTIONS.transition_length_2 * 1000;

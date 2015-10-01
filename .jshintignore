@@ -1,8 +1,10 @@
 js/html5shiv.js
 js/respond.min.js
 js/custom.min.js
+js/slider.js
 js/slider.min.js
 js/skip-link-focus-fix.js
 js/skip-link-focus-fix.min.js
 thirdparty/meanmenu/jquery.meanmenu.min.js
+thirdparty/nivoslider/jquery.nivo.slider.js
 thirdparty/nivoslider/jquery.nivo.slider.pack.js
