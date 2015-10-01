@@ -5,63 +5,6 @@
  * @package Blue_Planet
  */
 
-if ( ! function_exists( 'blue_planet_slider_js_starter' ) ) :
-
-	/**
-	 * Load JS for sliders.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_slider_js_starter() {
-		$bp_options = blueplanet_get_option_all();
-
-		if ( 'none' !== $bp_options['slider_status'] ) {
-			$bp_options['slider_autoplay'] = ( isset( $bp_options['slider_autoplay'] ) ) ? $bp_options['slider_autoplay'] : 0;
-			?>
-            <script type="text/javascript">
-            /* <![CDATA[ */
-            jQuery(document).ready(function($){
-                if(jQuery().nivoSlider) {
-                    $('#bp-main-slider').nivoSlider({
-                        directionNav: <?php echo esc_attr( $bp_options['direction_nav'] ); ?>,
-                        manualAdvance: '<?php echo ! ($bp_options['slider_autoplay'])  ; ?>',
-                        effect: '<?php echo esc_attr( $bp_options['transition_effect'] );?>',
-                        pauseTime: <?php echo (esc_attr( $bp_options['transition_delay'] ) ) * 1000 ; ?>,
-                        animSpeed: <?php echo ( esc_attr( $bp_options['transition_length'] ) ) * 1000 ; ?>,
-                        controlNav: false
-                    });
-                }
-            });
-            /* ]]> */
-            </script>
-            <?php
-		}
-		// secondary slider
-		if ( 'none' !== $bp_options['slider_status_2'] ) {
-			?>
-            <script type="text/javascript">
-            /* <![CDATA[ */
-            jQuery(document).ready(function($){
-                if(jQuery().nivoSlider) {
-                    $('#bp-secondary-slider').nivoSlider({
-                        controlNav: <?php echo esc_attr( $bp_options['control_nav_2'] ); ?>,
-                        directionNav: <?php echo esc_attr( $bp_options['direction_nav_2'] ); ?>,
-                        manualAdvance: '<?php echo ! ($bp_options['slider_autoplay_2'])  ; ?>',
-                        effect: '<?php echo esc_attr( $bp_options['transition_effect_2'] );?>',
-                        pauseTime: <?php echo ( esc_attr( $bp_options['transition_delay_2'] ) ) * 1000 ; ?>,
-                        animSpeed: <?php echo ( esc_attr( $bp_options['transition_length_2'] ) ) * 1000 ; ?>
-                    });
-                }
-            });
-            /* ]]> */
-            </script>
-            <?php
-		}
-	}
-endif;
-
-add_action( 'wp_footer', 'blue_planet_slider_js_starter', 100 );
-
 if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
 
 	/**

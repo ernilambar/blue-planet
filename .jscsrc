@@ -4,6 +4,7 @@
     "excludeFiles": [
     	"js/html5shiv.js",
     	"js/custom.min.js",
+    	"js/slider.min.js",
     	"js/respond.min.js",
     	"js/skip-link-focus-fix.js",
     	"js/skip-link-focus-fix.min.js",
