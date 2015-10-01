@@ -45,9 +45,7 @@ class BP_Social_Widget  extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		global $blueplanet_options_settings;
-
-		$bp_options = $blueplanet_options_settings;
+		$bp_options = blueplanet_get_option_all();
 
 		echo '<div class="social-widget-wrapper">';
 
@@ -55,11 +53,11 @@ class BP_Social_Widget  extends WP_Widget {
 
 		foreach ( $social_sites as $key => $site ) {
 			if ( '' !== $bp_options[ "social_$site" ] ) {
-				echo '<a class="social-' . esc_attr( $site ) . '" href="'.esc_url( $bp_options[ "social_$site" ] ).'"></a>';
+				echo '<a class="social-' . esc_attr( $site ) . '" href="' . esc_url( $bp_options[ "social_$site" ] ) . '"></a>';
 			}
 		}
-		if ( '' !== $bp_options['social_email'] ) {
-			echo '<a class="social-email" href="mailto:'.esc_attr( $bp_options['social_email'] ).'"></a>';
+		if ( isset( $bp_options['social_email'] ) && ! empty( $bp_options['social_email'] ) ) {
+			echo '<a class="social-email" href="mailto:' . esc_attr( $bp_options['social_email'] ) . '"></a>';
 		}
 		echo '</div>';
 

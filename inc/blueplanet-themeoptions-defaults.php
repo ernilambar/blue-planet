@@ -7,10 +7,6 @@
  * @package Blue_Planet
  */
 
-global $blueplanet_options_settings;
-
-$blueplanet_options_settings = get_option( 'blueplanet_options' );
-
 /**
  * Get theme option.
  *
@@ -38,11 +34,6 @@ function blueplanet_get_option( $key ) {
 	// Set default value first.
 	if ( is_array( $defaults ) && isset( $defaults[ $key ] ) ) {
 		$output = $defaults[ $key ];
-	}
-
-	// Has any value?
-	if ( is_array( $blueplanet_options_settings ) && isset( $blueplanet_options_settings[ $key ] ) ) {
-		$output = $blueplanet_options_settings[ $key ];
 	}
 
 	return $output;
@@ -80,7 +71,7 @@ function blueplanet_get_default_options() {
 	$defaults = array(
 		'custom_favicon'               => '',
 		'custom_css'                   => '',
-		'flg_enable_goto_top'          => '0',
+		'flg_enable_goto_top'          => '1',
 		'banner_background_color'      => '#00ADB3',
 		'search_placeholder'           => esc_html__( 'Search here...', 'blue-planet' ),
 		'flg_hide_search_box'          => '1',

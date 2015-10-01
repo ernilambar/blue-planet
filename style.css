@@ -924,11 +924,12 @@ footer div.site-info a{
   color: #FFFFFF!important;
 }
 footer#colophon {
-    text-align: center;
-    min-height: 50px;
-    margin: 10px 0px 15px 0px;
-    background-color: #32698B;
-    color: #FFFFFF;
+  text-align: center;
+  margin: 10px 0px 15px 0px;
+  background-color: #32698B;
+  color: #FFFFFF;
+  height: auto;
+  overflow: hidden;
 }
 footer#colophon a{
     color:#FFFFFF;
