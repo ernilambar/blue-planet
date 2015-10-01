@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer Reset section.
+ * Customizer Theme Options section.
  *
  * @package Blue_Planet
  */
