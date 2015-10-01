@@ -6,8 +6,8 @@
  */
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
-	return null; }
-
+	return null;
+}
 
 /**
  * Customize Control for Heading.
@@ -31,14 +31,12 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function render_content() {
 	?>
       <h3 class="bp-customize-heading"><?php echo esc_html( $this->label ); ?></h3><!-- .bp-customize-heading -->
     <?php
 	}
 }
-
 
 /**
  * Customize Control for Message.
@@ -70,7 +68,7 @@ class Blue_Planet_Customize_Message_Control extends WP_Customize_Control {
 	<?php if ( ! empty( $this->description ) ) : ?>
 		<span class="description customize-control-description bp-customize-message"><?php echo $this->description; ?></span>
 	<?php endif; ?>
-   <?php
+	<?php
 	}
 }
 
