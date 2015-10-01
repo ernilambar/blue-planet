@@ -15,12 +15,12 @@
  */
 function blue_planet_reset_all_theme_settings( $input ) {
 
-	if ( 1 === $input ) {
+	if ( true === $input ) {
 
 		$defaults = blueplanet_get_default_options();
 		$key      = 'blueplanet_options';
 
-		update_option( $key, $defaults );
+		set_theme_mod( $key, $defaults );
 
 	}
 	return false;
