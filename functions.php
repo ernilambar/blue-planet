@@ -132,9 +132,9 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 
 		wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
 		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
-		wp_enqueue_style( 'blue-planet-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'' );
+		wp_enqueue_style( 'blue-planet-style-responsive', get_template_directory_uri().'/css/responsive.min.css', false ,'' );
 
-		wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -151,7 +151,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
 		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array( 'jquery' ),'2.0.6', true );
 
-		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom.js', array( 'jquery' ),'1.1.1', true );
+		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom.min.js', array( 'jquery' ),'2.0.0', true );
 
 		// Scripts for IE hack.
 		global $wp_scripts;
