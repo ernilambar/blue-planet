@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blue-planet\n"
-"POT-Creation-Date: 2015-10-12 20:39+0530\n"
-"PO-Revision-Date: 2015-10-12 20:39+0530\n"
+"POT-Creation-Date: 2015-10-12 20:52+0530\n"
+"PO-Revision-Date: 2015-10-12 20:52+0530\n"
 "Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -89,11 +89,11 @@ msgid "Comment navigation"
 msgstr ""
 
 #: ../../blue-planet/comments.php:35 ../../blue-planet/comments.php:53
-msgid "&larr; Older Comments"
+msgid "Older Comments"
 msgstr ""
 
 #: ../../blue-planet/comments.php:36 ../../blue-planet/comments.php:54
-msgid "Newer Comments &rarr;"
+msgid "Newer Comments"
 msgstr ""
 
 #: ../../blue-planet/comments.php:64
@@ -310,7 +310,7 @@ msgid "Hide"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/controls.php:142
-msgid "Select"
+msgid "&mdash; Select &mdash;"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/slider.php:11

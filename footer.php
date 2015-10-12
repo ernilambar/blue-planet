@@ -22,7 +22,7 @@
 		do_action( 'blue_planet_after_footer_open' );
 		?>
 		<div class="site-info">
-            <?php
+      <?php
 			  wp_nav_menu( array(
 				  'theme_location'  => 'footer',
 				  'depth'           => 1,

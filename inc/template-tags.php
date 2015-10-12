@@ -109,6 +109,8 @@ function blue_planet_categorized_blog() {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
+      'fields'     => 'ids',
+      'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
