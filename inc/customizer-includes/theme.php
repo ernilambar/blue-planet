@@ -16,7 +16,7 @@
 	// General Section.
 	$wp_customize->add_section( 'blue_planet_options_general',
 		array(
-		'title'      => __( 'General', 'blue-planet' ),
+		'title'      => __( 'General Options', 'blue-planet' ),
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'blue_planet_options_panel',
@@ -75,7 +75,7 @@
 	$wp_customize->add_control(
 		'blueplanet_options[search_placeholder]',
 		array(
-		'label'       => __( 'Default text in Search box', 'blue-planet' ),
+		'label'       => __( 'Search Placeholder', 'blue-planet' ),
 		'section'     => 'blue_planet_options_general',
 		'settings'    => 'blueplanet_options[search_placeholder]',
 		'type'        => 'text',
@@ -106,7 +106,7 @@
 	// Header Section.
 	$wp_customize->add_section( 'blue_planet_options_header',
 		array(
-		'title'      => __( 'Header', 'blue-planet' ),
+		'title'      => __( 'Header Options', 'blue-planet' ),
 		'priority'   => 15,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'blue_planet_options_panel',
@@ -156,7 +156,7 @@
 	// Footer Section.
 	$wp_customize->add_section( 'blue_planet_options_footer',
 		array(
-		'title'      => __( 'Footer', 'blue-planet' ),
+		'title'      => __( 'Footer Options', 'blue-planet' ),
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'blue_planet_options_panel',
@@ -195,18 +195,18 @@
 	$wp_customize->add_control(
 		'blueplanet_options[number_of_footer_widgets]',
 		array(
-		'label'       => __( 'Number of Footer widgets', 'blue-planet' ),
-		'section'     => 'blue_planet_options_footer',
-		'settings'    => 'blueplanet_options[number_of_footer_widgets]',
-		'active_callback'    => 'blue_planet_check_footer_widgets_status_cb',
-		'type'        => 'select',
-		'priority'    => 50,
-		'choices'    => array(
-			'1' => __( '1', 'blue-planet' ),
-			'2' => __( '2', 'blue-planet' ),
-			'3' => __( '3', 'blue-planet' ),
-			'4' => __( '4', 'blue-planet' ),
-			'6' => __( '6', 'blue-planet' ),
+    'label'           => __( 'Number of Footer widgets', 'blue-planet' ),
+    'section'         => 'blue_planet_options_footer',
+    'settings'        => 'blueplanet_options[number_of_footer_widgets]',
+    'active_callback' => 'blue_planet_check_footer_widgets_status_cb',
+    'type'            => 'select',
+    'priority'        => 50,
+    'choices'         => array(
+      '1' => 1,
+      '2' => 2,
+      '3' => 3,
+      '4' => 4,
+      '6' => 6,
 		  ),
 		)
 	);
@@ -276,7 +276,7 @@
 	// Layout Section.
 	$wp_customize->add_section( 'blue_planet_options_layout',
 		array(
-		'title'      => __( 'Layout', 'blue-planet' ),
+		'title'      => __( 'Layout Options', 'blue-planet' ),
 		'priority'   => 25,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'blue_planet_options_panel',
@@ -333,7 +333,7 @@
 	// Blog Section.
 	$wp_customize->add_section( 'blue_planet_options_blog',
 		array(
-		'title'      => __( 'Blog', 'blue-planet' ),
+		'title'      => __( 'Blog Options', 'blue-planet' ),
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'blue_planet_options_panel',
@@ -383,7 +383,7 @@
 	// Social Section.
 	$wp_customize->add_section( 'blue_planet_options_social',
 		array(
-		'title'       => __( 'Social', 'blue-planet' ),
+		'title'       => __( 'Social Options', 'blue-planet' ),
 		'description' => __( 'Please enter Full URL', 'blue-planet' ),
 		'priority'    => 40,
 		'capability'  => 'edit_theme_options',

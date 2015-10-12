@@ -26,7 +26,7 @@
 	$wp_customize->add_control(
 		'reset_theme_settings',
 		array(
-			'label'       => esc_html__( 'Reset Now', 'blue-planet' ),
+			'label'       => esc_html__( 'Reset Theme Settings', 'blue-planet' ),
 			'section'     => 'blue_planet_reset_section',
 			'settings'    => 'blueplanet_options[reset_theme_settings]',
 			'type'        => 'checkbox',

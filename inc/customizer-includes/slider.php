@@ -128,6 +128,7 @@ $wp_customize->add_control(
 	'type'            => 'number',
 	'priority'        => 60,
 	'active_callback' => 'blue_planet_check_main_slider_status_cb',
+  'input_attrs'     => array( 'min' => 1, 'max' => 20, 'style' => 'width: 55px;' ),
 	)
 );
 
@@ -149,6 +150,7 @@ $wp_customize->add_control(
 	'type'            => 'number',
 	'priority'        => 70,
 	'active_callback' => 'blue_planet_check_main_slider_status_cb',
+  'input_attrs'     => array( 'min' => 1, 'max' => 20, 'style' => 'width: 55px;' ),
 	)
 );
 // Sliders block.
@@ -295,12 +297,13 @@ $wp_customize->add_setting( 'blueplanet_options[number_of_slides_2]',
 $wp_customize->add_control(
 	'blueplanet_options[number_of_slides_2]',
 	array(
-	'label'           => __( 'Number of slides', 'blue-planet' ),
-	'section'         => 'blue_planet_slider_secondary',
-	'settings'        => 'blueplanet_options[number_of_slides_2]',
-	'type'            => 'number',
-	'priority'        => 20,
-	'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
+  'label'           => __( 'Number of slides', 'blue-planet' ),
+  'section'         => 'blue_planet_slider_secondary',
+  'settings'        => 'blueplanet_options[number_of_slides_2]',
+  'type'            => 'number',
+  'priority'        => 20,
+  'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
+  'input_attrs'     => array( 'min' => 1, 'max' => 20, 'style' => 'width: 55px;' ),
 	)
 );
 // Setting - slider_category_2.
@@ -441,6 +444,7 @@ $wp_customize->add_control(
 	'type'            => 'number',
 	'priority'        => 80,
 	'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
+  'input_attrs'     => array( 'min' => 1, 'max' => 20, 'style' => 'width: 55px;' ),
 	)
 );
 // Setting - transition_length_2.
@@ -461,5 +465,6 @@ $wp_customize->add_control(
 	'type'            => 'number',
 	'priority'        => 90,
 	'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
+  'input_attrs'     => array( 'min' => 1, 'max' => 20, 'style' => 'width: 55px;' ),
 	)
 );
