@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blue-planet\n"
-"POT-Creation-Date: 2015-10-12 20:27+0530\n"
-"PO-Revision-Date: 2015-10-12 20:27+0530\n"
+"POT-Creation-Date: 2015-10-12 20:39+0530\n"
+"PO-Revision-Date: 2015-10-12 20:39+0530\n"
 "Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -175,18 +175,8 @@ msgstr ""
 msgid "Scroll"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:54
+#: ../../blue-planet/inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
-
-#: ../../blue-planet/inc/template-tags.php:57
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
-
-#: ../../blue-planet/inc/template-tags.php:58
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: ../../blue-planet/inc/template-tags.php:83

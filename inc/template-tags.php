@@ -40,7 +40,9 @@ endif;
 if ( ! function_exists( 'blue_planet_post_nav' ) ) :
 	/**
 	 * Display navigation to next/previous post when applicable.
-	 */
+   *
+   * @deprecated 2.0.3 Use the_post_navigation()
+   */
 	function blue_planet_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
@@ -53,10 +55,8 @@ if ( ! function_exists( 'blue_planet_post_nav' ) ) :
 		<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'blue-planet' ); ?></h1>
 		<div class="nav-links">
-
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'blue-planet' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'blue-planet' ) ); ?>
-
+			<?php previous_post_link( '%link', '<span class="meta-nav">&larr;</span> %title' ); ?>
+			<?php next_post_link( '%link', '%title <span class="meta-nav">&rarr;</span>' ); ?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
