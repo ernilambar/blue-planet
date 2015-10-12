@@ -11,7 +11,7 @@ if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
 	/**
    * Display navigation to next/previous set of posts when applicable.
    *
-	 * @deprecated 2.0.3 Use the_posts_navigation()
+	 * @deprecated 2.1 Use the_posts_navigation()
 	 */
 	function blue_planet_paging_nav() {
 		// Don't print empty markup if there's only one page.
@@ -41,7 +41,7 @@ if ( ! function_exists( 'blue_planet_post_nav' ) ) :
 	/**
 	 * Display navigation to next/previous post when applicable.
    *
-   * @deprecated 2.0.3 Use the_post_navigation()
+   * @deprecated 2.1 Use the_post_navigation()
    */
 	function blue_planet_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
@@ -80,7 +80,7 @@ if ( ! function_exists( 'blue_planet_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'blue-planet' ),
+		printf( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>',
 			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 				esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), $time_string // WPCS: XSS OK.
 			),
@@ -91,7 +91,7 @@ if ( ! function_exists( 'blue_planet_posted_on' ) ) :
 		); // WPCS: XSS OK.
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 			echo '<span class="comments">';
-			echo '<a href="'.esc_url( get_comments_link() ).'">';
+			echo '<a href="' . esc_url( get_comments_link() ) . '">';
 			echo comments_number( __( '0 comment','blue-planet' ), __( '1 comment','blue-planet' ), __( '% comments','blue-planet' ) );
 			echo '</a>';
 			echo '</span>';

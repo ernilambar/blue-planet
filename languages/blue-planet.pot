@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blue-planet\n"
-"POT-Creation-Date: 2015-10-12 21:21+0530\n"
-"PO-Revision-Date: 2015-10-12 21:21+0530\n"
+"POT-Creation-Date: 2015-10-12 21:34+0530\n"
+"PO-Revision-Date: 2015-10-12 21:34+0530\n"
 "Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -44,7 +44,8 @@ msgid "Widgets of Sidebar will be displayed here."
 msgstr ""
 
 #: ../../blue-planet/content.php:68
-msgid "Continue reading"
+#, php-format
+msgid "Continue reading %s"
 msgstr ""
 
 #: ../../blue-planet/content.php:71 ../../blue-planet/content-single.php:29
@@ -177,11 +178,6 @@ msgstr ""
 
 #: ../../blue-planet/inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
-
-#: ../../blue-planet/inc/template-tags.php:83
-#, php-format
-msgid "<span class=\"posted-on\">%1$s</span><span class=\"byline\">%2$s</span>"
 msgstr ""
 
 #: ../../blue-planet/inc/template-tags.php:95

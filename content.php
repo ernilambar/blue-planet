@@ -60,12 +60,12 @@ $content_layout = blueplanet_get_option( 'content_layout' );
 
 		        	<?php if ( has_post_thumbnail() ) : ?>
 		        		<div class="bp-thumbnail-wrapper">
-		        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+		        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 		        				<?php the_post_thumbnail(); ?>
 		        			</a>
 		        		</div>
 		        	<?php endif; ?>
-					 		<?php the_content( __( 'Continue reading', 'blue-planet' ) . '<span class="meta-nav">&rarr;</span>' ); ?>
+					 		<?php the_content( sprintf( __( 'Continue reading %s', 'blue-planet' ), '<span class="meta-nav">&rarr;</span><span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' ) ); ?>
 							<?php
 								wp_link_pages( array(
 									'before' => '<div class="page-links">' . __( 'Pages:', 'blue-planet' ),
