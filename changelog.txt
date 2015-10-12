@@ -1,7 +1,9 @@
 == Changelog ==
 
 Version 2.0.3 - ( 12 Oct 2015 )
-* Fix duplicate text strings
+* Fix: duplicate text strings
+* Update: new archive functions
+* Update: WP provided paging functions
 
 Version 2.0.2 - ( 1 Oct 2015 )
 * Fix text domain issue

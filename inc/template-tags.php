@@ -9,7 +9,9 @@
 
 if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
 	/**
-	 * Display navigation to next/previous set of posts when applicable.
+   * Display navigation to next/previous set of posts when applicable.
+   *
+	 * @deprecated 2.0.3 Use the_posts_navigation()
 	 */
 	function blue_planet_paging_nav() {
 		// Don't print empty markup if there's only one page.
@@ -22,11 +24,11 @@ if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'blue-planet' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> ' . __( 'Older posts', 'blue-planet' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'blue-planet' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'blue-planet' ) . '<span class="meta-nav">&rarr;</span>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
