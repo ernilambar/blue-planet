@@ -406,7 +406,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_facebook]',
 		array(
 		'default'              => $new_defaults['social_facebook'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -427,7 +426,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_twitter]',
 		array(
 		'default'              => $new_defaults['social_twitter'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -448,7 +446,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_googleplus]',
 		array(
 		'default'              => $new_defaults['social_googleplus'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -469,7 +466,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_youtube]',
 		array(
 		'default'              => $new_defaults['social_youtube'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -490,7 +486,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_pinterest]',
 		array(
 		'default'              => $new_defaults['social_pinterest'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -511,7 +506,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_linkedin]',
 		array(
 		'default'              => $new_defaults['social_linkedin'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -532,7 +526,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_vimeo]',
 		array(
 		'default'              => $new_defaults['social_vimeo'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -553,7 +546,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_flickr]',
 		array(
 		'default'              => $new_defaults['social_flickr'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -573,7 +565,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_tumblr]',
 		array(
 		'default'              => $new_defaults['social_tumblr'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -593,7 +584,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_dribbble]',
 		array(
 		'default'              => $new_defaults['social_dribbble'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -613,7 +603,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_deviantart]',
 		array(
 		'default'              => $new_defaults['social_deviantart'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -633,7 +622,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_rss]',
 		array(
 		'default'              => $new_defaults['social_rss'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -654,7 +642,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_instagram]',
 		array(
 		'default'              => $new_defaults['social_instagram'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -674,7 +661,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_skype]',
 		array(
 		'default'              => $new_defaults['social_skype'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_text_field',
 		'sanitize_js_callback' => 'sanitize_text_field',
@@ -695,7 +681,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_digg]',
 		array(
 		'default'              => $new_defaults['social_digg'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -716,7 +701,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_stumbleupon]',
 		array(
 		'default'              => $new_defaults['social_stumbleupon'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -736,7 +720,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_forrst]',
 		array(
 		'default'              => $new_defaults['social_forrst'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -756,7 +739,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_500px]',
 		array(
 		'default'              => $new_defaults['social_500px'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -776,7 +758,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[social_email]',
 		array(
 		'default'              => $new_defaults['social_email'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_email',
 		'sanitize_js_callback' => 'sanitize_email',

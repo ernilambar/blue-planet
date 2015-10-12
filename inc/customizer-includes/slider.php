@@ -242,7 +242,7 @@ for ( $i = 1; $i <= 5 ; $i++ ) {
 	$wp_customize->add_control(
 		'blueplanet_options[main_slider_new_tab_' . $i . ']',
 		array(
-		'label'           => __( 'Open in new tab', 'blue-planet' ),
+		'label'           => __( 'Open Link in New Window', 'blue-planet' ),
 		'section'         => 'blue_planet_slider_main',
 		'settings'        => 'blueplanet_options[main_slider_new_tab_' . $i . ']',
 		'type'            => 'checkbox',
@@ -415,7 +415,7 @@ $wp_customize->add_setting( 'blueplanet_options[slider_autoplay_2]',
 $wp_customize->add_control(
 	'blueplanet_options[slider_autoplay_2]',
 	array(
-	'label'           => __( 'Enable Autoplay', 'blue-planet' ),
+	'label'           => __( 'Enable Auto Play', 'blue-planet' ),
 	'section'         => 'blue_planet_slider_secondary',
 	'settings'        => 'blueplanet_options[slider_autoplay_2]',
 	'type'            => 'radio',

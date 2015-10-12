@@ -94,7 +94,7 @@ function blue_planet_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Menu Widget Area', 'blue-planet' ),
 		'id'            => 'sidebar-top-menu',
-		'description'   => esc_html__( 'Widget area in the header. Specially for menu widget', 'blue-planet' ),
+		'description'   => esc_html__( 'Widget area in the header. Specially for menu widget.', 'blue-planet' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',

@@ -134,21 +134,21 @@ if ( ! function_exists( 'blue_planet_get_slider_transition_effects' ) ) :
 	function blue_planet_get_slider_transition_effects() {
 
 		$choices = array(
-			'boxRain'            => __( 'boxRain', 'blue-planet' ),
-			'boxRainGrow'        => __( 'boxRainGrow', 'blue-planet' ),
-			'boxRainReverse'     => __( 'boxRainReverse', 'blue-planet' ),
-			'boxRainGrowReverse' => __( 'boxRainGrowReverse', 'blue-planet' ),
-			'boxRandom'          => __( 'boxRandom', 'blue-planet' ),
-			'fade'               => __( 'fade', 'blue-planet' ),
-			'fold'               => __( 'fold', 'blue-planet' ),
-			'random'             => __( 'random', 'blue-planet' ),
-			'sliceDown'          => __( 'sliceDown', 'blue-planet' ),
-			'sliceDownLeft'      => __( 'sliceDownLeft', 'blue-planet' ),
-			'sliceUp'            => __( 'sliceUp', 'blue-planet' ),
-			'sliceUpDown'        => __( 'sliceUpDown', 'blue-planet' ),
-			'sliceUpDownLeft'    => __( 'sliceUpDownLeft', 'blue-planet' ),
-			'slideInRight'       => __( 'slideInRight', 'blue-planet' ),
-			'slideInLeft'        => __( 'slideInLeft', 'blue-planet' ),
+			'boxRain'            => _x( 'boxRain', 'Transition Effect', 'blue-planet' ),
+			'boxRainGrow'        => _x( 'boxRainGrow', 'Transition Effect', 'blue-planet' ),
+			'boxRainReverse'     => _x( 'boxRainReverse', 'Transition Effect', 'blue-planet' ),
+			'boxRainGrowReverse' => _x( 'boxRainGrowReverse', 'Transition Effect', 'blue-planet' ),
+			'boxRandom'          => _x( 'boxRandom', 'Transition Effect', 'blue-planet' ),
+			'fade'               => _x( 'fade', 'Transition Effect', 'blue-planet' ),
+			'fold'               => _x( 'fold', 'Transition Effect', 'blue-planet' ),
+			'random'             => _x( 'random', 'Transition Effect', 'blue-planet' ),
+			'sliceDown'          => _x( 'sliceDown', 'Transition Effect', 'blue-planet' ),
+			'sliceDownLeft'      => _x( 'sliceDownLeft', 'Transition Effect', 'blue-planet' ),
+			'sliceUp'            => _x( 'sliceUp', 'Transition Effect', 'blue-planet' ),
+			'sliceUpDown'        => _x( 'sliceUpDown', 'Transition Effect', 'blue-planet' ),
+			'sliceUpDownLeft'    => _x( 'sliceUpDownLeft', 'Transition Effect', 'blue-planet' ),
+			'slideInRight'       => _x( 'slideInRight', 'Transition Effect', 'blue-planet' ),
+			'slideInLeft'        => _x( 'slideInLeft', 'Transition Effect', 'blue-planet' ),
 		);
 		$output = apply_filters( 'blue_planet_filter_slider_transition_effects', $choices );
 		if ( ! empty( $output ) ) {

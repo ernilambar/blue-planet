@@ -115,12 +115,12 @@ class BP_Advertisement_Widget  extends WP_Widget {
     <hr/>
     <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'adcode' ) ); ?>"><?php esc_html_e( 'Adv Code:','blue-planet' ); ?></label>
-            <textarea name="<?php echo esc_attr( $this->get_field_name( 'adcode' ) ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'adcode' ) ); ?>"><?php echo $adcode; ?></textarea><small><?php esc_html_e( 'eg, Google Adsense code','blue-planet' ); ?></small>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'adcode' ) ); ?>"><?php esc_html_e( 'Ad Code:','blue-planet' ); ?></label>
+            <textarea name="<?php echo esc_attr( $this->get_field_name( 'adcode' ) ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'adcode' ) ); ?>"><?php echo $adcode; ?></textarea>
         </p>
     <?php endif; ?>
     <hr >
-    <p style="text-align:center;"><strong>OR</strong></p>
+    <p style="text-align:center;"><strong><?php echo esc_html_x( 'OR', 'Ad Widget', 'blue-planet' ) ?></strong></p>
     <hr >
     <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'image' ) ); ?>"><?php esc_html_e( 'Image URL:','blue-planet' ); ?></label>

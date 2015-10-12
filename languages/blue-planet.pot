@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blue-planet\n"
-"POT-Creation-Date: 2015-10-01 17:14+0530\n"
-"PO-Revision-Date: 2015-10-01 17:15+0530\n"
-"Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
+"POT-Creation-Date: 2015-10-12 16:49+0530\n"
+"PO-Revision-Date: 2015-10-12 16:50+0530\n"
+"Last-Translator: WEN Themes <info@wenthemes.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -72,6 +72,7 @@ msgid ""
 msgstr ""
 
 #: ../../blue-planet/searchform.php:14
+msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
@@ -148,7 +149,7 @@ msgid "Menu Widget Area"
 msgstr ""
 
 #: ../../blue-planet/functions.php:97
-msgid "Widget area in the header. Specially for menu widget"
+msgid "Widget area in the header. Specially for menu widget."
 msgstr ""
 
 #: ../../blue-planet/functions.php:112
@@ -292,11 +293,12 @@ msgid " Blue Planet Advertisement"
 msgstr ""
 
 #: ../../blue-planet/inc/widgets/advertisement.php:118
-msgid "Adv Code:"
+msgid "Ad Code:"
 msgstr ""
 
-#: ../../blue-planet/inc/widgets/advertisement.php:119
-msgid "eg, Google Adsense code"
+#: ../../blue-planet/inc/widgets/advertisement.php:123
+msgctxt "Ad Widget"
+msgid "OR"
 msgstr ""
 
 #: ../../blue-planet/inc/widgets/advertisement.php:126
@@ -308,6 +310,7 @@ msgid "Link URL:"
 msgstr ""
 
 #: ../../blue-planet/inc/widgets/advertisement.php:134
+#: ../../blue-planet/inc/customizer-includes/slider.php:245
 msgid "Open Link in New Window"
 msgstr ""
 
@@ -320,62 +323,77 @@ msgid "Select"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:137
+msgctxt "Transition Effect"
 msgid "boxRain"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:138
+msgctxt "Transition Effect"
 msgid "boxRainGrow"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:139
+msgctxt "Transition Effect"
 msgid "boxRainReverse"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:140
+msgctxt "Transition Effect"
 msgid "boxRainGrowReverse"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:141
+msgctxt "Transition Effect"
 msgid "boxRandom"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:142
+msgctxt "Transition Effect"
 msgid "fade"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:143
+msgctxt "Transition Effect"
 msgid "fold"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:144
+msgctxt "Transition Effect"
 msgid "random"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:145
+msgctxt "Transition Effect"
 msgid "sliceDown"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:146
+msgctxt "Transition Effect"
 msgid "sliceDownLeft"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:147
+msgctxt "Transition Effect"
 msgid "sliceUp"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:148
+msgctxt "Transition Effect"
 msgid "sliceUpDown"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:149
+msgctxt "Transition Effect"
 msgid "sliceUpDownLeft"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:150
+msgctxt "Transition Effect"
 msgid "slideInRight"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/helper.php:151
+msgctxt "Transition Effect"
 msgid "slideInLeft"
 msgstr ""
 
@@ -686,6 +704,7 @@ msgid "Next Previous buttons"
 msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/slider.php:104
+#: ../../blue-planet/inc/customizer-includes/slider.php:418
 msgid "Enable Auto Play"
 msgstr ""
 
@@ -723,10 +742,6 @@ msgstr ""
 msgid "Slider URL"
 msgstr ""
 
-#: ../../blue-planet/inc/customizer-includes/slider.php:245
-msgid "Open in new tab"
-msgstr ""
-
 #: ../../blue-planet/inc/customizer-includes/slider.php:259
 msgid "Secondary Slider"
 msgstr ""
@@ -749,8 +764,4 @@ msgstr ""
 
 #: ../../blue-planet/inc/customizer-includes/slider.php:398
 msgid "Show Caption"
-msgstr ""
-
-#: ../../blue-planet/inc/customizer-includes/slider.php:418
-msgid "Enable Autoplay"
 msgstr ""
