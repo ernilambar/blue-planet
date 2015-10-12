@@ -65,7 +65,7 @@ $content_layout = blueplanet_get_option( 'content_layout' );
 		        			</a>
 		        		</div>
 		        	<?php endif; ?>
-					 		<?php the_content( __( 'Continue reading ', 'blue-planet' ) . '<span class="meta-nav">&rarr;</span>' ); ?>
+					 		<?php the_content( __( 'Continue reading', 'blue-planet' ) . '<span class="meta-nav">&rarr;</span>' ); ?>
 							<?php
 								wp_link_pages( array(
 									'before' => '<div class="page-links">' . __( 'Pages:', 'blue-planet' ),

@@ -22,7 +22,7 @@ class BP_Advertisement_Widget  extends WP_Widget {
 					'classname'     => 'bp_advertisement_widget',
 					'description'   => esc_html__( 'Widget for displaying ads', 'blue-planet' ),
 				);
-		parent::__construct( 'bp-advertisement', esc_html__( ' Blue Planet Advertisement', 'blue-planet' ), $opts );
+		parent::__construct( 'bp-advertisement', esc_html__( 'Blue Planet Advertisement', 'blue-planet' ), $opts );
 	}
 
 

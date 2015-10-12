@@ -73,7 +73,7 @@ function blueplanet_get_default_options() {
 		'custom_css'                   => '',
 		'flg_enable_goto_top'          => '1',
 		'banner_background_color'      => '#00ADB3',
-		'search_placeholder'           => esc_html__( 'Search here...', 'blue-planet' ),
+		'search_placeholder'           => esc_html__( 'Search...', 'blue-planet' ),
 		'flg_hide_search_box'          => '1',
 		'flg_hide_social_icons'        => '0',
 		'flg_enable_footer_widgets'    => '0',

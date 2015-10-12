@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.0.3 - ( 12 Oct 2015 )
+* Fix duplicate text strings
+
 Version 2.0.2 - ( 1 Oct 2015 )
 * Fix text domain issue
 

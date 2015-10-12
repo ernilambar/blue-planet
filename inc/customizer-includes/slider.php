@@ -17,7 +17,7 @@ $wp_customize->add_panel( 'blue_planet_slider_panel',
 $wp_customize->add_section( 'blue_planet_slider_main',
 	array(
 	  'title'       => __( 'Main Slider', 'blue-planet' ),
-	  'description' => __( 'Recommended image size for banner slider : 1140px X 250px', 'blue-planet' ),
+	  'description' => sprintf( __( 'Recommended image size for banner slider : %dpx X %dpx', 'blue-planet' ), 1140, 250 ),
 	  'priority'    => 10,
 	  'capability'  => 'edit_theme_options',
 	  'panel'       => 'blue_planet_slider_panel',
@@ -79,8 +79,7 @@ $wp_customize->add_setting( 'blueplanet_options[direction_nav]',
 $wp_customize->add_control(
 	'blueplanet_options[direction_nav]',
 	array(
-	'label'           => __( 'Direction Nav', 'blue-planet' ),
-	'description'     => __( 'Next Previous buttons', 'blue-planet' ),
+	'label'           => __( 'Show Direction Nav', 'blue-planet' ),
 	'section'         => 'blue_planet_slider_main',
 	'settings'        => 'blueplanet_options[direction_nav]',
 	'type'            => 'radio',

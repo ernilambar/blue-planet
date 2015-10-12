@@ -26,7 +26,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[custom_favicon]',
 		array(
 		'default'              => $new_defaults['custom_favicon'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_url_raw',
 		'sanitize_js_callback' => 'esc_url',
@@ -38,7 +37,6 @@
 			'blueplanet_options[custom_favicon]',
 			array(
 			'label'       => __( 'Favicon', 'blue-planet' ),
-			'description' => __( 'Upload your favicon. Recommended size 16px X 16px', 'blue-planet' ),
 			'section'     => 'blue_planet_options_general',
 			'settings'    => 'blueplanet_options[custom_favicon]',
 			'priority'    => 15,
@@ -49,7 +47,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[custom_css]',
 		array(
 		'default'              => $new_defaults['custom_css'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 		'sanitize_js_callback' => 'wp_filter_nohtml_kses',
@@ -59,7 +56,6 @@
 		'blueplanet_options[custom_css]',
 		array(
 		'label'       => __( 'Custom CSS', 'blue-planet' ),
-		'description' => __( 'Enter your Custom CSS here.', 'blue-planet' ),
 		'section'     => 'blue_planet_options_general',
 		'settings'    => 'blueplanet_options[custom_css]',
 		'type'        => 'textarea',
@@ -71,7 +67,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[search_placeholder]',
 		array(
 		'default'              => $new_defaults['search_placeholder'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_text_field',
 		'sanitize_js_callback' => 'esc_attr',
@@ -81,7 +76,6 @@
 		'blueplanet_options[search_placeholder]',
 		array(
 		'label'       => __( 'Default text in Search box', 'blue-planet' ),
-		'description' => __( 'Enter default text in Search box', 'blue-planet' ),
 		'section'     => 'blue_planet_options_general',
 		'settings'    => 'blueplanet_options[search_placeholder]',
 		'type'        => 'text',
@@ -93,7 +87,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[flg_enable_goto_top]',
 		array(
 		'default'              => $new_defaults['flg_enable_goto_top'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
 		'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
@@ -123,7 +116,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[banner_background_color]',
 		array(
 		'default'              => $new_defaults['banner_background_color'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_hex_color',
 		'sanitize_js_callback' => 'sanitize_hex_color',
@@ -145,7 +137,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[flg_hide_social_icons]',
 		array(
 		'default'              => $new_defaults['flg_hide_social_icons'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
 		'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
@@ -176,7 +167,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[flg_enable_footer_widgets]',
 		array(
 		'default'              => $new_defaults['flg_enable_footer_widgets'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
 		'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
@@ -197,7 +187,6 @@
 	$wp_customize->add_setting( 'blueplanet_options[number_of_footer_widgets]',
 		array(
 		'default'              => $new_defaults['number_of_footer_widgets'],
-		// 'type'                 => 'option',
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'esc_attr',
 		'sanitize_js_callback' => 'esc_attr',
