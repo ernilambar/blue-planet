@@ -219,7 +219,7 @@ if ( ! function_exists( 'blue_planet_footer_powered_by' ) ) :
       <div class="footer-powered-by">
           <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
           <span class="sep"> | </span>
-          <?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="http://www.nilambar.net" rel="designer">Nilambar Sharma</a>' ); ?>
+          <?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://www.nilambar.net' ) . '" rel="designer">Nilambar Sharma</a>' ); ?>
       </div>
     <?php }
 		return;
