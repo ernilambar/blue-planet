@@ -15,10 +15,10 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-        <?php
-          the_archive_title( '<h1 class="page-title">', '</h1>' );
-          the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
+            <?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
 			</header><!-- .page-header -->
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -35,13 +35,13 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-      <?php
-      the_posts_navigation( array(
-        'prev_text'          => '<span class="meta-nav">&larr;</span> ' . __( 'Older posts', 'blue-planet' ),
-        'next_text'          => __( 'Newer posts', 'blue-planet' ) . ' <span class="meta-nav">&rarr;</span>',
-        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Posts navigation', 'blue-planet' ) . ' </span>',
-      ) );
-      ?>
+		<?php
+		the_posts_navigation( array(
+			'prev_text'          => '<span class="meta-nav">&larr;</span> ' . __( 'Older posts', 'blue-planet' ),
+			'next_text'          => __( 'Newer posts', 'blue-planet' ) . ' <span class="meta-nav">&rarr;</span>',
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Posts navigation', 'blue-planet' ) . ' </span>',
+		) );
+		?>
 
 		<?php else : ?>
 

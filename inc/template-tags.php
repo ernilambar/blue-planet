@@ -9,8 +9,8 @@
 
 if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
 	/**
-   * Display navigation to next/previous set of posts when applicable.
-   *
+	 * Display navigation to next/previous set of posts when applicable.
+	 *
 	 * @deprecated 2.1 Use the_posts_navigation()
 	 */
 	function blue_planet_paging_nav() {
@@ -40,9 +40,9 @@ endif;
 if ( ! function_exists( 'blue_planet_post_nav' ) ) :
 	/**
 	 * Display navigation to next/previous post when applicable.
-   *
-   * @deprecated 2.1 Use the_post_navigation()
-   */
+	 *
+	 * @deprecated 2.1 Use the_post_navigation()
+	 */
 	function blue_planet_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
@@ -108,9 +108,8 @@ function blue_planet_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1,
-      'fields'     => 'ids',
-      'number'     => 2,
+			'fields'     => 'ids',
+			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.

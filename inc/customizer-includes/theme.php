@@ -195,19 +195,19 @@
 	$wp_customize->add_control(
 		'blueplanet_options[number_of_footer_widgets]',
 		array(
-    'label'           => __( 'Number of Footer widgets', 'blue-planet' ),
-    'section'         => 'blue_planet_options_footer',
-    'settings'        => 'blueplanet_options[number_of_footer_widgets]',
-    'active_callback' => 'blue_planet_check_footer_widgets_status_cb',
-    'type'            => 'select',
-    'priority'        => 50,
-    'choices'         => array(
-      '1' => 1,
-      '2' => 2,
-      '3' => 3,
-      '4' => 4,
-      '6' => 6,
-		  ),
+		'label'           => __( 'Number of Footer widgets', 'blue-planet' ),
+		'section'         => 'blue_planet_options_footer',
+		'settings'        => 'blueplanet_options[number_of_footer_widgets]',
+		'active_callback' => 'blue_planet_check_footer_widgets_status_cb',
+		'type'            => 'select',
+		'priority'        => 50,
+		'choices'         => array(
+								'1' => 1,
+								'2' => 2,
+								'3' => 3,
+								'4' => 4,
+								'6' => 6,
+							),
 		)
 	);
 
