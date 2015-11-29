@@ -371,12 +371,13 @@
 	$wp_customize->add_control(
 		'blueplanet_options[excerpt_length]',
 		array(
-		'label'       => __( 'Excerpt length', 'blue-planet' ),
-		'description' => __( 'in words', 'blue-planet' ),
-		'section'     => 'blue_planet_options_blog',
-		'settings'    => 'blueplanet_options[excerpt_length]',
-		'type'        => 'text',
-		'priority'    => 80,
+        'label'       => __( 'Excerpt length', 'blue-planet' ),
+        'description' => __( 'in words', 'blue-planet' ),
+        'section'     => 'blue_planet_options_blog',
+        'settings'    => 'blueplanet_options[excerpt_length]',
+        'type'        => 'number',
+        'priority'    => 80,
+        'input_attrs' => array( 'min' => 1, 'max' => 500, 'style' => 'width: 60px;' ),
 		)
 	);
 

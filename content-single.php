@@ -41,10 +41,10 @@
 			$tag_list = get_the_tag_list( '', __( ', ', 'blue-planet' ) );
 
 		if ( ! empty( $category_list ) ) {
-			echo '<span class="bp-category">'.$category_list.'</span>'; // WPCS: XSS OK.
+			echo '<span class="bp-category">' . $category_list . '</span>'; // WPCS: XSS OK.
 		}
 		if ( ! empty( $tag_list ) ) {
-			echo '<span class="bp-tags">'.$tag_list.'</span>'; // WPCS: XSS OK.
+			echo '<span class="bp-tags">' . $tag_list . '</span>'; // WPCS: XSS OK.
 		}
 			?>
 
