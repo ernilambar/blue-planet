@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.2 - ( 29 Nov 2015 )
+* Fix: Minor bug fixes
+
 Version 2.1 - ( 12 Oct 2015 )
 * Fix: Duplicate text strings
 * Update: New archive functions

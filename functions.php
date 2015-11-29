@@ -7,7 +7,7 @@
 
 define( 'BS_THEME_NAME', 'Blue Planet' );
 define( 'BS_THEME_SLUG', 'blue-planet' );
-define( 'BS_THEME_VERSION', '2.0' );
+define( 'BS_THEME_VERSION', '2.2' );
 define( 'BS_SHORT_NAME', 'bsk' );
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :
