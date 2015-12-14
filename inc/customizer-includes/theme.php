@@ -22,26 +22,6 @@
 		'panel'      => 'blue_planet_options_panel',
 		)
 	);
-	// Setting - custom_favicon.
-	$wp_customize->add_setting( 'blueplanet_options[custom_favicon]',
-		array(
-		'default'              => $new_defaults['custom_favicon'],
-		'capability'           => 'edit_theme_options',
-		'sanitize_callback'    => 'esc_url_raw',
-		'sanitize_js_callback' => 'esc_url',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'blueplanet_options[custom_favicon]',
-			array(
-			'label'       => __( 'Favicon', 'blue-planet' ),
-			'section'     => 'blue_planet_options_general',
-			'settings'    => 'blueplanet_options[custom_favicon]',
-			'priority'    => 15,
-			) )
-	);
 
 	// Setting - custom_css.
 	$wp_customize->add_setting( 'blueplanet_options[custom_css]',

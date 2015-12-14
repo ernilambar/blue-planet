@@ -69,7 +69,6 @@ function blueplanet_get_option_all() {
 function blueplanet_get_default_options() {
 
 	$defaults = array(
-		'custom_favicon'               => '',
 		'custom_css'                   => '',
 		'flg_enable_goto_top'          => '1',
 		'banner_background_color'      => '#00ADB3',
