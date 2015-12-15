@@ -5,11 +5,6 @@
  * @package Blue_Planet
  */
 
-define( 'BS_THEME_NAME', 'Blue Planet' );
-define( 'BS_THEME_SLUG', 'blue-planet' );
-define( 'BS_THEME_VERSION', '2.2' );
-define( 'BS_SHORT_NAME', 'bsk' );
-
 if ( ! function_exists( 'blue_planet_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

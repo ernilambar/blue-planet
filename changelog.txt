@@ -1,5 +1,10 @@
 == Changelog ==
 
+Version 2.3 - ( 15 Dec 2015 )
+* Fix: Content width in full width page template
+* Fix: Minor bug fixes
+* Remove: Favicon option is removed
+
 Version 2.2 - ( 29 Nov 2015 )
 * Fix: Minor bug fixes
 
