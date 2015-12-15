@@ -533,8 +533,7 @@ if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
 		if ( is_page() ) {
 			if ( is_page_template( 'templates/page-full-width.php' ) ) {
 				$content_width = 1110;
-			}
-			elseif ( is_page_template( array( 'templates/page-content-sidebar.php', 'templates/page-sidebar-content.php', 'templates/page-one-column-disabled-sidebar.php' ) ) ) {
+			} elseif ( is_page_template( array( 'templates/page-content-sidebar.php', 'templates/page-sidebar-content.php', 'templates/page-one-column-disabled-sidebar.php' ) ) ) {
 				$content_width = 730;
 			}
 		}
