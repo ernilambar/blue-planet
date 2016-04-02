@@ -69,6 +69,8 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		// Load up theme options defaults.
 		require( get_template_directory() . '/inc/blueplanet-themeoptions-defaults.php' );
 
+        add_editor_style( 'editor-style.css' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'blue_planet_setup' );
@@ -174,7 +176,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Include custom theme functions.
+ * Include custom helper functions.
+ */
+require get_template_directory() . '/inc/theme-functions.php';
+/**
+ * Include custom theme hooks.
  */
 require get_template_directory() . '/inc/theme-custom.php';
 
