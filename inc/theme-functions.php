@@ -20,6 +20,29 @@ if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
     }
 endif;
 
+if ( ! function_exists( 'blue_planet_primary_navigation_fallback' ) ) :
+
+    /**
+     * Fallback for primary navigation.
+     *
+     * @since 1.0.0
+     */
+    function blue_planet_primary_navigation_fallback() {
+        echo '<div class="nav-menu">';
+        echo '<ul>';
+        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . __( 'Home', 'blue-planet' ). '</a></li>';
+        wp_list_pages( array(
+            'title_li' => '',
+            'depth'    => 1,
+            'number'   => 7,
+        ) );
+        echo '</ul>';
+        echo '</div>';
+    }
+
+endif;
+
+
 if ( ! function_exists( 'blue_planet_get_main_slider_details' ) ) :
 
     /**
@@ -107,3 +130,6 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
         echo '</div>';
     }
 endif;
+
+// Deprecated functions.
+function blue_planet_custom_css() {}

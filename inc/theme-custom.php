@@ -185,30 +185,6 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 endif;
 add_action( 'blue_planet_after_main_open','blue_planet_add_secondary_slider_function' );
 
-if ( ! function_exists( 'blue_planet_custom_css' ) ) :
-
-	/**
-	 * Implement Custom CSS option.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_custom_css() {
-
-		$banner_background_color = blueplanet_get_option( 'banner_background_color' );
-		$custom_css = blueplanet_get_option( 'custom_css' );
-
-		echo '<style type="text/css">' . "\n";
-		echo 'header#masthead{background-color: ' . esc_attr( $banner_background_color ) . ';}';
-		if ( ! empty( $custom_css ) ) {
-			echo $custom_css;
-		}
-		echo "\n". '</style>' . "\n";
-	}
-
-endif;
-
-add_action( 'wp_head', 'blue_planet_custom_css' );
-
 if ( ! function_exists( 'blue_planet_copyright_text_content' ) ) :
 	/**
 	 * Implement copyright text in footer.

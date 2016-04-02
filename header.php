@@ -59,9 +59,10 @@
 
 					<?php
 					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_class'     => 'nav-menu',
-						'menu_id'        => 'menu-top',
+                        'theme_location' => 'primary',
+                        'menu_class'     => 'nav-menu',
+                        'menu_id'        => 'menu-top',
+                        'fallback_cb'    => 'blue_planet_primary_navigation_fallback',
 						)
 					);
 					?>
