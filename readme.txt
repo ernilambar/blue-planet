@@ -1,6 +1,6 @@
 = Blue Planet =
-* by the Nilambar Sharma, http://www.nilambar.net/
-See - http://www.nilambar.net/2014/03/blue-planet-wordpress-theme-free.html
+* by the Nilambar Sharma, http://nilambar.net/
+See - http://nilambar.net/2014/03/blue-planet-wordpress-theme-free.html
 
 == About ==
 Blue Planet is a beautiful and sleek theme for your awesome WordPress website. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WP-PageNavi, Contact Form 7 and many more. It is also translation ready.
