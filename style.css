@@ -729,9 +729,9 @@ div.site-branding{
 #secondary{
   padding-top:20px;
 }
-h1.widget-title,
-h1.widget-title a,
-h1.widget-title a:hover{
+.widget-title,
+.widget-title a,
+.widget-title a:hover{
     background: none repeat scroll 0 0 #00ADB3;
     color: #FFFFFF;
     font-size: 20px;
