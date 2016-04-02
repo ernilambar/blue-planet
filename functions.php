@@ -125,7 +125,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 	 */
 	function blue_planet_scripts() {
 
-		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.3.6' );
+		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap.min.css', false ,'3.3.6' );
         wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
 
 		wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
@@ -182,11 +182,6 @@ require get_template_directory() . '/inc/theme-custom.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
 
 /**
  * Load Jetpack compatibility file.
