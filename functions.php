@@ -69,7 +69,17 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		// Load up theme options defaults.
 		require( get_template_directory() . '/inc/blueplanet-themeoptions-defaults.php' );
 
+        // Editor style.
         add_editor_style( 'editor-style.css' );
+
+        // Custom header.
+        add_theme_support( 'custom-header', apply_filters( 'blue_planet_custom_header_args', array(
+            'default-image'      => '',
+            'default-text-color' => '#ffffff',
+            'width'              => 1140,
+            'height'             => 152,
+            'flex-height'        => true,
+        ) ) );
 
 	}
 endif;
@@ -169,11 +179,6 @@ add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
  * Include customizer settings.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Include custom helper functions.
