@@ -72,6 +72,14 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
         // Editor style.
         add_editor_style( 'editor-style.css' );
 
+        /**
+         * Enable support for footer widgets.
+         */
+        add_theme_support( 'footer-widgets', 4 );
+
+        // Include supports.
+        require get_template_directory() . '/inc/supports.php';
+
         // Custom header.
         add_theme_support( 'custom-header', apply_filters( 'blue_planet_custom_header_args', array(
             'default-image'      => '',
@@ -107,25 +115,6 @@ function blue_planet_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
-	// Register footer widgets.
-	$flg_enable_footer_widgets = blue_planet_get_option( 'flg_enable_footer_widgets' );
-	if ( 1 === $flg_enable_footer_widgets ) {
-		$number_of_footer_widgets = blue_planet_get_option( 'number_of_footer_widgets' );
-		$num_footer = $number_of_footer_widgets;
-
-		for ( $i = 1; $i <= $num_footer ;$i++ ) {
-			register_sidebar(array(
-				'name'          => esc_html__( 'Footer Column','blue-planet' ) .'-'.$i,
-				'id'            => 'footer-area-'.$i,
-				'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="footer-sidebar-title">',
-				'after_title'   => '</h3>',
-			));
-
-		}
-	}
 
 }
 add_action( 'widgets_init', 'blue_planet_widgets_init' );

@@ -314,7 +314,7 @@ if ( ! function_exists( 'blue_planet_footer_widgets' ) ) :
 
 	}
 endif; // blue_planet_footer_widgets
-add_action( 'blue_planet_after_content_close','blue_planet_footer_widgets' );
+// add_action( 'blue_planet_after_content_close','blue_planet_footer_widgets' );
 
 if ( ! function_exists( 'blue_planet_header_social' ) ) :
 	/**
