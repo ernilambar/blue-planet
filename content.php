@@ -81,33 +81,6 @@ $content_layout = blue_planet_get_option( 'content_layout' );
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( 'post' === get_post_type() ) : // Hide category and tag text for pages on Search. ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'blue-planet' ) );
-			if ( $categories_list && blue_planet_categorized_blog() ) :
-			?>
-			<?php
-			if ( ! empty( $categories_list ) ) {
-				echo '<span class="bp-category">'.$categories_list.'</span>'; // WPCS: XSS OK.
-			}
-				?>
-
-			<?php endif; // End if categories. ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'blue-planet' ) );
-			if ( $tags_list ) :
-
-			?>
-			<?php
-			if ( ! empty( $tags_list ) ) {
-				echo '<span class="bp-tags">'.$tags_list.'</span>'; // WPCS: XSS OK.
-			}
-				?>
-			<?php endif; // End if $tags_list. ?>
-		<?php endif; // End if 'post' == get_post_type(). ?>
-
+		<?php blue_planet_entry_footer(); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

@@ -1061,11 +1061,11 @@ footer.entry-meta{
     background-color: #EEEEEE;
     padding:10px;
 }
-footer.entry-meta span.bp-category{
+footer.entry-meta span.cat-links{
     background: url('images/category.png') no-repeat top left;
     padding-left: 15px;
 }
-footer.entry-meta span.bp-tags{
+footer.entry-meta span.tags-links{
     background: url('images/tags.png') no-repeat top left;
     padding-left: 15px;
     margin-left: 10px;
