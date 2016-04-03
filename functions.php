@@ -162,7 +162,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
 			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array( 'jquery' ), '3.2', true );
 			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri().'/js/slider.min.js', array( 'jquery', 'nivo-slider-script' ), '2.0.0', true );
-			$options = blueplanet_get_option_all();
+			$options = blue_planet_get_option_all();
 			wp_localize_script( 'blue-planet-theme-script-slider', 'BP_OPTIONS', $options );
 			wp_enqueue_script( 'blue-planet-theme-script-slider' );
 		}

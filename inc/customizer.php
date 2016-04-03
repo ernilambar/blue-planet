@@ -15,8 +15,8 @@ require get_template_directory() . '/inc/customizer-includes/helper.php';
  */
 function blue_planet_customize_register( $wp_customize ) {
 
-	$new_defaults = blueplanet_get_default_options();
-	$options = blueplanet_get_option_all();
+	$new_defaults = blue_planet_get_default_options();
+	$options = blue_planet_get_option_all();
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

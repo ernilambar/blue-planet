@@ -54,7 +54,7 @@ if ( ! function_exists( 'blue_planet_get_main_slider_details' ) ) :
      */
     function blue_planet_get_main_slider_details() {
 
-        $bp_options = blueplanet_get_option_all();
+        $bp_options = blue_planet_get_option_all();
         $output = array();
 
         for ( $i = 1; $i <= 5 ; $i++ ) {
@@ -85,7 +85,7 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
      * @since 1.0.0
      */
     function blue_planet_generate_social_links() {
-        $bp_options = blueplanet_get_option_all();
+        $bp_options = blue_planet_get_option_all();
         $social_array = array();
         if ( ! empty( $bp_options ) ) {
         	foreach ( $bp_options as $key => $val ) {

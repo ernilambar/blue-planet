@@ -93,7 +93,7 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_add_secondary_slider_function() {
-		$bp_options = blueplanet_get_option_all();
+		$bp_options = blue_planet_get_option_all();
 		$slider_status_2 = blueplanet_get_option( 'slider_status_2' );
 
 		if ( 'none' !== $slider_status_2 &&  ( is_home() || is_front_page() ) ) {
@@ -235,7 +235,7 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 	 */
 	function blue_planet_add_main_slider() {
 
-		$bp_options = blueplanet_get_option_all();
+		$bp_options = blue_planet_get_option_all();
 
 		$slides = blue_planet_get_main_slider_details();
 
@@ -291,7 +291,7 @@ if ( ! function_exists( 'blue_planet_footer_widgets' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_footer_widgets() {
-		$bp_options = blueplanet_get_option_all();
+		$bp_options = blue_planet_get_option_all();
 
 		if ( 1 === $bp_options['flg_enable_footer_widgets'] && isset( $bp_options['number_of_footer_widgets'] ) && absint( $bp_options['number_of_footer_widgets'] ) > 0 ) {
 			echo '<div class="footer-widgets-wrapper">';
