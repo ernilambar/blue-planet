@@ -86,48 +86,37 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
      */
     function blue_planet_generate_social_links() {
         $bp_options = blueplanet_get_option_all();
-
-        echo '<div class="social-wrapper">';
-
-        if ( '' !== $bp_options['social_email'] ) {
-            echo '<a class="social-email" href="mailto:'.esc_attr( $bp_options['social_email'] ).'"></a>';
+        $social_array = array();
+        if ( ! empty( $bp_options ) ) {
+        	foreach ( $bp_options as $key => $val ) {
+        		$pos = strpos( $key, 'social_' );
+        		if ( false !== $pos && 0 === $pos && ! empty( $val ) ) {
+        			$new_key = str_replace( 'social_', '', $key );
+	        		$social_array[ $new_key ] = $val;
+        		}
+        	}
         }
 
-        $social_sites = array(
-                'facebook'    => 'facebook',
-                'twitter'     => 'twitter',
-                'googleplus'  => 'googleplus',
-                'youtube'     => 'youtube',
-                'pinterest'   => 'pinterest',
-                'linkedin'    => 'linkedin',
-                'flickr'      => 'flickr',
-                'tumblr'      => 'tumblr',
-                'dribbble'    => 'dribbble',
-                'deviantart'  => 'deviantart',
-                'rss'         => 'rss',
-                'instagram'   => 'instagram',
-                'skype'       => 'skype',
-                'digg'        => 'digg',
-                'stumbleupon' => 'stumbleupon',
-                'forrst'      => 'forrst',
-                '500px'       => '500px',
-                'vimeo'       => 'vimeo',
-            );
-        $social_sites = apply_filters( 'blue_planet_filter_social_sites', $social_sites );
-        $social_sites = array_reverse( $social_sites );
+        if ( ! empty( $social_array ) ) {
+	        echo '<div class="social-wrapper">';
+	        $link_target = apply_filters( 'blue_planet_filter_social_sites_link_target', '_blank' );
+	        foreach ( $social_array as $key => $site ) {
+	        	switch ( $key ) {
+	        		case 'email':
+	        			echo '<a class="social-email" href="mailto:'.esc_attr( $site ).'"></a>';
+	        			break;
+	        		case 'skype':
+	        			echo '<a class="social-skype" href="skype:'.esc_attr( $site ).'?call"></a>';
+	        			break;
 
-        $link_target = apply_filters( 'blue_planet_filter_social_sites_link_target', '_blank' );
-
-        foreach ( $social_sites as $key => $site ) {
-            if ( '' !== $bp_options[ "social_$site" ] ) {
-                if ( 'skype' === $site ) {
-                    echo '<a class="social-'.$site.'" href="skype:'.esc_attr( $bp_options[ "social_$site" ] ).'?call"></a>';
-                } else {
-                    echo '<a class="social-'.$site.'" href="'.esc_url( $bp_options[ "social_$site" ] ).'" target="' . esc_attr( $link_target ) . '"></a>';
-                }
-            }
+	        		default:
+	        			echo '<a class="social-' . esc_attr( $key ) . '" href="' . esc_url( $site ) . '" target="' . esc_attr( $link_target ) . '"></a>';
+	        			break;
+	        	}
+	        }
+	        echo '</div><!-- .social-wrapper -->';
         }
-        echo '</div>';
+
     }
 endif;
 

@@ -1245,7 +1245,7 @@ main#main .entry-content p{
 
 }
 .social-wrapper a{
-    float: right;
+    /*float: right;*/
     margin-left: 5px;
 }
 .social-widget-wrapper a{
