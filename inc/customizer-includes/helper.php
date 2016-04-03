@@ -245,3 +245,80 @@ if ( ! function_exists( 'blue_planet_sanitize_select' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'blue_planet_get_image_alignment_options' ) ) :
+
+	/**
+	 * Returns image options.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array Options array.
+	 */
+	function blue_planet_get_image_alignment_options() {
+
+		$choices = array(
+			'none'   => _x( 'None', 'Alignment', 'blue-planet' ),
+			'left'   => _x( 'Left', 'Alignment', 'blue-planet' ),
+			'center' => _x( 'Center', 'Alignment', 'blue-planet' ),
+			'right'  => _x( 'Right', 'Alignment', 'blue-planet' ),
+		);
+		return $choices;
+
+	}
+
+endif;
+
+if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
+
+	/**
+	 * Returns image sizes options.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool  $add_disable True for adding No Image option.
+	 * @param array $allowed Allowed image size options.
+	 * @param bool  $show_dimension True for displaying dimension.
+	 * @return array Image size options.
+	 */
+	function blue_planet_get_image_sizes_options( $add_disable = true, $allowed = array(), $show_dimension = true ) {
+
+		global $_wp_additional_image_sizes;
+		$get_intermediate_image_sizes = get_intermediate_image_sizes();
+		$choices = array();
+		if ( true === $add_disable ) {
+			$choices['disable'] = esc_html__( 'No Image', 'blue-planet' );
+		}
+		$choices['thumbnail'] = esc_html__( 'Thumbnail', 'blue-planet' );
+		$choices['medium']    = esc_html__( 'Medium', 'blue-planet' );
+		$choices['large']     = esc_html__( 'Large', 'blue-planet' );
+		$choices['full']      = esc_html__( 'Full (original)', 'blue-planet' );
+
+		if ( true === $show_dimension ) {
+			foreach ( array( 'thumbnail', 'medium', 'large' ) as $key => $_size ) {
+				$choices[ $_size ] = $choices[ $_size ] . ' (' . get_option( $_size . '_size_w' ) . 'x' . get_option( $_size . '_size_h' ) . ')';
+			}
+		}
+
+		if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
+			foreach ( $_wp_additional_image_sizes as $key => $size ) {
+				$choices[ $key ] = $key;
+				if ( true === $show_dimension ) {
+					$choices[ $key ] .= ' ('. $size['width'] . 'x' . $size['height'] . ')';
+				}
+			}
+		}
+
+		if ( ! empty( $allowed ) ) {
+			foreach ( $choices as $key => $value ) {
+				if ( ! in_array( $key, $allowed ) ) {
+					unset( $choices[ $key ] );
+				}
+			}
+		}
+
+		return $choices;
+
+	}
+
+endif;
