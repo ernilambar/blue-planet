@@ -26,5 +26,15 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php
+	edit_post_link(
+		sprintf (
+			/* translators: %s: Name of current post */
+			__( 'Edit %s', 'blue-planet' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+		'<footer class="entry-meta"><span class="edit-link">',
+		'</span></footer>'
+		);
+	?>
 </article><!-- #post-## -->
