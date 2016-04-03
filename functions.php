@@ -95,8 +95,8 @@ function blue_planet_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'blue-planet' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Menu Widget Area', 'blue-planet' ),
@@ -104,8 +104,8 @@ function blue_planet_widgets_init() {
 		'description'   => esc_html__( 'Widget area in the header. Specially for menu widget.', 'blue-planet' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 
 	// Register footer widgets.
