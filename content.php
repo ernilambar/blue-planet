@@ -1,86 +1,56 @@
 <?php
 /**
- * The default template for displaying content
+ * Template part for displaying posts.
  *
  * @package Blue_Planet
  */
 
 ?>
-<?php
-$content_layout = blue_planet_get_option( 'content_layout' );
-?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php blue_planet_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<div class="entry-meta">
+				<?php blue_planet_posted_on(); ?>
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search. ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php else : ?>
+	<?php
+	$content_layout          =  blue_planet_get_option( 'content_layout' );
+	$archive_image           =  blue_planet_get_option( 'archive_image' );
+	$archive_image_alignment =  blue_planet_get_option( 'archive_image_alignment' );
+	?>
+
 	<div class="entry-content">
+		<?php if ( has_post_thumbnail() && 'disable' !== $archive_image ) : ?>
+			<?php the_post_thumbnail( esc_attr( $archive_image ), array( 'class' => esc_attr( 'align' . $archive_image_alignment ) ) ); ?>
+		<?php endif; ?>
 
-		<?php if ( 'excerpt' === $content_layout ) : ?>
-				<?php if ( has_post_thumbnail() ) : ?>
-				<div class="bp-thumbnail-wrapper">
-				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-					<?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?>
-				   </a>
-				</div>
-					<?php endif; ?>
-				<?php the_excerpt(); ?>
+		<?php if ( 'excerpt' === $content_layout || 'excerpt-thumb' === $content_layout ) : ?>
 
+			<?php the_excerpt(); ?>
 
-        <?php else : ?>
-        	<?php if ( 'excerpt-thumb' === $content_layout ) :  ?>
-        		<div class="et-row row ">
-        			<div class="et-row-left col-md-5 col-sm-5 col-xs-12">
-	        			<?php if ( has_post_thumbnail() ) : ?>
-        				<div class="bp-thumbnail-wrapper excerpt-thumb">
-        					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-        						<?php the_post_thumbnail( 'homepage-thumb' ); ?>
-        					</a>
-        				</div>
-        			<?php endif; ?>
-        			</div>
-        			<div class="et-row-right col-md-7 col-sm-7 col-xs-12">
-        				<?php the_excerpt(); ?>
-      				</div>
-        		</div>
+		<?php else : ?>
+			<?php
+				the_content( sprintf(
+					/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blue-planet' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
 
-
-	        <?php else : ?>
-
-		        	<?php if ( has_post_thumbnail() ) : ?>
-		        		<div class="bp-thumbnail-wrapper">
-		        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		        				<?php the_post_thumbnail(); ?>
-		        			</a>
-		        		</div>
-		        	<?php endif; ?>
-					 		<?php the_content( sprintf( __( 'Continue reading %s', 'blue-planet' ), '<span class="meta-nav">&rarr;</span><span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' ) ); ?>
-							<?php
-								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'blue-planet' ),
-									'after'  => '</div>',
-								) );
-							?>
-		        <?php endif; // End if excerpt-thumb. ?>
-        <?php endif; // End if content_layout. ?>
-
-
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blue-planet' ),
+					'after'  => '</div>',
+				) );
+			?>
+		<?php endif; ?>
 
 	</div><!-- .entry-content -->
-	<?php endif; ?>
+
 
 	<footer class="entry-meta">
 		<?php blue_planet_entry_footer(); ?>
-	</footer><!-- .entry-meta -->
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
