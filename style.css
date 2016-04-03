@@ -1216,6 +1216,15 @@ main#main .entry-content p{
     }
 
 /*social*/
+.social-wrapper-outer .social-wrapper {
+	text-align: right;
+}
+.social-wrapper-outer .social-wrapper a{
+	display: inline-block;
+}
+.bp_social_widget .social-wrapper{
+	text-align: left;
+}
 .social-wrapper{
     display: block;
     margin: 5px 0px;

@@ -98,6 +98,7 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
         }
 
         if ( ! empty( $social_array ) ) {
+	        echo '<div class="social-wrapper-outer">';
 	        echo '<div class="social-wrapper">';
 	        $link_target = apply_filters( 'blue_planet_filter_social_sites_link_target', '_blank' );
 	        foreach ( $social_array as $key => $site ) {
@@ -115,6 +116,7 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 	        	}
 	        }
 	        echo '</div><!-- .social-wrapper -->';
+	        echo '</div><!-- .social-wrapper-outer -->';
         }
 
     }
