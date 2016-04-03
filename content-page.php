@@ -22,15 +22,17 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php
-	edit_post_link(
-		sprintf (
-			/* translators: %s: Name of current post */
-			__( 'Edit %s', 'blue-planet' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-		'<footer class="entry-meta"><span class="edit-link">',
-		'</span></footer>'
-		);
-	?>
+	<footer class="entry-meta">
+		<?php
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'blue-planet' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
+		?>
+	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
