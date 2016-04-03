@@ -17,7 +17,7 @@ function blue_planet_reset_all_theme_settings( $input ) {
 
 	if ( true === $input ) {
 
-		$defaults = blueplanet_get_default_options();
+		$defaults = blue_planet_get_default_options();
 		$key      = 'blueplanet_options';
 
 		set_theme_mod( $key, $defaults );

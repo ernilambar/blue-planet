@@ -189,6 +189,11 @@ add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Deprecated functions.
+ */
+require get_template_directory() . '/inc/deprecated.php';
+
+/**
  * Include custom helper functions.
  */
 require get_template_directory() . '/inc/theme-functions.php';

@@ -17,7 +17,7 @@
  */
 function blueplanet_get_option( $key ) {
 
-	$defaults = blueplanet_get_default_options();
+	$defaults = blue_planet_get_default_options();
 	$options = blueplanet_get_option_all();
 
 	$output = '';
@@ -49,7 +49,7 @@ function blueplanet_get_option( $key ) {
  */
 function blueplanet_get_option_all() {
 
-	$defaults = blueplanet_get_default_options();
+	$defaults = blue_planet_get_default_options();
 
 	$output = get_theme_mod( 'blueplanet_options', $defaults );
 
@@ -66,7 +66,7 @@ function blueplanet_get_option_all() {
  *
  * @return array Default theme options.
  */
-function blueplanet_get_default_options() {
+function blue_planet_get_default_options() {
 
 	$defaults = array(
 		'custom_css'                   => '',

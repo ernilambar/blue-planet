@@ -121,6 +121,3 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 
     }
 endif;
-
-// Deprecated functions.
-function blue_planet_custom_css() {}
