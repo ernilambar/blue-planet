@@ -437,3 +437,28 @@ if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
 endif;
 
 add_filter( 'template_redirect', 'blue_planet_custom_content_width' );
+
+if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
+
+	/**
+	 * Add image in single post.
+	 *
+	 * @since 3.0
+	 */
+	function blue_planet_add_image_in_single_display() {
+
+		global $post;
+		if ( has_post_thumbnail() ) {
+			$single_image           = blue_planet_get_option( 'single_image' );
+			$single_image_alignment = blue_planet_get_option( 'single_image_alignment' );
+			if ( 'disable' !== $single_image ) {
+				$args = array(
+					'class' => 'align' . $single_image_alignment,
+				);
+				the_post_thumbnail( $single_image, $args );
+			}
+		}
+	}
+
+endif;
+add_action( 'blue_planet_single_image', 'blue_planet_add_image_in_single_display' );

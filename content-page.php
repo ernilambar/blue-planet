@@ -13,11 +13,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-		}
-		?>
+		<?php do_action( 'blue_planet_single_image' ); ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
