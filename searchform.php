@@ -7,7 +7,7 @@
 
 ?>
 <?php
-	$search_placeholder = blueplanet_get_option( 'search_placeholder' );
+	$search_placeholder = blue_planet_get_option( 'search_placeholder' );
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<fieldset>

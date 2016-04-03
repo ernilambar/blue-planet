@@ -10,12 +10,12 @@
 /**
  * Get theme option.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @param string $key Option key.
  * @return mixed Option value.
  */
-function blueplanet_get_option( $key ) {
+function blue_planet_get_option( $key ) {
 
 	$defaults = blue_planet_get_default_options();
 	$options = blue_planet_get_option_all();
@@ -31,19 +31,12 @@ function blueplanet_get_option( $key ) {
 	}
 	return $output;
 
-	// Set default value first.
-	if ( is_array( $defaults ) && isset( $defaults[ $key ] ) ) {
-		$output = $defaults[ $key ];
-	}
-
-	return $output;
-
 }
 
 /**
  * Get all theme options.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @return array Theme options.
  */
@@ -62,7 +55,7 @@ function blue_planet_get_option_all() {
 /**
  * Get default theme options.
  *
- * @since 1.0.0
+ * @since 3.0.0
  *
  * @return array Default theme options.
  */

@@ -7,7 +7,7 @@
 
 ?>
 <?php
-$content_layout = blueplanet_get_option( 'content_layout' );
+$content_layout = blue_planet_get_option( 'content_layout' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">

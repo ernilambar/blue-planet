@@ -34,3 +34,20 @@ function blueplanet_get_option_all() {
 	return blue_planet_get_option_all();
 
 }
+
+/**
+ * Get theme option.
+ *
+ * @since 1.0.0
+ * @deprecated 3.0
+ *
+ * @param string $key Option key.
+ * @return mixed Option value.
+ */
+function blueplanet_get_option( $key ) {
+
+	_deprecated_function( 'blueplanet_get_option', '3.0', 'blue_planet_get_option' );
+
+	return blue_planet_get_option( $key );
+
+}

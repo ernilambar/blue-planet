@@ -10,7 +10,7 @@ if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
      * @return string Class.
      */
     function blue_planet_layout_setup_class() {
-        $default_layout = blueplanet_get_option( 'default_layout' );
+        $default_layout = blue_planet_get_option( 'default_layout' );
         if ( 'right-sidebar' === $default_layout ) {
             $class = ' pull-left ';
         } else {
