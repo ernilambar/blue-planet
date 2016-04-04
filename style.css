@@ -43,16 +43,26 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
-	background: #fff;
-    color:#888888;
+
+*,
+*:before,
+*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+	box-sizing:         border-box;
 }
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
 article,
 aside,
 details,
@@ -65,31 +75,44 @@ nav,
 section {
 	display: block;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
+
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-caption, th, td {
+
+caption,
+th,
+td {
 	font-weight: normal;
 	text-align: left;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: "";
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: "" "";
 }
+
 a:focus {
 	outline: thin dotted;
 }
+
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+a:active {
 	outline: 0;
 }
+
 a img {
 	border: 0;
 }
@@ -111,28 +134,39 @@ textarea {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 	line-height: 1.2;
 	margin: 0 0 10px;
 }
 h1 {
 	font-size: 30px;
+	font-size: 28px;
 }
 h2 {
 	font-size: 28px;
+	font-size: 26px;
 }
 h3 {
 	font-size: 24px;
+	font-size: 22px;
 }
 h4 {
 	font-size: 20px;
+	font-size: 18px;
 }
 h5 {
 	font-size: 18px;
+	font-size: 16px;
 }
 h6 {
 	font-size: 16px;
+	font-size: 14px;
 }
 hr {
 	background-color: #ccc;
@@ -347,16 +381,18 @@ textarea {
 }
 
 /* Links */
-a {
-	color: royalblue;
+a,
+a:visited,
+a:link{
+    color:#2a6496;
 }
-a:visited {
-	color: purple;
+a{
+    text-decoration: none;
 }
 a:hover,
 a:focus,
-a:active {
-	color: midnightblue;
+a:active{
+    color:#404040;
 }
 
 /* Alignment */
@@ -365,25 +401,28 @@ a:active {
 	float: left;
 	margin-right: 1.5em;
 }
+
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
+
 .aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
 }
 
-/* Text meant only for screen readers */
+/* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -400,7 +439,7 @@ a:active {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar */
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 /* Clearing */
@@ -505,6 +544,7 @@ a:active {
 ----------------------------------------------- */
 
 .sticky {
+	display: block;
 }
 .hentry {
 	margin: 0 0 1.5em;
@@ -633,12 +673,6 @@ object {
 	max-width: 100%;
 }
 
-/* Search widget */
-.widget_search .search-submit {
-	/*display: none;*/
-}
-
-
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -655,9 +689,6 @@ object {
 
 
 /* STYLER */
-*{
-    outline: none;
-}
 
 body {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -670,21 +701,9 @@ body {
 body > .container{
     background: none repeat scroll 0 0 #FFFFFF;
     box-shadow: 0 0 10px #999999;
-    margin:20px auto;
+    margin: 20px auto;
 }
-a,
-a:visited,
-a:link{
-    color:#2a6496;
-}
-a{
-    text-decoration: none;
-}
-a:hover,
-a:focus,
-a:active{
-    color:#404040;
-}
+
 /*Header*/
 header#masthead{
     background-color: #00ADB3;
@@ -1036,7 +1055,6 @@ footer#colophon .footer-powered-by{
 .entry-title,
 .entry-title a{
 	color: #404040;
-	font-size: 30px;
 }
 .entry-title a,
 .entry-title a:hover {
@@ -1066,6 +1084,7 @@ div.entry-meta > span.posted-on ,
 div.entry-meta > span.byline ,
 div.entry-meta > span.comments-link  {
 	margin-right: 5px;
+	font-size: 14px;
 }
 div.entry-meta > span.posted-on a:before {
 	content: "\f307";
@@ -1076,9 +1095,12 @@ div.entry-meta > span.byline a:before {
 div.entry-meta > span.comments-link a:before {
 	content: "\f300";
 }
-footer.entry-meta{
-    background-color: #EEEEEE;
-    padding:10px;
+footer.entry-meta {
+    background-color: #EEE;
+    padding: 10px;
+    margin-top: 10px;
+    clear: both;
+	font-size: 14px;
 }
 
 .entry-meta .cat-links,
@@ -1157,22 +1179,8 @@ nav.navigation .nav-links a:hover{
     clear: both;
     width:100%;
 }
-main#main p{
-    clear:both;
-}
-main#main .entry-content p{
-    clear:none !important;
-}
-.et-row{
-  margin:5px 0px 15px 0px;
-}
 
 /*nav*/
-
-.assistive-text, .site .screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-}
 
     .blueplanet-nav ul.nav-menu,
     .blueplanet-nav div.nav-menu > ul {

@@ -20,8 +20,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 	<?php do_action( 'blue_planet_after_body_open' ); ?>
+	<a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'blue-planet' ); ?></a>
   <div class="container">
     <div class="container-open-wrapper">
 	    <?php do_action( 'blue_planet_after_container_open' ); ?>
@@ -40,7 +40,6 @@
 
 	    <?php do_action( 'blue_planet_after_masthead_close' ); ?>
 	    <nav role="navigation" class="blueplanet-nav" id="site-navigation">
-        <a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'blue-planet' ); ?></a>
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) : ?>
 
