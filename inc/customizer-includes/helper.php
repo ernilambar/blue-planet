@@ -68,24 +68,6 @@ function blue_planet_sanitize_checkbox_input( $input ) {
 }
 
 /**
- * Check if footer widget is active
- *
- * @since 1.0.0
- *
- * @param WP_Customize_Control $control WP_Customize_Control instance.
- * @return bool Whether the control is active to the current preview.
- */
-function blue_planet_check_footer_widgets_status_cb( $control ) {
-
-	if ( true === $control->manager->get_setting( 'blueplanet_options[flg_enable_footer_widgets]' )->value() ) {
-		return true;
-	} else {
-		return false;
-	}
-
-}
-
-/**
  * Check if main slider is enabled
  *
  * @since 1.0.0

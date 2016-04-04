@@ -143,54 +143,6 @@
 		)
 	);
 
-	// Setting - flg_enable_footer_widgets.
-	$wp_customize->add_setting( 'blueplanet_options[flg_enable_footer_widgets]',
-		array(
-		'default'              => $new_defaults['flg_enable_footer_widgets'],
-		'capability'           => 'edit_theme_options',
-		'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
-		'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
-		)
-	);
-	$wp_customize->add_control(
-		'blueplanet_options[flg_enable_footer_widgets]',
-		array(
-		'label'       => __( 'Enable Footer Widgets', 'blue-planet' ),
-		'section'     => 'blue_planet_options_footer',
-		'settings'    => 'blueplanet_options[flg_enable_footer_widgets]',
-		'type'        => 'checkbox',
-		'priority'    => 45,
-		)
-	);
-
-	// Setting - number_of_footer_widgets.
-	$wp_customize->add_setting( 'blueplanet_options[number_of_footer_widgets]',
-		array(
-		'default'              => $new_defaults['number_of_footer_widgets'],
-		'capability'           => 'edit_theme_options',
-		'sanitize_callback'    => 'esc_attr',
-		'sanitize_js_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control(
-		'blueplanet_options[number_of_footer_widgets]',
-		array(
-		'label'           => __( 'Number of Footer widgets', 'blue-planet' ),
-		'section'         => 'blue_planet_options_footer',
-		'settings'        => 'blueplanet_options[number_of_footer_widgets]',
-		'active_callback' => 'blue_planet_check_footer_widgets_status_cb',
-		'type'            => 'select',
-		'priority'        => 50,
-		'choices'         => array(
-								'1' => 1,
-								'2' => 2,
-								'3' => 3,
-								'4' => 4,
-								'6' => 6,
-							),
-		)
-	);
-
 	// Setting - copyright_text.
 	$wp_customize->add_setting( 'blueplanet_options[copyright_text]',
 		array(

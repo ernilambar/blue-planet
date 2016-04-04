@@ -68,8 +68,6 @@ function blue_planet_get_default_options() {
 		'search_placeholder'           => esc_html__( 'Search...', 'blue-planet' ),
 		'flg_hide_search_box'          => '1',
 		'flg_hide_social_icons'        => '0',
-		'flg_enable_footer_widgets'    => '0',
-		'number_of_footer_widgets'     => '3',
 		'copyright_text'               => esc_html__( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
 		'flg_hide_powered_by'          => '1',
 		'flg_hide_footer_social_icons' => '1',

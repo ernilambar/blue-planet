@@ -282,40 +282,6 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 endif;
 add_action( 'blue_planet_after_content_open','blue_planet_add_main_slider' );
 
-
-if ( ! function_exists( 'blue_planet_footer_widgets' ) ) :
-
-	/**
-	 * Implement footer widgets.
-	 *
-	 * @since 1.0.0
-	 */
-	function blue_planet_footer_widgets() {
-		$bp_options = blue_planet_get_option_all();
-
-		if ( 1 === $bp_options['flg_enable_footer_widgets'] && isset( $bp_options['number_of_footer_widgets'] ) && absint( $bp_options['number_of_footer_widgets'] ) > 0 ) {
-			echo '<div class="footer-widgets-wrapper">';
-			$num_footer = $bp_options['number_of_footer_widgets'];
-
-			$grid = 12 / $num_footer;
-			for ( $i = 1 ; $i <= $num_footer; $i++ ) {
-				echo '<div class="footer-widget-area col-md-'.$grid.'">';
-				?>
-                    <?php
-					if ( is_active_sidebar( "footer-area-$i" ) ) :
-						dynamic_sidebar( "footer-area-$i" );
-					endif;
-					?>
-                <?php
-				echo '</div>';
-			}
-			echo '</div>';
-		}
-
-	}
-endif; // blue_planet_footer_widgets
-// add_action( 'blue_planet_after_content_close','blue_planet_footer_widgets' );
-
 if ( ! function_exists( 'blue_planet_header_social' ) ) :
 	/**
 	 * Implement social links in header.
