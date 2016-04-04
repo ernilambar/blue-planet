@@ -211,15 +211,18 @@ if ( ! function_exists( 'blue_planet_footer_powered_by' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_footer_powered_by() {
+		$extra_style = '';
 		$flg_hide_powered_by = blue_planet_get_option( 'flg_hide_powered_by' );
-		if ( 1 !== $flg_hide_powered_by ) {  ?>
-      <div class="footer-powered-by">
-          <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
-          <span class="sep"> | </span>
-          <?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://nilambar.net' ) . '" rel="designer">Nilambar Sharma</a>' ); ?>
-      </div>
-    <?php }
-		return;
+		if ( 1 === $flg_hide_powered_by ) {
+			$extra_style = 'display:none;';
+		}
+		?>
+		<div class="footer-powered-by" style="<?php echo esc_attr( $extra_style ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blue-planet' ) ); ?>"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://nilambar.net' ) . '" rel="designer">Nilambar</a>' ); ?>
+		</div>
+		<?php
 	}
 endif;
 
