@@ -113,8 +113,10 @@ textarea {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-    color:#888888;
+	line-height: 1.2;
+	margin: 0 0 10px;
 }
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -777,19 +779,10 @@ header.entry-header,
 header.page-header
 {
     border-bottom: 3px solid #EEEEEE;
-    margin: 0px 0px 10px;
+    margin: 0 0 10px;
     padding-bottom: 5px;
 }
-header.entry-header h1,
-header.page-header h1
-{
-    font-size: 24px;
-}
-header.entry-header h1 a,
-header.page-header h1 a
-{
-    text-decoration: none;
-}
+
 /*Comment*/
 code {
     white-space:normal!important;
@@ -1010,7 +1003,18 @@ footer#colophon .footer-powered-by{
 }
 
 /*POST*/
-
+.entry-title,
+.entry-title a{
+	color: #404040;
+	font-size: 30px;
+}
+.entry-title a,
+.entry-title a:hover {
+	text-decoration: none;
+}
+.entry-title a:hover {
+	color: #2a6496;
+}
 div.entry-meta a,
 footer.entry-meta a{
     font-style:italic;
