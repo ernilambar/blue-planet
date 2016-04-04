@@ -116,7 +116,24 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	margin: 0 0 10px;
 }
-
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 24px;
+}
+h4 {
+	font-size: 20px;
+}
+h5 {
+	font-size: 18px;
+}
+h6 {
+	font-size: 16px;
+}
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -155,7 +172,9 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 20px;
+	border-left: 5px #EEE solid;
+	padding: 10px 20px;
 }
 address {
 	margin: 0 0 1.5em;
@@ -206,11 +225,22 @@ figure {
 	margin: 0;
 }
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    margin: 0 0 1.5em;
+    width: 100%;
+    border-collapse: collapse;
 }
 th {
-	font-weight: bold;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    font-weight: bold;
+    padding: 8px;
+}
+td {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    padding: 8px;
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
@@ -1074,21 +1104,6 @@ footer.entry-meta{
 .edit-link:before {
   content: "\f411";
 }
-
-.entry-content table {
-  margin:5px 0px;
-  border-collapse: collapse;
-}
-
-.entry-content table td, .entry-content table th{
-  border:1px #ccc solid;
-  padding:.3em;
-}
-.entry-content table thead, .entry-content table th{
-  background-color: #EEEEEE;
-}
-
-
 
 /*navigation menu*/
 nav.navigation{
