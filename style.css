@@ -892,48 +892,6 @@ span.required {
     margin-bottom: 10px;
 }
 
-/*Search Widget*/
-.search-box-wrapper  {
-  background: #42454e;
-  display: inline-block;
-  float: right;
-  margin-right: 20px;
-  right:0;
-  left:auto;
-}
-
-.search-form input{
-  float: left;
-  font-size: 12px;
-  border-radius: 0;
-  height:34px;
-  font-weight: bold;
-}
-
-.search-form input[type="search"] {
-  background: #ffffff;
-  color: #42454e;
-  min-width: 184px;
-  padding: 6px 8px;
-  border-color: #4086AA;
-}
-.widget_search .search-form .search-field{
-  width: 100% !important;
-  max-width: 275px;
-}
-.search-form input[type="submit"] {
-  background: #4086AA;
-  border:1px #4086AA solid;
-  border-radius: 0;
-  color: #fff;
-  padding: 6px 16px;
-  box-shadow: none;
-  max-height: 34px;
-  height: 34px;
-  overflow: hidden;
-  text-shadow: none;
-}
-
 /*calendar*/
 .widget_calendar table{
     margin:5px 0px;
@@ -1552,6 +1510,37 @@ a.scrollup:focus{
     color: #ffffff;
 }
 
+.search-form {
+	margin: 10px 0;
+}
+.search-form .search-field {
+	border: 1px #32698b solid;
+	border-radius: 0;
+	padding: 6px 8px;
+	margin: 0;
+	width: calc( 100% - 100px );
+	max-width: 260px;
+	float: left;
+	height: 20px;
+
+}
+.search-form input[type="submit"] {
+	background: #32698b;
+	border: 1px #32698b solid;
+	border-radius: 0;
+	width: 80px;
+	color: #fff;
+	padding: 6px 16px;
+	box-shadow: none;
+	max-height: 34px;
+	height: 34px;
+	overflow: hidden;
+	text-shadow: none;
+	font-weight: bold;
+}
+.footer-widgets-wrapper .search-form .search-field {
+	/*max-width: 162px;*/
+}
 /* RESPONSIVE STARTS */
 @media only screen and (min-width : 1025px) {
      h1.site-title > a {
@@ -1573,10 +1562,7 @@ a.scrollup:focus{
 
 }
 @media only screen and (max-width:1023px) and (min-width:768px){
-    .widget_search .search-form .search-field{
-        width:100%;
-        max-width: 615px;
-    }
+
     #secondary{
         clear: both;
     }
@@ -1641,10 +1627,7 @@ a.scrollup:focus{
     .entry-meta {
         font-size : 0.8em;
     }
-    .widget_search .search-form .search-field{
-        width:100%;
-        max-width: 345px;
-    }
+
 
 }
 @media only screen and (max-width:479px) {
@@ -1684,10 +1667,7 @@ a.scrollup:focus{
 
 }
 @media only screen and (max-width:479px) and (min-width:320px){
-    .widget_search .search-form .search-field{
-        width:100%;
-        max-width: 185px;
-    }
+
     .site-logo img{
         width:50%;
     }
