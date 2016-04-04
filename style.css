@@ -640,15 +640,18 @@ body > .container{
     box-shadow: 0 0 10px #999999;
     margin:20px auto;
 }
-a, a:active, a:visited, a:link{
+a,
+a:visited,
+a:link{
     color:#2a6496;
 }
 a{
     text-decoration: none;
 }
-a:hover{
-    text-decoration: underline;
-    color:#888888!important;
+a:hover,
+a:focus,
+a:active{
+    color:#404040;
 }
 /*Header*/
 header#masthead{
@@ -1008,39 +1011,64 @@ footer#colophon .footer-powered-by{
 
 /*POST*/
 
-.entry-meta{
-    font-style: italic;
-    padding:0px 0px 0px 0px;
-    font-weight: bold;
-    font-size: .9em;
-}
-.entry-meta a{
-    padding:1px 3px;
+div.entry-meta a,
+footer.entry-meta a{
     font-style:italic;
-    margin:0px 1px ;
     text-decoration: none;
 }
-.entry-meta a:hover{
-    text-decoration: underline;
+
+div.entry-meta > span.posted-on a:before,
+div.entry-meta > span.byline a:before,
+div.entry-meta > span.comments-link a:before {
+	font-size: 18px;
+	vertical-align: middle;
+	font-family: "Genericons";
+	color: #666;
+	content: "\f307";
+	font-style: normal;
 }
-.entry-meta span.posted-on{
-    background: url('images/calendar.png') no-repeat top left;
-    padding-left:20px;
+
+div.entry-meta > span.posted-on ,
+div.entry-meta > span.byline ,
+div.entry-meta > span.comments-link  {
+	margin-right: 5px;
 }
-.entry-meta span.byline{
-    background: url('images/author.png') no-repeat top left;
-    padding-left: 15px;
-    margin-left: 10px;
+div.entry-meta > span.posted-on a:before {
+	content: "\f307";
 }
-.entry-meta span.comments{
-    background: url('images/comments.png') no-repeat top left;
-    padding-left: 15px;
-    margin-left: 10px;
+div.entry-meta > span.byline a:before {
+	content: "\f304";
 }
-.entry-meta span.edit-link{
-    background: url('images/edit.png') no-repeat top left;
-    padding-left: 15px;
-    margin-left: 10px;
+div.entry-meta > span.comments-link a:before {
+	content: "\f300";
+}
+footer.entry-meta{
+    background-color: #EEEEEE;
+    padding:10px;
+}
+
+.entry-meta .cat-links,
+.entry-meta .tags-links{
+	margin-right: 10px;
+}
+
+.cat-links:before,
+.tags-links:before,
+.edit-link:before {
+  font-size: 18px;
+  vertical-align: middle;
+  font-family: "Genericons";
+  margin-right: 5px;
+  color: #666;
+}
+.cat-links:before {
+  content: "\f301";
+}
+.tags-links:before {
+  content: "\f302";
+}
+.edit-link:before {
+  content: "\f411";
 }
 
 .entry-content table {
@@ -1056,19 +1084,7 @@ footer#colophon .footer-powered-by{
   background-color: #EEEEEE;
 }
 
-footer.entry-meta{
-    background-color: #EEEEEE;
-    padding:10px;
-}
-footer.entry-meta span.cat-links{
-    background: url('images/category.png') no-repeat top left;
-    padding-left: 15px;
-}
-footer.entry-meta span.tags-links{
-    background: url('images/tags.png') no-repeat top left;
-    padding-left: 15px;
-    margin-left: 10px;
-}
+
 
 /*navigation menu*/
 nav.navigation{
