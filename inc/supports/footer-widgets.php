@@ -68,7 +68,7 @@ class Blue_Planet_Footer_Widgets{
 			// Add footer widgets in front end.
 			add_action( $this->theme_prefix . '_after_content_close', array( $this, 'add_footer_widgets' ) );
 			// Add custom class in widgets.
-			// add_filter( $this->theme_prefix . '_filter_footer_widget_class', array( $this, 'custom_footer_widget_class' ) );
+			add_filter( $this->theme_prefix . '_filter_footer_widget_class', array( $this, 'custom_footer_widget_class' ) );
 
 		}
 
@@ -165,8 +165,8 @@ class Blue_Planet_Footer_Widgets{
 
 		$args = array(
 			'container' => 'div',
-			'before'    => '<div class="container"><div class="row">',
-			'after'     => '</div><!-- .row --></div><!-- .container -->',
+			'before'    => '<div class="row">',
+			'after'     => '</div><!-- .row -->',
 		);
 		$footer_widgets_content = $this->get_footer_widgets_content( $args );
 		echo $footer_widgets_content;
@@ -204,7 +204,7 @@ class Blue_Planet_Footer_Widgets{
 		// Defaults.
 		$args = wp_parse_args( (array) $args, array(
 			'container'       => 'div',
-			'container_class' => '',
+			'container_class' => 'footer-widgets-wrapper',
 			'container_style' => '',
 			'container_id'    => 'footer-widgets',
 			'wrap_class'      => 'footer-widget-area',
