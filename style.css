@@ -776,16 +776,12 @@ div.site-branding{
 .header-image-wrapper div.site-branding{
   margin-top:-14%;
 }
-#site-navigation{
-  /*margin-top: -1px;*/
-}
+
 /*SIDEBAR*/
-#secondary{
-  padding-top:20px;
-}
+
 .widget-title,
 .widget-title a,
-.widget-title a:hover{
+.widget-title a:hover {
     background: none repeat scroll 0 0 #00ADB3;
     color: #FFFFFF;
     font-size: 20px;
@@ -793,10 +789,12 @@ div.site-branding{
     padding: 6px 10px 6px 20px;
     text-decoration: none;
 }
-.widget-area ul{
+.widget-area ul,
+.footer-widget-area ul {
     list-style: none;
 }
-div.widget-area ul li:before{
+.widget-area ul li:before,
+.footer-widget-area ul li:before {
     font-size: 10px;
     vertical-align: middle;
     font-family: "Genericons";
@@ -805,26 +803,16 @@ div.widget-area ul li:before{
     font-style: normal;
     margin-right: 10px;
 }
-div.widget-area ul > li {
-    padding:5px 0px 5px 8px;
-}
-div.widget-area ul > li ul > li{
-}
-div.widget-area ul li a{
-    padding-left: 3px;
-}
 
 /*Article*/
 article.post {
-    padding-bottom: 10px;
     margin-bottom: 30px;
 }
-header.entry-header,
-header.page-header
-{
+.entry-header,
+.page-header {
     border-bottom: 3px solid #EEEEEE;
-    margin: 0 0 10px;
-    padding-bottom: 5px;
+    height: auto;
+    overflow: hidden;
 }
 
 /*Comment*/
@@ -888,32 +876,13 @@ span.required {
 }
 
 /*calendar*/
-.widget_calendar table{
-    margin:5px 0px;
-}
-.widget_calendar table a{
-    font-weight: bold;
-}
-.widget_calendar table th, .widget_calendar table td{
-    margin:5px 0px;
-    text-align: center;
-}
-
-.widget_calendar table tfoot{
-    text-align: center;
-}
-.widget_calendar table caption{
+.widget_calendar caption {
     text-align: center;
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-/*categories widget*/
-.widget_categories select, .widget_archive select, .widget form select{
-    border-radius: 0px;
-    min-height: 30px;
-    height:30px;
-    border: 1px #57bddb solid;
+.widget_calendar table a {
+    font-weight: bold;
 }
 
 /*FOOTER*/
@@ -975,38 +944,16 @@ footer#colophon .footer-powered-by{
   margin-top: 5px;
 }
 
-.footer-widgets-wrapper{
+.footer-widgets-wrapper {
     height:auto;
     overflow: hidden;
     background-color: #EEEEEE;
-}
-.footer-widgets-wrapper .footer-sidebar-title{
-    background: none repeat scroll 0 0 #00ADB3;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: normal;
-    padding: 6px 10px 6px 20px;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-.footer-widgets-wrapper .social-widget-wrapper{
-}
-.footer-widgets-wrapper .textwidget{
-  padding:0;
-}
-.footer-widgets-wrapper .widget>div,
-.footer-widgets-wrapper .widget>ul{
-  padding:0px 10px;
-}
-.footer-widgets-wrapper .footer-widget-area ul{
-  list-style: none outside url("images/bullet.png");
-  margin: 0 0 0 30px;
-  padding: 0;
+    padding: 15px;
 }
 
 /*POST*/
 .entry-title,
-.entry-title a{
+.entry-title a {
 	color: #404040;
 }
 .entry-title a,

@@ -220,7 +220,7 @@ if ( ! function_exists( 'blue_planet_footer_powered_by' ) ) :
 		<div class="footer-powered-by" style="<?php echo esc_attr( $extra_style ); ?>">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blue-planet' ) ); ?>"><?php printf( __( 'Powered by %s', 'blue-planet' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( '%1$s by %2$s.', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://nilambar.net' ) . '" rel="designer">Nilambar</a>' ); ?>
+			<?php printf( __( '%1$s by %2$s', 'blue-planet' ), 'Blue Planet', '<a href="' . esc_url( 'http://nilambar.net' ) . '" rel="designer">Nilambar</a>' ); ?>
 		</div>
 		<?php
 	}
