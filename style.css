@@ -180,7 +180,7 @@ p {
 	margin-bottom: 1.5em;
 }
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0;
 }
 ul {
 	list-style: disc;
@@ -191,7 +191,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 15px;
 }
 dt {
 	font-weight: bold;
@@ -793,17 +793,8 @@ div.site-branding{
     padding: 6px 10px 6px 20px;
     text-decoration: none;
 }
-div.textwidget{
-    border:none;
-    padding:20px 20px 20px 20px;
-    margin-bottom: 20px;
-    background-color: #FFFFFF;
-    color:#666666;
-}
-div.widget-area ul{
+.widget-area ul{
     list-style: none;
-    padding: 0px;
-    margin: 0;
 }
 div.widget-area ul li:before{
     font-size: 10px;
