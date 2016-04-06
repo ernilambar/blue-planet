@@ -181,17 +181,20 @@ p {
 }
 ul, ol {
 	margin: 0;
+	margin: 0 0 0 30px;
 }
 ul {
 	list-style: disc;
+	list-style-position: outside;
 }
 ol {
 	list-style: decimal;
+	list-style-position: outside;
 }
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 15px;
+	margin-left: 30px;
 }
 dt {
 	font-weight: bold;
@@ -542,7 +545,9 @@ a:active{
 
 /* =Content
 ----------------------------------------------- */
-
+#content {
+	margin-top: 20px;
+}
 .sticky {
 	display: block;
 }
@@ -788,6 +793,12 @@ div.site-branding{
     font-weight: normal;
     padding: 6px 10px 6px 20px;
     text-decoration: none;
+}
+.widget-area ul,
+.widget-area ol,
+.footer-widget-area ol,
+.footer-widget-area ul {
+    margin: 0;
 }
 .widget-area ul,
 .footer-widget-area ul {

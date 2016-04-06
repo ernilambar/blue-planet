@@ -59,5 +59,5 @@
 
 		<div class="clear"></div>
 
-    <div id="content" class="site-content"  style="margin-top:10px;">
+    <div id="content" class="site-content">
     <?php do_action( 'blue_planet_after_content_open' ); ?>
