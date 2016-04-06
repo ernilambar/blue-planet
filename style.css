@@ -801,12 +801,18 @@ div.textwidget{
     color:#666666;
 }
 div.widget-area ul{
-    list-style-type: none;
-    list-style-position:outside;
-    list-style-image: url('images/bullet.png');
+    list-style: none;
     padding: 0px;
-    margin: 0 0 0 20px;
-
+    margin: 0;
+}
+div.widget-area ul li:before{
+    font-size: 10px;
+    vertical-align: middle;
+    font-family: "Genericons";
+    color: #666;
+    content: "\f104";
+    font-style: normal;
+    margin-right: 10px;
 }
 div.widget-area ul > li {
     padding:5px 0px 5px 8px;
@@ -815,8 +821,6 @@ div.widget-area ul > li ul > li{
 }
 div.widget-area ul li a{
     padding-left: 3px;
-}
-div.widget-area ul li:before {
 }
 
 /*Article*/
