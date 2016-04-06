@@ -1039,35 +1039,27 @@ footer.entry-meta {
 }
 
 /*navigation menu*/
-nav.navigation{
+nav.navigation {
+}
+nav.navigation .nav-links{
+	height: auto;
+	overflow: hidden;
+}
+nav.navigation .nav-links .nav-previous,
+nav.navigation .nav-links .nav-next{
+	// border: 1px red solid !important;
+	height: auto;
+	overflow: hidden;
 }
 nav.navigation .nav-links a{
-    background-color: #32698B;
-    min-height: 30px;
-    line-height: 30px;
-    height: 30px;
-    color:#FFFFFF;
     font-weight: bold;
-    width: auto;
-    display: inline-block;
-    padding:0px 5px;
+    // width: auto;
+    // display: inline-block;
+    // padding:0px 5px;
 
 }
-nav.navigation .nav-links a:hover{
-    background-color: #234961;
-    color: #dddddd!important;
-}
-
-.site-logo{
-    margin: auto 10%;
-    max-height: 120px;
-    min-height: 30px;
-    overflow: hidden;
-}
-
 
 /*slider*/
-
 .main-slider-wrapper{
     height:auto;
     overflow: hidden;
@@ -1538,9 +1530,6 @@ a.scrollup:focus{
     h2.site-description{
         font-size: 120%;
     }
-    .site-logo img{
-        width:80%;
-    }
     .container-open-wrapper{
         border:none;
         height: auto;
@@ -1561,15 +1550,7 @@ a.scrollup:focus{
 
 }
 @media only screen and (max-width:767px) and (min-width:480px){
-    .site-logo img{
-        width:70%;
-    }
 
-    nav.navigation .nav-links a{
-        height: auto;
-        display: block;
-        margin-top: 5px;
-    }
     .footer-powered-by span.sep{
         display: none;
     }
@@ -1590,9 +1571,6 @@ a.scrollup:focus{
     h2.site-description{
         font-size: 110%;
     }
-    .site-logo img{
-        width:60%;
-    }
 
     .container-open-wrapper{
         border:none;
@@ -1610,28 +1588,5 @@ a.scrollup:focus{
         clear: both;
         display: block;
     }
-    nav.navigation .nav-links a{
-        height: auto;
-        display: block;
-        margin-top: 5px;
-    }
-
-
-
 }
-@media only screen and (max-width:479px) and (min-width:320px){
-
-    .site-logo img{
-        width:50%;
-    }
-}
-@media only screen and (max-width:319px) {
-    .site-logo img{
-        width:40%;
-    }
-
-
-
-}
-
 /* RESPONSIVE ENDS */
