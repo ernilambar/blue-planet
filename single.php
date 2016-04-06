@@ -16,8 +16,12 @@ get_header(); ?>
 
 			<?php
 			the_post_navigation( array(
-				'next_text' => '%title <span class="meta-nav">&rarr;</span>',
-				'prev_text' => '<span class="meta-nav">&larr;</span> %title',
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'blue-planet' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'blue-planet' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'blue-planet' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'blue-planet' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
 			) );
 			?>
 
