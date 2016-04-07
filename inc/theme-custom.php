@@ -57,11 +57,16 @@ if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 	 * @return string The excerpt.
 	 */
 	function blue_planet_excerpt_readmore( $more ) {
+
 		global $post;
 		$read_more_text = blue_planet_get_option( 'read_more_text' );
+		if ( ! empty( $read_more_text ) ) {
+			$more = '...';
+		}
 
-		$output = '... <a href="'. esc_url( get_permalink( $post->ID ) ) . '" class="readmore">' . esc_attr( $read_more_text )  . '</a>';
+		$output = $more . ' <a href="'. esc_url( get_permalink( $post->ID ) ) . '" class="readmore">' . esc_attr( $read_more_text )  . '<span class="screen-reader-text">"' . esc_html( get_the_title() ) . '"</span></a>';
 		$output = apply_filters( 'blue_planet_filter_read_more_content' , $output );
+
 		return $output;
 	}
 endif;
