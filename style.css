@@ -1066,6 +1066,21 @@ footer.entry-meta {
 	text-transform: uppercase;
 }
 
+/* Pagination */
+.pagination {
+	display: block;
+	height: auto;
+	overflow: hidden;
+}
+.pagination .page-numbers,
+.pagination .page-links a {
+	margin-right: 5px;
+	font-size: 18px;
+}
+.pagination .nav-links .current {
+	font-weight: bold;
+}
+
 /*slider*/
 .main-slider-wrapper{
     height:auto;

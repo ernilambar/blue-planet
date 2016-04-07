@@ -27,13 +27,13 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-		<?php
-		the_posts_navigation( array(
-			'prev_text'          => '<span class="meta-nav">&larr;</span> ' . __( 'Older posts', 'blue-planet' ),
-			'next_text'          => __( 'Newer posts', 'blue-planet' ) . ' <span class="meta-nav">&rarr;</span>',
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Posts navigation', 'blue-planet' ) . ' </span>',
-		) );
-		?>
+			<?php
+			the_posts_pagination( array(
+				'prev_text' => _x( '&larr; Previous', 'posts navigation', 'blue-planet' ),
+				'next_text' => _x( 'Next &rarr;',     'posts navigation', 'blue-planet' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>',
+			) );
+			?>
 
 		<?php else : ?>
 
