@@ -989,6 +989,7 @@ div.entry-meta > span.comments-link a:before {
 	color: #666;
 	content: "\f307";
 	font-style: normal;
+	margin-right: 5px;
 }
 
 div.entry-meta > span.posted-on ,
