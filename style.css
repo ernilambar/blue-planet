@@ -1396,8 +1396,7 @@ ol.comment-list li ul{
 ol.comment-list li ul.children{
     list-style-type: none;
 }
-a.comment-reply-link,
-a.readmore{
+a.comment-reply-link {
     background-color: #32698B;
     color: #FFFFFF;
     padding:2px 5px;
@@ -1405,14 +1404,22 @@ a.readmore{
     font-size: 12px;
     text-decoration: none;
 }
-a.readmore{
-    width:85px!important;
-    margin: 5px 0px;
-}
-a.comment-reply-link:hover,
-a.readmore:hover{
+// a.readmore{
+//     width:85px!important;
+//     margin: 5px 0px;
+// }
+a.comment-reply-link:hover {
     color: #dddddd!important;
     text-decoration: none!important;
+}
+a.readmore {
+	color: #FFFFFF;
+	background-color: #32698B;
+	border: 1px #2a6496 solid;
+	display: table;
+	clear: both;
+	padding: 2px 5px;
+	margin-top: 5px;
 }
 
 /*contact form 7*/
