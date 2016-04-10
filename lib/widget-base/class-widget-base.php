@@ -376,13 +376,19 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 	}
 
 	function add_defaults( $instance ) {
+
+		$default_arr = array();
 		if ( ! empty( $this->fields ) ) {
 			foreach ( $this->fields as $key => $field ) {
+				$default_arr[ $key ] = null;
 				if ( ! isset( $instance[ $key ] ) && isset( $field['default'] ) ) {
-					$instance[ $key ] = $field['default'];
+					$default_arr[ $key ] = $field['default'];
 				}
+
 			}
 		}
+		$instance = array_merge( $default_arr, $instance );
+
 		return $instance;
 	}
 
