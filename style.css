@@ -710,42 +710,41 @@ body > .container{
 }
 
 /*Header*/
-header#masthead{
+#masthead{
     background-color: #00ADB3;
     margin-top: 15px; /*dont change*/
     color: #FFFFFF;
     padding-bottom: 0px;
 }
-header#masthead div.site-branding{
+#masthead div.site-branding{
     position: inherit;
     /*width: 100%;*/
 }
-header#masthead img {
+#masthead img {
     /*height: 100% !important;*/
     left: 0;
     position: inherit;
     top: 0;
     z-index: 99989;
 }
-h1.site-title{
+.site-title{
     margin : 10px 10px 5px 10px ;
     font-size:25px;
 }
-h1.site-title > a{
+.site-title > a{
     font-weight: normal;
     text-decoration: none;
     font-size: 105%;
+    color: #FFF;
 }
-h1.site-title > a:hover{
-    color: #FFFFFF!important;
+.site-title > a:hover {
 }
-h2.site-description{
+.site-description{
     margin:5px 10px 10px 10px;
     font-size: 110%;
     font-style: italic;
-    /*margin-bottom:8px;*/
 }
-header#masthead > nav{
+#masthead > nav{
     border-radius: 0px;
     border: none;
     margin:0px;
