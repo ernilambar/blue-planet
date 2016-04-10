@@ -474,8 +474,106 @@ a:active{
 
 /* =Menu
 ----------------------------------------------- */
+.blueplanet-nav {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+	background-color: #32698b;
+}
+.blueplanet-nav ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
 
-.main-navigation {
+.blueplanet-nav li {
+	float: left;
+	position: relative;
+}
+.blueplanet-nav a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 1em;
+}
+
+.blueplanet-nav ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 48px;
+    left: -999em;
+    z-index: 99999;
+    min-width: 180px;
+}
+
+.blueplanet-nav ul ul ul {
+    left: -999em;
+    top: 0;
+}
+
+.blueplanet-nav ul ul a {
+    color: #656565;
+    display: block;
+    height: auto;
+    line-height: 1.5;
+    padding: 0.75em 1em;
+    background: #fff;
+}
+.blueplanet-nav ul ul a:hover,
+.blueplanet-nav ul ul a:focus,
+.blueplanet-nav ul ul a:active {
+    color: #0b789c;
+}
+
+.blueplanet-nav ul ul li {
+    border-top: 1px dashed #ddd;
+    width: 100%;
+}
+.blueplanet-nav ul ul li:first-child {
+    border: 0;
+}
+
+.blueplanet-nav li:hover > a,
+.blueplanet-nav li.focus > a {
+}
+
+.blueplanet-nav ul ul :hover > a,
+.blueplanet-nav ul ul .focus > a {
+}
+
+.blueplanet-nav ul ul a:hover,
+.blueplanet-nav ul ul a.focus {
+}
+
+.blueplanet-nav ul li:hover > ul,
+.blueplanet-nav ul li.focus > ul {
+    left: auto;
+    background-color: #fff;
+}
+
+.blueplanet-nav ul ul li:hover > ul,
+.blueplanet-nav ul ul li.focus > ul {
+    left: 100%;
+}
+
+.blueplanet-nav .current_page_item > a,
+.blueplanet-nav .current-menu-item > a,
+.blueplanet-nav .current_page_ancestor > a,
+.blueplanet-nav .current-menu-ancestor > a {
+}
+
+.blueplanet-nav > .menu > ul > li.page_item_has_children > a,
+.blueplanet-nav > div > ul > li.menu-item-has-children > a {
+    padding-right: 18px;
+}
+
+
+/*.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
@@ -523,7 +621,7 @@ a:active{
 }
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
-}
+}*/
 
 /* Small menu */
 .menu-toggle {
@@ -640,20 +738,6 @@ object {
 
 /* =Navigation
 ----------------------------------------------- */
-
-// .site-main [class*="navigation"] {
-// 	margin: 0 0 1.5em;
-// 	overflow: hidden;
-// }
-// [class*="navigation"] .nav-previous {
-// 	float: left;
-// 	width: 50%;
-// }
-// [class*="navigation"] .nav-next {
-// 	float: right;
-// 	text-align: right;
-// 	width: 50%;
-// }
 
 
 /* =Comments
@@ -1104,83 +1188,6 @@ footer.entry-meta {
     clear: both;
     width:100%;
 }
-
-/*nav*/
-
-    .blueplanet-nav ul.nav-menu,
-    .blueplanet-nav div.nav-menu > ul {
-        background:none repeat scroll 0 0 #32698b;
-        display: inline-block !important;
-        text-align: left;
-        width: 100%;
-    }
-    .blueplanet-nav ul {
-        margin: 0;
-        text-indent: 0;
-    }
-    .blueplanet-nav li a,
-    .blueplanet-nav li {
-        display: inline-block;
-        text-decoration: none;
-    }
-    .blueplanet-nav li a {
-        border-bottom: 0;
-        color: #EEEEEE;
-        line-height: 3.692307692;
-        padding: 0 20px;
-        text-transform: uppercase;
-        white-space: nowrap;
-        transition: .3s ease 0s;
-        font-size: 12px;
-        font-weight: bold;
-    }
-    .blueplanet-nav li a:hover {
-        color: #EEEEEE!important;
-        background-color: #27526D
-    }
-    .blueplanet-nav li {
-        position: relative;
-        margin-right: -4px;
-    }
-    .blueplanet-nav li ul {
-        display: none;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 100%;
-        z-index: 1000;
-    }
-    .blueplanet-nav li ul ul {
-        top: 0;
-        left: 100%;
-    }
-    .blueplanet-nav ul li:hover > ul {
-        border-left: 0;
-        display: block;
-    }
-    .blueplanet-nav li ul li a {
-        background: #3d80a9;
-        border-bottom: 1px solid #CCCCCC;
-        border-right: 1px solid #CCCCCC;
-        color:#EEEEEE;
-        display: block;
-        line-height: 2.181818182;
-        padding: 8px 10px;
-        width: auto;
-        min-width: 200px;
-        white-space: normal;
-    }
-    .blueplanet-nav li ul li a:hover {
-        background: #4693c3;
-        color: #FFF;
-    }
-    .blueplanet-nav .current-menu-item > a,
-    .blueplanet-nav .current-menu-ancestor > a,
-    .blueplanet-nav .current_page_item > a,
-    .blueplanet-nav .current_page_ancestor > a {
-            background: none repeat scroll 0 0 #27526D;
-            color: #FFFFFF;
-    }
 
 /*social*/
 .social-wrapper-outer .social-wrapper {

@@ -43,6 +43,7 @@
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) : ?>
 
+	        	<button class="menu-toggle" aria-hidden="true"><?php esc_html_e( 'Primary Menu', 'blue-planet' ); ?></button>
 					<?php
 					wp_nav_menu( array(
                         'theme_location' => 'primary',
