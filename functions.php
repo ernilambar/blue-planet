@@ -126,9 +126,11 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 	 */
 	function blue_planet_scripts() {
 
-		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap.min.css', false ,'3.3.6' );
-		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/thirdparty/genericons/genericons.min.css', array(), '3.4.1' );
-        wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
+		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap' . $min . '.css', false ,'3.3.6' );
+		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/thirdparty/genericons/genericons' . $min . '.css', array(), '3.4.1' );
+        wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu' . $min . '.css', false ,'2.0.6' );
         wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
 
         $banner_background_color = blue_planet_get_option( 'banner_background_color' );
@@ -139,8 +141,8 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
         }
         wp_add_inline_style( 'blue-planet-style', $custom_style );
 
-        wp_enqueue_script( 'blue-planet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-		wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+        wp_enqueue_script( 'blue-planet-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array(), '20120206', true );
+		wp_enqueue_script( 'blue-planet-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -158,14 +160,14 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_script( 'blue-planet-theme-script-slider' );
 		}
 
-		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array( 'jquery' ), '2.0.6', true );
+		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu' . $min . '.js', array( 'jquery' ), '2.0.6', true );
 
-		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom.min.js', array( 'jquery' ), '2.0.0', true );
+		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom' . $min . '.js', array( 'jquery' ), '2.0.0', true );
 
 		// Scripts for IE hack.
-		wp_enqueue_script( 'blue-planet-html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.3', false );
+		wp_enqueue_script( 'blue-planet-html5shiv', get_template_directory_uri() . '/js/html5shiv' . $min . '.js', array(), '3.7.3', false );
         wp_script_add_data( 'blue-planet-html5shiv', 'conditional', 'lt IE 9' );
-        wp_enqueue_script( 'blue-planet-respond', get_template_directory_uri() . '/js/respond.min.js', array(), '1.4.2', false );
+        wp_enqueue_script( 'blue-planet-respond', get_template_directory_uri() . '/js/respond' . $min . '.js', array(), '1.4.2', false );
         wp_script_add_data( 'blue-planet-respond', 'conditional', 'lt IE 9' );
 
 	}
