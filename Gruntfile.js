@@ -128,7 +128,7 @@ module.exports = function( grunt ) {
 		wpcss: {
 			target: {
 				src: ['style.css'],
-				dest: 'style-tmp.css'
+				dest: 'style.css'
 			}
 		},
 
