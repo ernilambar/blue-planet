@@ -75,6 +75,15 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// Check JS.
+		jshint: {
+			options: grunt.file.readJSON('.jshintrc'),
+			all: [
+				'js/*.js',
+				'!js/*.min.js'
+			]
+		},
+
 		// Clean the directory.
 		clean: {
 			deploy: ['deploy']
@@ -118,7 +127,7 @@ module.exports = function( grunt ) {
 
 		// Uglify JS.
 		uglify: {
-			my_target: {
+			target: {
 				options: {
 					mangle: false
 				},
@@ -140,6 +149,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 
 	grunt.registerTask( 'default', [] );
 
@@ -147,6 +157,11 @@ module.exports = function( grunt ) {
 		'uglify',
 		'addtextdomain',
 		'makepot'
+	]);
+
+	grunt.registerTask( 'precommit', [
+		'jshint',
+		'checktextdomain'
 	]);
 
 	grunt.registerTask( 'deploy', [
