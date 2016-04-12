@@ -125,6 +125,13 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		wpcss: {
+			target: {
+				src: ['style.css'],
+				dest: 'style-tmp.css'
+			}
+		},
+
 		// Uglify JS.
 		uglify: {
 			target: {
@@ -150,6 +157,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-wp-css' );
 
 	grunt.registerTask( 'default', [] );
 
