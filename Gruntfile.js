@@ -114,8 +114,23 @@ module.exports = function( grunt ) {
 				src: ['**/*'],
 				dest: '<%= pkg.name %>/'
 			}
-		}
+		},
 
+		// Uglify JS.
+		uglify: {
+			my_target: {
+				options: {
+					mangle: false
+				},
+				files: [{
+					expand: true,
+					cwd: 'js',
+					src: ['*.js', '!*.min.js'],
+					dest: 'js',
+					ext: '.min.js'
+				}]
+			}
+		}
 	});
 
 	// Load NPM tasks to be used here
@@ -124,8 +139,15 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 
 	grunt.registerTask( 'default', [] );
+
+	grunt.registerTask( 'build', [
+		'uglify',
+		'addtextdomain',
+		'makepot'
+	]);
 
 	grunt.registerTask( 'deploy', [
 		'clean:deploy',
