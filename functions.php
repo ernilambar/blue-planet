@@ -25,11 +25,8 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 
 		/*
 		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Blue Planet, use a find and replace
-		 * to change 'blue-planet' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'blue-planet', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'blue-planet' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -151,10 +148,10 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		$slider_status = blue_planet_get_option( 'slider_status' );
 		$slider_status_2 = blue_planet_get_option( 'slider_status_2' );
 		if ( 'none' !== $slider_status || 'none' !== $slider_status_2 ) {
-			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
-			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
-			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array( 'jquery' ), '3.2', true );
-			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri().'/js/slider.min.js', array( 'jquery', 'nivo-slider-script' ), '2.0.0', true );
+			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider' . $min . '.css', false ,'3.2' );
+			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default' . $min . '.css', false ,'3.2' );
+			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider' . $min . '.js', array( 'jquery' ), '3.2', true );
+			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri().'/js/slider' . $min . '.js', array( 'jquery', 'nivo-slider-script' ), '2.0.0', true );
 			$options = blue_planet_get_option_all();
 			wp_localize_script( 'blue-planet-theme-script-slider', 'BP_OPTIONS', $options );
 			wp_enqueue_script( 'blue-planet-theme-script-slider' );
