@@ -57,16 +57,80 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// Update text domain.
+		addtextdomain: {
+			options: {
+				textdomain: '<%= pkg.name %>',
+				updateDomains: true
+			},
+			target: {
+				files: {
+					src: [
+					'*.php',
+					'**/*.php',
+					'!node_modules/**',
+					'!tests/**'
+					]
+				}
+			}
+		},
+
+		// Clean the directory.
+		clean: {
+			deploy: ['deploy']
+		},
+
+		// Copy files to deploy.
+		copy: {
+			deploy: {
+				src: [
+					'**',
+					'!.*',
+					'!*.md',
+					'!.*/**',
+					'!tmp/**',
+					'!Gruntfile.js',
+					'!test.php',
+					'!package.json',
+					'!node_modules/**',
+					'!languages/**',
+					'!docs/**',
+					'!tests/**'
+				],
+				dest: 'deploy/<%= pkg.name %>',
+				expand: true,
+				dot: true
+			}
+		},
+
+		// Compress files,
+		compress: {
+			deploy: {
+				expand: true,
+				options: {
+					archive: 'deploy/<%= pkg.name %>.zip'
+				},
+				cwd: 'deploy/<%= pkg.name %>',
+				src: ['**/*'],
+				dest: '<%= pkg.name %>/'
+			}
+		}
+
 	});
 
 	// Load NPM tasks to be used here
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	// grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	// grunt.loadNpmTasks( 'grunt-contrib-compress' );
-	// grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	// grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	// grunt.loadNpmTasks( 'grunt-php' );
-	// grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-contrib-clean' );
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-compress' );
+
+	grunt.registerTask( 'default', [] );
+
+	grunt.registerTask( 'deploy', [
+		'clean:deploy',
+		'copy:deploy',
+		'compress:deploy'
+	]);
 
 }
