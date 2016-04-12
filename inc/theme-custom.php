@@ -17,6 +17,10 @@ function blue_planet_body_classes( $classes ) {
         $classes[] = 'group-blog';
     }
 
+    if ( get_header_image() ) {
+    	$classes[] = 'custom-header-enabled';
+    }
+
     return $classes;
 }
 
