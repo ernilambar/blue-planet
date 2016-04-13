@@ -16,18 +16,21 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
     <?php do_action( 'blue_planet_after_footer_open' ); ?>
 		<div class="site-info">
-      <?php
-			  wp_nav_menu( array(
-				  'theme_location'  => 'footer',
-				  'depth'           => 1,
-				  'container'       => 'div',
-				  'container_class' => 'footer-nav-wrapper',
-				  'menu_class'      => 'footer-nav',
-				  'fallback_cb'     => false,
-				  'link_after'      => '<span class="pipe">|</span>',
-				  )
-			  );
-			?>
+			<?php if ( has_nav_menu( 'footer' ) ) : ?>
+				<nav class="footer-navigation" role="navigation" aria-label="<?php _e( 'Footer Menu', 'blue-planet' ); ?>">
+					<?php
+					wp_nav_menu( array(
+						'theme_location'  => 'footer',
+						'depth'           => 1,
+						'container'       => 'div',
+						'container_class' => 'footer-nav-wrapper',
+						'menu_class'      => 'footer-nav',
+						'fallback_cb'     => false,
+						)
+					);
+					?>
+				</nav>
+			<?php endif; ?>
 			<?php do_action( 'blue_planet_credits' ); ?>
 
 		</div><!-- .site-info -->
