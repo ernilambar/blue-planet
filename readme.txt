@@ -33,6 +33,10 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 * Update: Compatibility check with WP 4.5
 * Update: Major refactoring of code
 * Update: Minimum WP required is 4.3
+* Update: Core pagination feature for archives
+* Update: Bootstrap library
+* Add: Genericons for icons
+* Add: Several theme options
 
 = 2.3 - Dec 15 2015 =
 * Fix: Content width in full width page template
