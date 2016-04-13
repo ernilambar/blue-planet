@@ -1006,7 +1006,11 @@ article.post {
 .page-header {
 	overflow: hidden;
 	height: auto;
-	border-bottom: 3px solid #eee;
+	border-bottom: 3px solid #EEE;
+	margin: 0;
+}
+.page-header {
+	margin-bottom: 15px;
 }
 
 /*Comment*/
@@ -1062,8 +1066,8 @@ footer#colophon a {
 footer#colophon .footer-nav-wrapper,
 footer#colophon .copyright,
 footer#colophon .footer-powered-by {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .footer-navigation ul {
