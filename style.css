@@ -484,6 +484,10 @@ a:active {
 	margin: 0 auto;
 }
 
+.wp-post-image {
+	margin-bottom: 10px;
+}
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	overflow: hidden;
@@ -912,9 +916,7 @@ textarea {
 	border: none;
 	border-radius: 0;
 }
-.only-site-branding {
-	min-height: 152px;
-}
+
 .header-image-wrapper {
 	display: table;
 	overflow: hidden;
