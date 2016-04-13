@@ -1535,9 +1535,9 @@ a.scrollup:focus {
 
 /* Smaller than standard 1024 (devices and browsers) */
 @media only screen and ( max-width:1023px ) {
-	a {
+	/*a {
 		border: 1px yellow solid;
-	}
+	}*/
 	#secondary {
 		clear: both;
 	}
@@ -1554,9 +1554,9 @@ a.scrollup:focus {
 	body {
 		margin-top: 0;
 	}
-	a {
+	/*a {
 		border: 1px blue solid;
-	}
+	}*/
 	.header-image-wrapper div.site-branding {
 		margin-top: 0;
 		padding: 0;
@@ -1568,9 +1568,9 @@ a.scrollup:focus {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and ( max-width:479px ) {
-	a {
+	/*a {
 		border: 1px green solid;
-	}
+	}*/
 	.footer-powered-by .sep {
 		display: table-column;
 		clear: both;
