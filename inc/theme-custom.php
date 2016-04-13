@@ -109,12 +109,12 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 		$slider_status_2 = blue_planet_get_option( 'slider_status_2' );
 
 		if ( 'none' !== $slider_status_2 &&  ( is_home() || is_front_page() ) ) {
-			$slider_category_2 = esc_attr( $bp_options['slider_category_2'] );
-			$number_of_slides_2 = esc_attr( $bp_options['number_of_slides_2'] );
+			$slider_category_2  = absint( $bp_options['slider_category_2'] );
+			$number_of_slides_2 = absint( $bp_options['number_of_slides_2'] );
 			$args = array(
 				'posts_per_page' => $number_of_slides_2,
 				'meta_query'     => array(
-					array( 'key' => '_thumbnail_id' ), // Show only posts with featured images
+					array( 'key' => '_thumbnail_id' ),
 				  ),
 				);
 			if ( absint( $slider_category_2 ) > 0  ) {
@@ -165,10 +165,10 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 									echo '/>';
 									?>
                                 </a>
-                            <?php }//endforeach ?>
+                            <?php } // Endforeach. ?>
                           </div>
 
-							<?php endif ?>
+							<?php endif; ?>
 
 
 					<?php unset( $slide ); ?>

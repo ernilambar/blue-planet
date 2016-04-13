@@ -39,7 +39,7 @@
 			</header><!-- #masthead -->
 
 	    <?php do_action( 'blue_planet_after_masthead_close' ); ?>
-	    <nav role="navigation" class="blueplanet-nav" id="site-navigation">
+	    <nav role="navigation" class="blueplanet-nav" id="site-navigation" aria-label="<?php _e( 'Primary Menu', 'blue-planet' ); ?>">
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) : ?>
 
