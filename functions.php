@@ -67,7 +67,7 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		require( get_template_directory() . '/inc/blueplanet-themeoptions-defaults.php' );
 
         // Editor style.
-        add_editor_style( 'editor-style.css' );
+        add_editor_style();
 
         /**
          * Enable support for footer widgets.

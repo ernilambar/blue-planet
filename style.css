@@ -197,27 +197,21 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 30px;
 	font-size: 28px;
 }
 h2 {
-	font-size: 28px;
 	font-size: 26px;
 }
 h3 {
-	font-size: 24px;
 	font-size: 22px;
 }
 h4 {
-	font-size: 20px;
 	font-size: 18px;
 }
 h5 {
-	font-size: 18px;
 	font-size: 16px;
 }
 h6 {
-	font-size: 16px;
 	font-size: 14px;
 }
 hr {
@@ -475,14 +469,13 @@ a,
 a:visited,
 a:link {
 	color: #2a6496;
-}
-a {
 	text-decoration: none;
 }
 a:hover,
 a:focus,
 a:active {
 	color: #404040;
+	text-decoration: underline;
 }
 
 /* Alignment */
