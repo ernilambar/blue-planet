@@ -1198,6 +1198,9 @@ footer.entry-meta {
 	display: block;
 	overflow: hidden;
 	height: auto;
+	border-top: 3px #EEE solid;
+	border-radius: 0;
+	padding-top: 10px;
 }
 .pagination .page-numbers,
 .pagination .page-links a {
@@ -1445,48 +1448,40 @@ ol.comment-list li ul {
 ol.comment-list li ul.children {
 	list-style-type: none;
 }
-a.comment-reply-link {
-	margin-bottom: 10px;
-	padding: 2px 5px;
-	color: #fff;
-	background-color: #32698b;
-	font-size: 12px;
-	text-decoration: none;
-}
-a.comment-reply-link:hover {
-	color: #ddd!important;
-	text-decoration: none!important;
-}
-a.readmore {
-	display: table;
-	clear: both;
-	margin-top: 5px;
-	padding: 2px 5px;
-	border: 1px #2a6496 solid;
-	color: #fff;
-	background-color: #32698b;
-	float: right;
+a.comment-reply-link:before {
+	margin-right: 5px;
+	color: #666;
+	font-family: "Genericons";
+	font-size: 18px;
+	font-style: normal;
+	vertical-align: middle;
+	content: "\f467";
 }
 
 /* Goto top */
-.scrollup {
+a.scrollup {
 	display: none;
 	position: fixed;
 	right: 30px;
 	bottom: 50px;
 	width: 40px;
 	height: 40px;
-	border: none;
+	text-decoration: none;
+	/*border: 1px #CCC solid;*/
 	outline: none;
-	opacity: 0.6;
-	background: url("images/icon_top.png") no-repeat;
-	text-indent: -9999px;
+	border-radius: 5px;
+	background-color: #333;
 }
-a.scrollup:active,
+a.scrollup .genericon{
+	color: #FFF;
+	font-size: 40px;
+	vertical-align: middle;
+}
 a.scrollup:focus {
-	outline: none;
+	border: 1px #FFF solid;
+	border-radius: 5px;
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6);
 }
-
 .search-form {
 	margin: 10px 0;
 }

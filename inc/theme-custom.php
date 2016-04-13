@@ -340,7 +340,7 @@ if ( ! function_exists( 'blue_planet_goto_top' ) ) :
 
 		$flg_enable_goto_top = blue_planet_get_option( 'flg_enable_goto_top' );
 		if ( $flg_enable_goto_top ) {
-			echo '<a href="#" class="scrollup">'. __( 'Scroll', 'blue-planet' ) . '</a>';
+			echo '<a href="#" class="scrollup"><span class="genericon genericon-collapse" aria-hidden="true"></span><span class="screen-reader-text">'. __( 'Go to top', 'blue-planet' ) . '</span></a>';
 		}
 	}
 endif;
