@@ -36,14 +36,19 @@
 			<?php
 				the_content( sprintf(
 					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blue-planet' ), array( 'span' => array( 'class' => array() ) ) ),
+					wp_kses( __( 'Continue reading %s', 'blue-planet' ), array( 'span' => array( 'class' => array() ) ) ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				) );
 
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blue-planet' ),
-					'after'  => '</div>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'blue-planet' ) . '</span>',
+					'after'       => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>%',
+					'separator'   => '<span class="screen-reader-text">, </span>',
 				) );
+
 			?>
 		<?php endif; ?>
 

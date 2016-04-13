@@ -692,7 +692,10 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
+.page-links a,
+.page-links > span {
+	margin-right: 5px;
+}
 
 /* =Asides
 ----------------------------------------------- */

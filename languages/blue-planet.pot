@@ -27,7 +27,8 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive.php:34 index.php:45 search.php:30
+#: archive.php:34 content-page.php:24 content-single.php:27 content.php:48
+#: index.php:37 search.php:30
 msgid "Page"
 msgstr ""
 
@@ -71,22 +72,22 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:30 inc/template-tags.php:104
+#: content-page.php:34 inc/template-tags.php:104
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
 #: content.php:39
 #. translators: %s: Name of current post.
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading %s"
 msgstr ""
 
-#: functions.php:53 header.php:46
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:54
+#: footer.php:20 functions.php:54
 msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:53 header.php:42 header.php:46
+msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:98 sidebar.php:23
@@ -494,28 +495,28 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/theme-custom.php:42
+#: inc/theme-custom.php:45
 msgid "Recommended image sizes"
 msgstr ""
 
-#: inc/theme-custom.php:43
+#: inc/theme-custom.php:46
 msgid "Secondary Slider : %dpx X %dpx"
 msgstr ""
 
-#: inc/theme-custom.php:230
+#: inc/theme-custom.php:233
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/theme-custom.php:230
+#: inc/theme-custom.php:233
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/theme-custom.php:232
+#: inc/theme-custom.php:235
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: inc/theme-custom.php:343
-msgid "Scroll"
+#: inc/theme-custom.php:348
+msgid "Go to top"
 msgstr ""
 
 #: inc/theme-functions.php:33
@@ -630,12 +631,12 @@ msgstr ""
 msgid "Sidebar-Content"
 msgstr ""
 
-#: archive.php:32 index.php:43 search.php:28
+#: archive.php:32 index.php:35 search.php:28
 msgctxt "posts navigation"
 msgid "&larr; Previous"
 msgstr ""
 
-#: archive.php:33 index.php:44 search.php:29
+#: archive.php:33 index.php:36 search.php:29
 msgctxt "posts navigation"
 msgid "Next &rarr;"
 msgstr ""
