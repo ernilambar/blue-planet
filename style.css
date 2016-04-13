@@ -891,19 +891,20 @@ textarea {
 	position: inherit;
 	z-index: 99989;
 	top: 0;
-	/*height: 100% !important;*/
 	left: 0;
 }
 .site-title {
 	margin: 10px 10px 5px 10px ;
-	font-size: 25px;
+	font-size: 30px;
 }
 .site-title > a {
 	color: #fff;
-	font-size: 105%;
 	font-weight: normal;
 	text-decoration: none;
 }
+/*.site-title > a:hover {
+	color: #eee;
+}*/
 
 .site-description {
 	margin: 5px 10px 10px 10px;
