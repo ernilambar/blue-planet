@@ -621,6 +621,12 @@ a:active {
 .blueplanet-nav > div > ul > li.menu-item-has-children > a {
 	padding-right: 18px;
 }
+.blueplanet-nav .current-menu-item > a,
+.blueplanet-nav .current-menu-ancestor > a,
+.blueplanet-nav .current_page_item > a,
+.blueplanet-nav .current_page_ancestor > a {
+    background-color: #27526D;
+}
 
 /*.main-navigation {
 	clear: both;
@@ -1587,6 +1593,7 @@ a.scrollup:focus {
 	width: calc( 100% - 100px );
 	max-width: 260px;
 	height: 20px;
+	min-height: 20px;
 	margin: 0;
 	padding: 6px 8px;
 	border: 1px #32698b solid;
