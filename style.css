@@ -1486,20 +1486,18 @@ a.scrollup {
 	width: 40px;
 	height: 40px;
 	text-decoration: none;
-	/*border: 1px #CCC solid;*/
 	outline: none;
 	border-radius: 5px;
-	background-color: #333;
+	background-color: #555;
 }
 a.scrollup .genericon{
 	color: #FFF;
 	font-size: 40px;
 	vertical-align: middle;
 }
+a.scrollup:hover,
 a.scrollup:focus {
-	border: 1px #FFF solid;
-	border-radius: 5px;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6);
+	background-color: #333;
 }
 .search-form {
 	margin: 10px 0;
