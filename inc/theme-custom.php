@@ -363,10 +363,12 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img id="bs-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
                             <div class="site-branding">
                                 <div class="site-info">
-                                    <h1 class="site-title">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                                    </h1>
-                                    <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                                    <?php if ( is_front_page() && is_home() ) : ?>
+                                    		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    	<?php else : ?>
+                                    		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                    	<?php endif; ?>
+                                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                                 </div>
                             </div>
                     </div>
@@ -377,10 +379,12 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
             <div class="only-site-branding">
                 <div class="site-branding">
                     <div class="site-info">
-                        <h1 class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </h1>
-                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	                    <?php if ( is_front_page() && is_home() ) : ?>
+	                    		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	                    	<?php else : ?>
+	                    		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	                    	<?php endif; ?>
+	                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                     </div>
                 </div>
             </div>  <!-- .only-site-branding -->
