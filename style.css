@@ -567,6 +567,7 @@ a:active {
 	color: #fff;
 	line-height: 48px;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .blueplanet-nav ul ul {
@@ -621,10 +622,10 @@ a:active {
 .blueplanet-nav > div > ul > li.menu-item-has-children > a {
 	padding-right: 18px;
 }
-.blueplanet-nav .current-menu-item > a,
-.blueplanet-nav .current-menu-ancestor > a,
-.blueplanet-nav .current_page_item > a,
-.blueplanet-nav .current_page_ancestor > a {
+.blueplanet-nav div > ul > .current-menu-item > a,
+.blueplanet-nav div > ul > .current-menu-ancestor > a,
+.blueplanet-nav div > ul > .current_page_item > a,
+.blueplanet-nav div > ul > .current_page_ancestor > a {
     background-color: #27526D;
 }
 
