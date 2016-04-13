@@ -292,7 +292,8 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 		} //end main if
 	}
 endif;
-add_action( 'blue_planet_after_content_open','blue_planet_add_main_slider' );
+
+add_action( 'blue_planet_before_content_open','blue_planet_add_main_slider' );
 
 if ( ! function_exists( 'blue_planet_header_social' ) ) :
 	/**

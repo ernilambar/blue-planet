@@ -60,5 +60,8 @@
 
 		<div class="clear"></div>
 
+    <?php do_action( 'blue_planet_before_content_open' ); ?>
+
     <div id="content" class="site-content">
+
     <?php do_action( 'blue_planet_after_content_open' ); ?>

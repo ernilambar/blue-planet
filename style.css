@@ -664,7 +664,7 @@ a:active {
 /* =Content
 ----------------------------------------------- */
 #content {
-	margin-top: 20px;
+	margin-top: 15px;
 }
 .sticky {
 	display: block;
@@ -1231,10 +1231,9 @@ footer.entry-meta {
 	font-weight: bold;
 }
 
-/*slider*/
+/* slider */
 .main-slider-wrapper {
-	overflow: hidden;
-	height: auto;
+	margin-top: 15px;
 }
 .main-slider-wrapper img {
 	width: 100%;
