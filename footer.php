@@ -23,7 +23,7 @@
 				  'container'       => 'div',
 				  'container_class' => 'footer-nav-wrapper',
 				  'menu_class'      => 'footer-nav',
-				  'fallback_cb'     => '',
+				  'fallback_cb'     => false,
 				  'link_after'      => '<span class="pipe">|</span>',
 				  )
 			  );

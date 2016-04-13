@@ -20,6 +20,9 @@ function blue_planet_body_classes( $classes ) {
     if ( get_header_image() ) {
     	$classes[] = 'custom-header-enabled';
     }
+    else {
+    	$classes[] = 'custom-header-disabled';
+    }
 
     return $classes;
 }
@@ -282,14 +285,14 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
 						?>
 						<?php echo $link_close; ?>
 
-					<?php endforeach ?>
+					<?php endforeach; ?>
 
                 </div>
               </div>
             </div>
 
             <?php
-		} //end main if
+		} // End main if.
 	}
 endif;
 
