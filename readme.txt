@@ -101,10 +101,12 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 * Initial Submission to WordPress.org
 
 == Credits ==
-
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Nivo Slider http://nivo.dev7studios.com/, Copyright 2012, Dev7studios, [MIT](http://opensource.org/licenses/MIT)
 * jquery.meanmenu.js https://github.com/weare2ndfloor/meanMenu/, (C) 2012-2013 Chris Wharton, [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
 * Bootstrap http://getbootstrap.com/, (C) Twitter, Inc, [MIT](http://opensource.org/licenses/MIT)
 * Genericons icon font http://www.genericons.com/, (C) 2013-2015 Automattic.com, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+== Images ==
+* CC0 - https://pixabay.com/en/blue-sky-night-romantic-259458/

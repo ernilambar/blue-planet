@@ -971,12 +971,13 @@ div.site-branding {
 .widget-title,
 .widget-title a,
 .widget-title a:hover {
-	padding: 6px 10px 6px 20px;
+	padding: 10px 20px;
 	color: #fff;
 	background: none repeat scroll 0 0 #00adb3;
 	font-size: 20px;
 	font-weight: normal;
 	text-decoration: none;
+	line-height: 1;
 }
 .widget-area ul,
 .widget-area ol,
@@ -1229,7 +1230,6 @@ footer.entry-meta {
 	overflow: hidden;
 	width: 100%;
 	height: auto;
-	margin-top: 20px;
 }
 
 /**/
@@ -1252,6 +1252,7 @@ footer.entry-meta {
 }
 .bp_social_widget .social-wrapper {
 	text-align: left;
+	margin-top: 15px;
 }
 .social-wrapper {
 	display: block;

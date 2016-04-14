@@ -67,10 +67,10 @@ function blue_planet_get_default_options() {
 		'banner_background_color'      => '#00ADB3',
 		'search_placeholder'           => esc_html__( 'Search...', 'blue-planet' ),
 		'flg_hide_search_box'          => 1,
-		'flg_hide_social_icons'        => 0,
+		'flg_hide_social_icons'        => 1,
 		'copyright_text'               => esc_html__( 'Copyright &copy; All Rights Reserved.', 'blue-planet' ),
 		'flg_hide_powered_by'          => 0,
-		'flg_hide_footer_social_icons' => 1,
+		'flg_hide_footer_social_icons' => 0,
 		'default_layout'               => 'right-sidebar',
 		'content_layout'               => 'excerpt', // Archive layout.
 		'archive_image'                => 'large',
