@@ -110,3 +110,4 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 
 == Images ==
 * CC0 - https://pixabay.com/en/blue-sky-night-romantic-259458/
+* CC0 - https://pixabay.com/en/girl-woman-female-young-hair-ivy-984060/
