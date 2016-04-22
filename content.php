@@ -25,7 +25,9 @@
 
 	<div class="entry-content">
 		<?php if ( has_post_thumbnail() && 'disable' !== $archive_image ) : ?>
-			<?php the_post_thumbnail( esc_attr( $archive_image ), array( 'class' => esc_attr( 'align' . $archive_image_alignment ) ) ); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( esc_attr( $archive_image ), array( 'class' => esc_attr( 'align' . $archive_image_alignment ) ) ); ?>
+			</a>
 		<?php endif; ?>
 
 		<?php if ( 'excerpt' === $content_layout || 'excerpt-thumb' === $content_layout ) : ?>
