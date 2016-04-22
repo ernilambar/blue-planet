@@ -561,7 +561,6 @@ a:active {
 
 .blueplanet-nav {
 	display: block;
-	float: left;
 	clear: both;
 	width: 100%;
 	background-color: #32698b;
@@ -574,8 +573,12 @@ a:active {
 }
 
 .blueplanet-nav li {
-	float: left;
 	position: relative;
+	display: inline-block;
+}
+.blueplanet-nav li ul li {
+	float: left;
+	text-align: left;
 }
 .blueplanet-nav a {
 	display: block;
