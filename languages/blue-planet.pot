@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License Version 3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blue Planet 3.0\n"
+"Project-Id-Version: Blue Planet 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-12 21:34+0530\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive.php:34 content-page.php:24 content-single.php:27 content.php:48
+#: archive.php:34 content-page.php:24 content-single.php:27 content.php:50
 #: index.php:37 search.php:30
 msgid "Page"
 msgstr ""
@@ -68,7 +68,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:20 content-single.php:23 content.php:44
+#: content-page.php:20 content-single.php:23 content.php:46
 msgid "Pages:"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: content.php:39
+#: content.php:41
 #. translators: %s: Name of current post.
 msgid "Continue reading %s"
 msgstr ""
