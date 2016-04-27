@@ -155,6 +155,7 @@ if ( ! function_exists( 'blue_planet_header_style' ) ) :
 			else :
 		?>
 			.site-title a,
+			.site-title a:visited,
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}

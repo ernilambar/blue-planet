@@ -918,21 +918,20 @@ textarea {
 	font-size: 30px;
 	line-height: 1.2;
 }
-.site-title > a,
-.site-title > a:visited {
-	color: #fff;
+.site-title a {
+	color: #FFF;
 	font-weight: normal;
 	text-decoration: none;
 	text-shadow: 1px 1px #32698b;
 }
-.site-title > a:hover {
+.site-title a:hover {
 	text-shadow: none;
 }
 
 .site-description {
 	margin: 5px 10px 10px 10px;
 	font-style: italic;
-	color: #fff;
+	color: #FFF;
 	text-shadow: 1px 1px #32698b;
 }
 #masthead > nav {
