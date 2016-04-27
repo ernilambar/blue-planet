@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License Version 3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blue Planet 3.1\n"
+"Project-Id-Version: Blue Planet 3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-12 21:34+0530\n"
 "MIME-Version: 1.0\n"
@@ -90,19 +90,19 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:98 sidebar.php:23
+#: functions.php:99 sidebar.php:23
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:101
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:107
+#: functions.php:108
 msgid "Menu Widget Area"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:110
 msgid "Widget area in the header. Specially for menu widget."
 msgstr ""
 
