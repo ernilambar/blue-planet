@@ -79,11 +79,12 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 
         // Custom header.
         add_theme_support( 'custom-header', apply_filters( 'blue_planet_custom_header_args', array(
-            'default-image'      => '',
-            'default-text-color' => '#ffffff',
-            'width'              => 1140,
-            'height'             => 152,
-            'flex-height'        => true,
+			'default-image'      => '',
+			'default-text-color' => '#ffffff',
+			'width'              => 1140,
+			'height'             => 152,
+			'flex-height'        => true,
+			'wp-head-callback'   => 'blue_planet_header_style',
         ) ) );
 
 	}
