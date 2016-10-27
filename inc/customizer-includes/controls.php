@@ -62,40 +62,6 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 }
 
 /**
- * Customize Control for Message.
- *
- * @since 1.0.0
- *
- * @see WP_Customize_Control
- */
-class Blue_Planet_Customize_Message_Control extends WP_Customize_Control {
-
-	/**
-	 * Control type.
-	 *
-	 * @access public
-	 * @var string
-	 */
-	public $type = 'message';
-
-	/**
-	 * Render content.
-	 *
-	 * @since 1.0.0
-	 */
-	public function render_content() {
-	?>
-	<?php if ( ! empty( $this->label ) ) : ?>
-		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-	<?php endif; ?>
-	<?php if ( ! empty( $this->description ) ) : ?>
-		<span class="description customize-control-description bp-customize-message"><?php echo $this->description; ?></span>
-	<?php endif; ?>
-	<?php
-	}
-}
-
-/**
  * Customize Control for Taxonomy Select.
  *
  * @since 1.0.0
