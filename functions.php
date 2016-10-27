@@ -46,7 +46,7 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		 * Enable support for Post Thumbnails on posts and pages.
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'homepage-thumb', 285, 215, true ); // (cropped)
+		add_image_size( 'homepage-thumb', 285, 215, true ); // Cropped image.
 
 		// Register nav menu.
 		register_nav_menus( array(

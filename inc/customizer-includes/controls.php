@@ -137,17 +137,17 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 	?>
     <label>
       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-         <select <?php echo $this->link(); ?>>
+         <select <?php $this->link(); ?>>
             <?php
 			  printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '&mdash; Select &mdash;', 'blue-planet' ) );
 				?>
-            <?php if ( ! empty( $all_taxonomies ) ) :  ?>
-				<?php foreach ( $all_taxonomies as $key => $tax ) :  ?>
+            <?php if ( ! empty( $all_taxonomies ) ) : ?>
+				<?php foreach ( $all_taxonomies as $key => $tax ) : ?>
                 <?php
 				  printf( '<option value="%s" %s>%s</option>', $tax->term_id, selected( $this->value(), $tax->term_id, false ), $tax->name );
 					?>
-				<?php endforeach ?>
-			<?php endif ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
          </select>
 
     </label>
