@@ -31,8 +31,7 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 	 *
 	 * @since 1.0.0
 	 */
-	public function render_content() {
-	}
+	public function render_content() {}
 
 	/**
 	 * Add custom parameters to pass to the JS via JSON.
@@ -167,32 +166,5 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 	 *
 	 * @since 1.0.0
 	 */
-	public function render_content() {
-		return;
-
-		$tax_args = array(
-		'hierarchical' => 0,
-		'taxonomy'     => $this->taxonomy,
-		);
-		$all_taxonomies = get_categories( $tax_args );
-
-	?>
-    <label>
-      <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-         <select <?php $this->link(); ?>>
-            <?php
-			  printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '&mdash; Select &mdash;', 'blue-planet' ) );
-				?>
-            <?php if ( ! empty( $all_taxonomies ) ) : ?>
-				<?php foreach ( $all_taxonomies as $key => $tax ) : ?>
-                <?php
-				  printf( '<option value="%s" %s>%s</option>', $tax->term_id, selected( $this->value(), $tax->term_id, false ), $tax->name );
-					?>
-				<?php endforeach; ?>
-			<?php endif; ?>
-         </select>
-
-    </label>
-    <?php
-	}
+	public function render_content() {}
 }
