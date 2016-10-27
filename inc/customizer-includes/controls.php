@@ -32,8 +32,31 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 	 * @since 1.0.0
 	 */
 	public function render_content() {
+	}
+
+	/**
+	 * Add custom parameters to pass to the JS via JSON.
+	 *
+	 * @since 1.0.0
+	 */
+	public function to_json() {
+		parent::to_json();
+
+		$this->json['value'] = $this->value();
+		$this->json['link']  = $this->get_link();
+		$this->json['id']    = $this->id;
+	}
+
+	/**
+	 * Content template.
+	 *
+	 * @since 1.0.0
+	 */
+	public function content_template() {
 	?>
-      <h3 class="bp-customize-heading"><?php echo esc_html( $this->label ); ?></h3><!-- .bp-customize-heading -->
+      <# if ( data.label ) { #>
+      	<h3 class="bp-customize-heading">{{ data.label }}</h3>
+      <# } #>
     <?php
 	}
 }

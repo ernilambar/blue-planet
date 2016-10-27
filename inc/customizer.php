@@ -21,6 +21,8 @@ function blue_planet_customize_register( $wp_customize ) {
 	// Custom Controls.
 	require get_template_directory() . '/inc/customizer-includes/controls.php';
 
+	$wp_customize->register_control_type( 'Blue_Planet_Customize_Heading_Control' );
+
 	// Theme Settings.
 	require get_template_directory() . '/inc/customizer-includes/theme.php';
 
