@@ -28,6 +28,7 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 
 = 3.3 - Oct 27 2016 =
+* Update: Partial refresh for site identity in Customizer
 * Update: Remove deprecated theme tags
 * Fix: Minor bug fixes
 
