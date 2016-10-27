@@ -1,11 +1,9 @@
 === Blue Planet ===
 
 Contributors: rabmalin
-Tags: light, blue, green, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready, responsive-layout, threaded-comments
-
-Requires at least: 4.3
-Tested up to: 4.5
-Stable tag: 3.2
+Requires at least: 4.5
+Tested up to: 4.7
+Stable tag: 3.3
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,6 +26,10 @@ Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress
 Blue Planet includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 3.3 - Oct 27 2016 =
+* Update: Remove deprecated theme tags
+* Fix: Minor bug fixes
 
 = 3.2 - Apr 27 2016 =
 * Fix: Issue of header text and color

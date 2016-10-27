@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License Version 3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blue Planet 3.2\n"
+"Project-Id-Version: Blue Planet 3.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-12 21:34+0530\n"
 "MIME-Version: 1.0\n"
