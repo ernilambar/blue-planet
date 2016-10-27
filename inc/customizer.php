@@ -18,10 +18,6 @@ function blue_planet_customize_register( $wp_customize ) {
 	$new_defaults = blue_planet_get_default_options();
 	$options = blue_planet_get_option_all();
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
 	// Custom Controls.
 	require get_template_directory() . '/inc/customizer-includes/controls.php';
 
@@ -37,11 +33,3 @@ function blue_planet_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'blue_planet_customize_register' );
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function blue_planet_customize_preview_js() {
-	wp_enqueue_script( 'blue_planet_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'blue_planet_customize_preview_js' );
