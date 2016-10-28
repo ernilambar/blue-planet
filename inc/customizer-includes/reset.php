@@ -14,13 +14,15 @@
 			'capability'  => 'edit_theme_options',
 		)
 	);
+
 	// Setting - reset_theme_settings.
 	$wp_customize->add_setting( 'blueplanet_options[reset_theme_settings]',
 		array(
-			'default'           => $new_defaults['reset_theme_settings'],
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'blue_planet_reset_all_theme_settings',
-			'transport'         => 'postMessage',
+			'default'              => $new_defaults['reset_theme_settings'],
+			'capability'           => 'edit_theme_options',
+			'transport'            => 'postMessage',
+			'sanitize_callback'    => 'blue_planet_sanitize_checkbox_input',
+			'sanitize_js_callback' => 'blue_planet_sanitize_checkbox_output',
 		)
 	);
 	$wp_customize->add_control(

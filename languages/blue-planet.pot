@@ -162,7 +162,7 @@ msgstr ""
 msgid "Full (original)"
 msgstr ""
 
-#: inc/customizer-includes/reset.php:11 inc/customizer-includes/reset.php:29
+#: inc/customizer-includes/reset.php:11 inc/customizer-includes/reset.php:31
 msgid "Reset Theme Settings"
 msgstr ""
 
