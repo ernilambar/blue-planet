@@ -10,8 +10,9 @@
 		array(
 			'title'       => esc_html__( 'Reset Theme Settings', 'blue-planet' ),
 			'description' => esc_html__( 'Caution: This will delete your customization and reset to default as installed first time. Please refresh the page to see effect.', 'blue-planet' ),
-			'priority'    => 200,
+			'priority'    => 900,
 			'capability'  => 'edit_theme_options',
+			'panel'       => 'blue_planet_options_panel',
 		)
 	);
 
