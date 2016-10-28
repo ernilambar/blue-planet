@@ -3,7 +3,7 @@
 Contributors: rabmalin
 Requires at least: 4.4
 Tested up to: 4.6.1
-Stable tag: 3.3
+Stable tag: 3.4
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,10 @@ Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress
 Blue Planet includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 3.4 - Oct 30 2016 =
+* Update: JS rendered custom controls
+* Fix: Minor bug fixes
 
 = 3.3 - Oct 27 2016 =
 * Update: Partial refresh for site identity in Customizer

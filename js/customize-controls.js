@@ -1,6 +1,6 @@
 ( function( $, api ) {
 
-	/* === Select Group Control === */
+	/* === Dropdown Taxonomies Control === */
 
 	api.controlConstructor['dropdown-taxonomies'] = api.Control.extend( {
 		ready: function() {
