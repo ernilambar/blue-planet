@@ -122,7 +122,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: inc/customizer-includes/controls.php:142
+#: inc/customizer-includes/controls.php:116
 msgid "&mdash; Select &mdash;"
 msgstr ""
 

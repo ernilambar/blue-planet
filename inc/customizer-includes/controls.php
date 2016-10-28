@@ -113,6 +113,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 		$all_taxonomies = get_categories( $tax_args );
 
 		$choices = array();
+		$choices[0] = esc_html__( '&mdash; Select &mdash;', 'blue-planet' );
 		if ( ! empty( $all_taxonomies ) && ! is_wp_error( $all_taxonomies ) ) {
 			foreach ( $all_taxonomies as $tax ) {
 				$choices[ $tax->term_id ] = $tax->name;
@@ -123,6 +124,16 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 
 		parent::__construct( $manager, $id, $args );
 	}
+
+	/**
+	 * Enqueue scripts/styles.
+	 *
+	 * @since  1.0.0
+	 */
+	public function enqueue() {
+		wp_enqueue_script( 'blue-planet-customize-controls' );
+	}
+
 
 	/**
 	 * Add custom parameters to pass to the JS via JSON.
@@ -155,7 +166,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 			<select {{{ data.link }}} name="_customize-{{ data.type }}-{{ data.id }}" id="{{ data.id }}">
 				<# _.each( data.choices, function( label, choice ) { #>
 
-					<option value="{{ choice }}" <# if ( choice === data.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+					<option value="{{ choice }}" <# if ( choice === data.value ) { #> selected="selected" <# } #>>{{{ label }}}</option>
 
 				<# } ) #>
 			</select>

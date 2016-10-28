@@ -89,3 +89,16 @@ function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
     ) );
 }
 add_action( 'customize_register', 'blue_planet_customizer_partials', 99 );
+
+
+/**
+ * Register customizer controls scripts.
+ *
+ * @since 3.3.0
+ */
+function blue_planet_customize_controls_register_scripts() {
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	wp_register_script( 'blue-planet-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'customize-controls' ), null, true );
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'blue_planet_customize_controls_register_scripts', 0 );
