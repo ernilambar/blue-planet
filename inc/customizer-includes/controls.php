@@ -147,7 +147,6 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 		$this->json['link']    = $this->get_link();
 		$this->json['value']   = $this->value();
 		$this->json['id']      = $this->id;
-		$this->json['name']    = '_customize-dropdown-taxonomies-' . $this->id;
 	}
 
 	/**
@@ -157,6 +156,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 	 */
 	public function content_template() {
 		?>
+			<label>
 			<# if ( data.label ) { #>
 				<span class="customize-control-title">{{ data.label }}</span>
 			<# } #>
@@ -170,6 +170,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 
 				<# } ) #>
 			</select>
+			</label>
 		<?php
 	}
 
