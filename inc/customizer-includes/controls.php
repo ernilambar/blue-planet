@@ -136,6 +136,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 		$this->json['link']    = $this->get_link();
 		$this->json['value']   = $this->value();
 		$this->json['id']      = $this->id;
+		$this->json['name']    = '_customize-dropdown-taxonomies-' . $this->id;
 	}
 
 	/**
@@ -151,7 +152,7 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 			<# if ( data.description ) { #>
 				<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
-			<select {{{ data.link }}}>
+			<select {{{ data.link }}} name="_customize-{{ data.type }}-{{ data.id }}" id="{{ data.id }}">
 				<# _.each( data.choices, function( label, choice ) { #>
 
 					<option value="{{ choice }}" <# if ( choice === data.value ) { #> selected="selected" <# } #>>{{ label }}</option>
