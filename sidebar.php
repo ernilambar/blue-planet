@@ -24,8 +24,8 @@
 			'text'  => esc_html__( 'Widgets of Sidebar will be displayed here.', 'blue-planet' ),
 			);
 		$args = array(
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title'  => '</h2>',
 			);
 		the_widget( $widget, $instance, $args );
 		?>
