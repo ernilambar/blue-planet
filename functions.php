@@ -129,7 +129,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap' . $min . '.css', false ,'3.3.6' );
 		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/thirdparty/genericons/genericons' . $min . '.css', array(), '3.4.1' );
         wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu' . $min . '.css', false ,'2.0.6' );
-        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), '3.2' );
+        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), '3.5' );
 
         $banner_background_color = blue_planet_get_option( 'banner_background_color' );
         $custom_css = blue_planet_get_option( 'custom_css' );
