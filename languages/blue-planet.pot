@@ -126,39 +126,39 @@ msgstr ""
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:157
+#: inc/customizer-includes/helper.php:135
 msgid "On"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:158
+#: inc/customizer-includes/helper.php:136
 msgid "Off"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:179
+#: inc/customizer-includes/helper.php:157
 msgid "Show"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:180
+#: inc/customizer-includes/helper.php:158
 msgid "Hide"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:272
+#: inc/customizer-includes/helper.php:250
 msgid "No Image"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:274
+#: inc/customizer-includes/helper.php:252
 msgid "Thumbnail"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:275
+#: inc/customizer-includes/helper.php:253
 msgid "Medium"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:276
+#: inc/customizer-includes/helper.php:254
 msgid "Large"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:277
+#: inc/customizer-includes/helper.php:255
 msgid "Full (original)"
 msgstr ""
 
@@ -648,97 +648,97 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer-includes/helper.php:119
+#: inc/customizer-includes/helper.php:97
 msgctxt "Transition Effect"
 msgid "boxRain"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:120
+#: inc/customizer-includes/helper.php:98
 msgctxt "Transition Effect"
 msgid "boxRainGrow"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:121
+#: inc/customizer-includes/helper.php:99
 msgctxt "Transition Effect"
 msgid "boxRainReverse"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:122
+#: inc/customizer-includes/helper.php:100
 msgctxt "Transition Effect"
 msgid "boxRainGrowReverse"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:123
+#: inc/customizer-includes/helper.php:101
 msgctxt "Transition Effect"
 msgid "boxRandom"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:124
+#: inc/customizer-includes/helper.php:102
 msgctxt "Transition Effect"
 msgid "fade"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:125
+#: inc/customizer-includes/helper.php:103
 msgctxt "Transition Effect"
 msgid "fold"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:126
+#: inc/customizer-includes/helper.php:104
 msgctxt "Transition Effect"
 msgid "random"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:127
+#: inc/customizer-includes/helper.php:105
 msgctxt "Transition Effect"
 msgid "sliceDown"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:128
+#: inc/customizer-includes/helper.php:106
 msgctxt "Transition Effect"
 msgid "sliceDownLeft"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:129
+#: inc/customizer-includes/helper.php:107
 msgctxt "Transition Effect"
 msgid "sliceUp"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:130
+#: inc/customizer-includes/helper.php:108
 msgctxt "Transition Effect"
 msgid "sliceUpDown"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:131
+#: inc/customizer-includes/helper.php:109
 msgctxt "Transition Effect"
 msgid "sliceUpDownLeft"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:132
+#: inc/customizer-includes/helper.php:110
 msgctxt "Transition Effect"
 msgid "slideInRight"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:133
+#: inc/customizer-includes/helper.php:111
 msgctxt "Transition Effect"
 msgid "slideInLeft"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:243
+#: inc/customizer-includes/helper.php:221
 msgctxt "Alignment"
 msgid "None"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:244
+#: inc/customizer-includes/helper.php:222
 msgctxt "Alignment"
 msgid "Left"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:245
+#: inc/customizer-includes/helper.php:223
 msgctxt "Alignment"
 msgid "Center"
 msgstr ""
 
-#: inc/customizer-includes/helper.php:246
+#: inc/customizer-includes/helper.php:224
 msgctxt "Alignment"
 msgid "Right"
 msgstr ""

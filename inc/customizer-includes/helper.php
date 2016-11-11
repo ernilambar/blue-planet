@@ -6,28 +6,6 @@
  */
 
 /**
- * Reset theme settings.
- *
- * @since 1.0.0
- *
- * @param int $input Input value.
- * @return bool Always false.
- */
-function blue_planet_reset_all_theme_settings( $input ) {
-
-	if ( true === $input ) {
-
-		$defaults = blue_planet_get_default_options();
-		$key      = 'blueplanet_options';
-
-		set_theme_mod( $key, $defaults );
-
-	}
-	return false;
-
-}
-
-/**
  * Sanitize checkbox for output.
  *
  * Customizer check callback: DB  -> Customizer.
@@ -154,8 +132,8 @@ if ( ! function_exists( 'blue_planet_get_on_off_options' ) ) :
 	function blue_planet_get_on_off_options() {
 
 		$choices = array(
-		'1' => __( 'On', 'blue-planet' ),
-		'0' => __( 'Off', 'blue-planet' ),
+			'1' => __( 'On', 'blue-planet' ),
+			'0' => __( 'Off', 'blue-planet' ),
 		);
 		return $choices;
 

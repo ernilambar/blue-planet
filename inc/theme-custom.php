@@ -449,3 +449,51 @@ if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
 
 endif;
 add_action( 'blue_planet_single_image', 'blue_planet_add_image_in_single_display' );
+
+if ( ! function_exists( 'blue_planet_import_custom_css' ) ) :
+
+	/**
+	 * Import Custom CSS.
+	 *
+	 * @since 3.5.0
+	 */
+	function blue_planet_import_custom_css() {
+
+		// Bail if not WP 4.7.
+		if ( ! function_exists( 'wp_get_custom_css_post' ) ) {
+			return;
+		}
+
+		$custom_css = blue_planet_get_option( 'custom_css' );
+
+		// Bail if there is no Custom CSS.
+		if ( empty( $custom_css ) ) {
+			return;
+		}
+
+		$stylesheet = get_stylesheet();
+		$args = array(
+			'post_content' => $custom_css,
+			'post_title'   => $stylesheet,
+			'post_name'    => sanitize_title( $stylesheet ),
+			'post_type'    => 'custom_css',
+			'post_status'  => 'publish',
+		);
+
+		// Update post if it already exists, otherwise create a new one.
+		$post = wp_get_custom_css_post( $stylesheet );
+		if ( $post ) {
+			$args['ID'] = $post->ID;
+			$post_id = wp_update_post( wp_slash( $args ) );
+		} else {
+			$post_id = wp_insert_post( wp_slash( $args ) );
+		}
+
+		// Remove from theme.
+		$options = blue_planet_get_option_all();
+		$options['custom_css'] = '';
+		set_theme_mod( 'blueplanet_options', $options );
+	}
+endif;
+
+add_action( 'after_setup_theme', 'blue_planet_import_custom_css', 99 );
