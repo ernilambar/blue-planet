@@ -471,28 +471,17 @@ if ( ! function_exists( 'blue_planet_import_custom_css' ) ) :
 			return;
 		}
 
-		$stylesheet = get_stylesheet();
-		$args = array(
-			'post_content' => $custom_css,
-			'post_title'   => $stylesheet,
-			'post_name'    => sanitize_title( $stylesheet ),
-			'post_type'    => 'custom_css',
-			'post_status'  => 'publish',
-		);
+		$core_css = wp_get_custom_css();
+		$return = wp_update_custom_css_post( $core_css . $custom_css );
 
-		// Update post if it already exists, otherwise create a new one.
-		$post = wp_get_custom_css_post( $stylesheet );
-		if ( $post ) {
-			$args['ID'] = $post->ID;
-			$post_id = wp_update_post( wp_slash( $args ) );
-		} else {
-			$post_id = wp_insert_post( wp_slash( $args ) );
+		if ( ! is_wp_error( $return ) ) {
+
+			// Remove from theme.
+			$options = blue_planet_get_option_all();
+			$options['custom_css'] = '';
+			set_theme_mod( 'blueplanet_options', $options );
 		}
 
-		// Remove from theme.
-		$options = blue_planet_get_option_all();
-		$options['custom_css'] = '';
-		set_theme_mod( 'blueplanet_options', $options );
 	}
 endif;
 
