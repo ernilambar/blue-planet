@@ -28,6 +28,7 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 
 = 3.6 - Dec 2 2016 =
+* Remove: Remove deprecated define variable
 * Fix: Minor bug fixes
 
 = 3.5 - Nov 12 2016 =
