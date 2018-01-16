@@ -92,7 +92,7 @@ if ( ! function_exists( 'blue_planet_custom_excerpt_length' ) ) :
 	 */
 	function blue_planet_custom_excerpt_length( $length ) {
 		$excerpt_length = blue_planet_get_option( 'excerpt_length' );
-		return apply_filters( 'blue_planet_filter_excerpt_length', esc_attr( $excerpt_length ) );
+		return apply_filters( 'blue_planet_filter_excerpt_length', absint( $excerpt_length ) );
 	}
 endif;
 
@@ -160,7 +160,7 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 									<?php
 									echo '<img src="'.esc_url( $slide['url'] ).'" alt="'.esc_attr( $slide['title'] ).'" ';
 									if ( 1 === $bp_options['slider_caption_2'] ) {
-										echo ' title="#htmlcaption-'.$slide['ID'].'" ';
+										echo ' title="#htmlcaption-'.$slide['ID'] . '" ';
 									}
 									echo '/>';
 									?>
@@ -177,7 +177,7 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
 					<?php if ( ! empty( $slide_data ) ) :  ?>
 
 						<?php foreach ( $slide_data as $slide ) { ?>
-                     <div id="<?php echo 'htmlcaption-'.$slide['ID']; ?>" class="nivo-html-caption">
+                     <div id="<?php echo 'htmlcaption-' . $slide['ID']; ?>" class="nivo-html-caption">
                         <h4><?php echo $slide['title']; ?></h4>
                         <?php echo $slide['excerpt']; ?>
 

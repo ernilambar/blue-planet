@@ -30,7 +30,7 @@ if ( ! function_exists( 'blue_planet_primary_navigation_fallback' ) ) :
     function blue_planet_primary_navigation_fallback() {
         echo '<div class="nav-menu">';
         echo '<ul>';
-        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . __( 'Home', 'blue-planet' ). '</a></li>';
+        echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'blue-planet' ). '</a></li>';
         wp_list_pages( array(
             'title_li' => '',
             'depth'    => 1,
