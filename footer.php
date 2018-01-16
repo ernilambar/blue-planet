@@ -17,7 +17,7 @@
     <?php do_action( 'blue_planet_after_footer_open' ); ?>
 		<div class="site-info">
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" role="navigation" aria-label="<?php _e( 'Footer Menu', 'blue-planet' ); ?>">
+				<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'blue-planet' ); ?>">
 					<?php
 					wp_nav_menu( array(
 						'theme_location'  => 'footer',
