@@ -43,7 +43,7 @@ if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 
         if ( 'post' === get_post_type( $post_id ) ) {
             $content .= '<strong>' . __( 'Recommended image sizes', 'blue-planet' ) . '</strong><br/>';
-            $content .= '<br/>' . sprintf( __( 'Secondary Slider : %dpx X %dpx', 'blue-planet' ), 720, 350 );
+            $content .= '<br/>' . sprintf( __( 'Secondary Slider : %1$dpx X %2$dpx', 'blue-planet' ), 720, 350 );
         }
 
         return $content;

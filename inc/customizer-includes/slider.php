@@ -17,7 +17,7 @@ $wp_customize->add_panel( 'blue_planet_slider_panel',
 $wp_customize->add_section( 'blue_planet_slider_main',
 	array(
 	  'title'       => __( 'Main Slider', 'blue-planet' ),
-	  'description' => sprintf( __( 'Recommended image size for banner slider : %dpx X %dpx', 'blue-planet' ), 1140, 250 ),
+	  'description' => sprintf( __( 'Recommended image size for banner slider : %1$dpx X %2$dpx', 'blue-planet' ), 1140, 250 ),
 	  'priority'    => 10,
 	  'capability'  => 'edit_theme_options',
 	  'panel'       => 'blue_planet_slider_panel',

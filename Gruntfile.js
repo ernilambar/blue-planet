@@ -101,8 +101,8 @@ module.exports = function( grunt ) {
 					'!Gruntfile.js',
 					'!test.php',
 					'!package.json',
+					'!package-lock.json',
 					'!node_modules/**',
-					'!languages/**',
 					'!docs/**',
 					'!tests/**'
 				],
