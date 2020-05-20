@@ -1,4 +1,2 @@
-js/html5shiv.js
-js/navigation.js
-js/respond.js
-js/skip-link-focus-fix.js
+scripts/navigation.js
+scripts/skip-link-focus-fix.js
