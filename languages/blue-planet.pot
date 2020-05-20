@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blue Planet 3.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/blue-planet\n"
-"POT-Creation-Date: 2020-05-20 10:56:17+00:00\n"
+"POT-Creation-Date: 2020-05-20 11:12:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,31 +81,31 @@ msgstr ""
 msgid "Continue reading %s"
 msgstr ""
 
-#: footer.php:20 functions.php:54
+#: footer.php:20 functions.php:50
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:53 header.php:42 header.php:46
+#: functions.php:49 header.php:47 header.php:51
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:99 sidebar.php:23
+#: functions.php:94 sidebar.php:23
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:96
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:108
+#: functions.php:103
 msgid "Menu Widget Area"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:105
 msgid "Widget area in the header. Specially for menu widget."
 msgstr ""
 
-#: header.php:24
+#: header.php:29
 msgid "Skip to content"
 msgstr ""
 
