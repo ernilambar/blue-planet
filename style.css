@@ -1601,3 +1601,20 @@ a.scrollup:focus {
 }
 
 /* RESPONSIVE ENDS */
+
+/** Block styles **/
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+    font-style: italic;
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.wp-block-separator {
+    background: none;
+    border-bottom-width: 1px;
+}
+
+p.has-drop-cap:not(:focus)::first-letter {
+    font-size: 5em;
+    margin-top: 0.075em;
+}

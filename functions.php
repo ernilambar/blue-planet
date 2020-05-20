@@ -15,17 +15,14 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 	 */
 	function blue_planet_setup() {
 
-		/**
-	   * Set the content width based on the theme's design and stylesheet.
-	   */
+		// Set the content width based on the theme's design and stylesheet.
 		global $content_width;
+
 		if ( ! isset( $content_width ) ) {
 			$content_width = 730;
 		}
 
-		/*
-		 * Make theme available for translation.
-		 */
+		// Make theme available for translation.
 		load_theme_textdomain( 'blue-planet' );
 
 		// Add default posts and comments RSS feed links to head.
@@ -34,19 +31,18 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		// Add support for custom backgrounds.
 		add_theme_support( 'custom-background' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
+		// Let WordPress manage the document title.
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 */
+		// Load default block styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'homepage-thumb', 285, 215, true ); // Cropped image.
+		add_image_size( 'homepage-thumb', 285, 215, true );
 
 		// Register nav menu.
 		register_nav_menus( array(
@@ -69,9 +65,7 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
         // Editor style.
         add_editor_style();
 
-        /**
-         * Enable support for footer widgets.
-         */
+		// Enable support for footer widgets.
         add_theme_support( 'footer-widgets', 4 );
 
         // Include supports.
@@ -86,9 +80,10 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 			'flex-height'        => true,
 			'wp-head-callback'   => 'blue_planet_header_style',
         ) ) );
-
 	}
+
 endif;
+
 add_action( 'after_setup_theme', 'blue_planet_setup' );
 
 /**

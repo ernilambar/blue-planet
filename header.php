@@ -20,8 +20,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php do_action( 'blue_planet_after_body_open' ); ?>
-	<a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'blue-planet' ); ?></a>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+<?php do_action( 'blue_planet_after_body_open' ); ?>
+<a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'blue-planet' ); ?></a>
   <div class="container">
     <div class="container-open-wrapper">
 	    <?php do_action( 'blue_planet_after_container_open' ); ?>
