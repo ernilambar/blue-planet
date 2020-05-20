@@ -1,9 +1,9 @@
 === Blue Planet ===
 
 Contributors: rabmalin
-Requires at least: 4.7
-Tested up to: 4.9.1
-Stable tag: 3.7
+Requires at least: 5.2
+Tested up to: 5.4
+Stable tag: 3.8
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,9 @@ Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress
 Blue Planet includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 3.8 - May 20 2020 =
+* Fix: Minor bug fixes
 
 = 3.7 - Jan 15 2018 =
 * Fix: Minor bug fixes

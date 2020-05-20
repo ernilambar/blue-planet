@@ -146,8 +146,9 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		$slider_status = blue_planet_get_option( 'slider_status' );
+		$slider_status   = blue_planet_get_option( 'slider_status' );
 		$slider_status_2 = blue_planet_get_option( 'slider_status_2' );
+
 		if ( 'none' !== $slider_status || 'none' !== $slider_status_2 ) {
 			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider' . $min . '.css', false ,'3.2' );
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default' . $min . '.css', false ,'3.2' );
@@ -161,13 +162,6 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu' . $min . '.js', array( 'jquery' ), '2.0.6', true );
 
 		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom' . $min . '.js', array( 'jquery' ), '2.0.0', true );
-
-		// Scripts for IE hack.
-		wp_enqueue_script( 'blue-planet-html5shiv', get_template_directory_uri() . '/js/html5shiv' . $min . '.js', array(), '3.7.3', false );
-        wp_script_add_data( 'blue-planet-html5shiv', 'conditional', 'lt IE 9' );
-        wp_enqueue_script( 'blue-planet-respond', get_template_directory_uri() . '/js/respond' . $min . '.js', array(), '1.4.2', false );
-        wp_script_add_data( 'blue-planet-respond', 'conditional', 'lt IE 9' );
-
 	}
 
 endif;

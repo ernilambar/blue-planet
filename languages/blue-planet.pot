@@ -595,7 +595,7 @@ msgid "Blue Planet"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://nilambar.net/2014/03/blue-planet-wordpress-theme-free.html"
+msgid "https://www.nilambar.net/2014/03/blue-planet-wordpress-theme-free.html"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -611,7 +611,7 @@ msgid "Nilambar Sharma"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://nilambar.net"
+msgid "https://www.nilambar.net"
 msgstr ""
 
 #. Template Name of the plugin/theme
