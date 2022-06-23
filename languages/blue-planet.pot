@@ -1,17 +1,17 @@
-# <!=Copyright (C) 2020 Nilambar Sharma
+# <!=Copyright (C) 2022 Nilambar Sharma
 # This file is distributed under the GNU GPL V3.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Blue Planet 3.8\n"
+"Project-Id-Version: Blue Planet 3.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/blue-planet\n"
-"POT-Creation-Date: 2020-05-20 11:12:27+00:00\n"
+"POT-Creation-Date: 2022-06-23 11:29:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.3\n"
+"X-Generator: node-wp-i18n 1.2.6\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -81,27 +81,27 @@ msgstr ""
 msgid "Continue reading %s"
 msgstr ""
 
-#: footer.php:20 functions.php:50
+#: footer.php:20 functions.php:55
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:49 header.php:47 header.php:51
+#: functions.php:54 header.php:47 header.php:51
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:94 sidebar.php:23
+#: functions.php:99 sidebar.php:23
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:101
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:103
+#: functions.php:108
 msgid "Menu Widget Area"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:110
 msgid "Widget area in the header. Specially for menu widget."
 msgstr ""
 
@@ -647,81 +647,6 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
-
-#: inc/customizer-includes/helper.php:97
-msgctxt "Transition Effect"
-msgid "boxRain"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:98
-msgctxt "Transition Effect"
-msgid "boxRainGrow"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:99
-msgctxt "Transition Effect"
-msgid "boxRainReverse"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:100
-msgctxt "Transition Effect"
-msgid "boxRainGrowReverse"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:101
-msgctxt "Transition Effect"
-msgid "boxRandom"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:102
-msgctxt "Transition Effect"
-msgid "fade"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:103
-msgctxt "Transition Effect"
-msgid "fold"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:104
-msgctxt "Transition Effect"
-msgid "random"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:105
-msgctxt "Transition Effect"
-msgid "sliceDown"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:106
-msgctxt "Transition Effect"
-msgid "sliceDownLeft"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:107
-msgctxt "Transition Effect"
-msgid "sliceUp"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:108
-msgctxt "Transition Effect"
-msgid "sliceUpDown"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:109
-msgctxt "Transition Effect"
-msgid "sliceUpDownLeft"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:110
-msgctxt "Transition Effect"
-msgid "slideInRight"
-msgstr ""
-
-#: inc/customizer-includes/helper.php:111
-msgctxt "Transition Effect"
-msgid "slideInLeft"
-msgstr ""
 
 #: inc/customizer-includes/helper.php:221
 msgctxt "Alignment"

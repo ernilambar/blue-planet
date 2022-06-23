@@ -15,7 +15,7 @@ A sleek responsive theme.
 Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress website. Features - Cross browser compatible, Two columns or One column layout, Responsive Design, Custom menus, Featured slider, Social Icons, Theme options, Custom CSS, Translation ready
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -143,7 +143,3 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 * jquery.meanmenu.js https://github.com/weare2ndfloor/meanMenu/, (C) 2012-2013 Chris Wharton, [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
 * Bootstrap http://getbootstrap.com/, (C) Twitter, Inc, [MIT](http://opensource.org/licenses/MIT)
 * Genericons icon font http://www.genericons.com/, (C) 2013-2015 Automattic.com, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-
-== Images ==
-* CC0 - https://pixabay.com/en/blue-sky-night-romantic-259458/
-* CC0 - https://pixabay.com/en/girl-woman-female-young-hair-ivy-984060/
