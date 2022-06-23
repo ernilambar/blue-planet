@@ -92,24 +92,24 @@ if ( ! function_exists( 'blue_planet_get_slider_transition_effects' ) ) :
 	 * @return array Options.
 	 */
 	function blue_planet_get_slider_transition_effects() {
-
 		$choices = array(
-			'boxRain'            => _x( 'boxRain', 'Transition Effect', 'blue-planet' ),
-			'boxRainGrow'        => _x( 'boxRainGrow', 'Transition Effect', 'blue-planet' ),
-			'boxRainReverse'     => _x( 'boxRainReverse', 'Transition Effect', 'blue-planet' ),
-			'boxRainGrowReverse' => _x( 'boxRainGrowReverse', 'Transition Effect', 'blue-planet' ),
-			'boxRandom'          => _x( 'boxRandom', 'Transition Effect', 'blue-planet' ),
-			'fade'               => _x( 'fade', 'Transition Effect', 'blue-planet' ),
-			'fold'               => _x( 'fold', 'Transition Effect', 'blue-planet' ),
-			'random'             => _x( 'random', 'Transition Effect', 'blue-planet' ),
-			'sliceDown'          => _x( 'sliceDown', 'Transition Effect', 'blue-planet' ),
-			'sliceDownLeft'      => _x( 'sliceDownLeft', 'Transition Effect', 'blue-planet' ),
-			'sliceUp'            => _x( 'sliceUp', 'Transition Effect', 'blue-planet' ),
-			'sliceUpDown'        => _x( 'sliceUpDown', 'Transition Effect', 'blue-planet' ),
-			'sliceUpDownLeft'    => _x( 'sliceUpDownLeft', 'Transition Effect', 'blue-planet' ),
-			'slideInRight'       => _x( 'slideInRight', 'Transition Effect', 'blue-planet' ),
-			'slideInLeft'        => _x( 'slideInLeft', 'Transition Effect', 'blue-planet' ),
+			'boxRain'            => 'boxRain',
+			'boxRainGrow'        => 'boxRainGrow',
+			'boxRainReverse'     => 'boxRainReverse',
+			'boxRainGrowReverse' => 'boxRainGrowReverse',
+			'boxRandom'          => 'boxRandom',
+			'fade'               => 'fade',
+			'fold'               => 'fold',
+			'random'             => 'random',
+			'sliceDown'          => 'sliceDown',
+			'sliceDownLeft'      => 'sliceDownLeft',
+			'sliceUp'            => 'sliceUp',
+			'sliceUpDown'        => 'sliceUpDown',
+			'sliceUpDownLeft'    => 'sliceUpDownLeft',
+			'slideInRight'       => 'slideInRight',
+			'slideInLeft'        => 'slideInLeft',
 		);
+
 		$output = apply_filters( 'blue_planet_filter_slider_transition_effects', $choices );
 		if ( ! empty( $output ) ) {
 			ksort( $output );
