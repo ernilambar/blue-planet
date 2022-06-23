@@ -1,9 +1,14 @@
 <?php
 /**
- * Blue Planet functions and definitions
+ * Theme functions and definitions
  *
  * @package Blue_Planet
  */
+
+
+if ( ! defined( 'BLUE_PLANET_VERSION' ) ) {
+	define( 'BLUE_PLANET_VERSION', '3.9.0' );
+}
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :
 	/**
@@ -124,7 +129,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/thirdparty/bootstrap/css/bootstrap' . $min . '.css', false ,'3.3.6' );
 		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/thirdparty/genericons/genericons' . $min . '.css', array(), '3.4.1' );
         wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu' . $min . '.css', false ,'2.0.6' );
-        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), '3.8' );
+        wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), BLUE_PLANET_VERSION );
 
         $banner_background_color = blue_planet_get_option( 'banner_background_color' );
         $custom_css = blue_planet_get_option( 'custom_css' );
@@ -156,7 +161,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 
 		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu' . $min . '.js', array( 'jquery' ), '2.0.6', true );
 
-		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom' . $min . '.js', array( 'jquery' ), '2.0.0', true );
+		wp_enqueue_script( 'blue-planet-theme-script-custom', get_template_directory_uri().'/js/custom' . $min . '.js', array( 'jquery' ), BLUE_PLANET_VERSION, true );
 	}
 
 endif;
