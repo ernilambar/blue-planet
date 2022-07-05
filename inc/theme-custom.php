@@ -486,3 +486,22 @@ if ( ! function_exists( 'blue_planet_import_custom_css' ) ) :
 endif;
 
 add_action( 'after_setup_theme', 'blue_planet_import_custom_css', 99 );
+
+
+/**
+ * Add admin notice.
+ *
+ * @since 3.9.1
+ */
+function blue_planet_add_admin_notice() {
+	// Setup notice.
+	\Nilambar\AdminNotice\Notice::init(
+		array(
+			'slug' => 'blue-planet',
+			'type' => 'theme',
+			'name' => esc_html__( 'Blue Planet', 'obulma' ),
+		)
+	);
+}
+
+add_action( 'admin_init', 'blue_planet_add_admin_notice' );
