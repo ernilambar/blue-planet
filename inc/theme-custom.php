@@ -499,7 +499,7 @@ function blue_planet_add_admin_notice() {
 		array(
 			'slug' => 'blue-planet',
 			'type' => 'theme',
-			'name' => esc_html__( 'Blue Planet', 'obulma' ),
+			'name' => esc_html__( 'Blue Planet', 'blue-planet' ),
 		)
 	);
 }

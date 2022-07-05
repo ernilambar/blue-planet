@@ -206,3 +206,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Theme Widgets.
  */
 require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Load welcome.
+ */
+require get_template_directory() . '/inc/welcome/welcome.php';
