@@ -7,7 +7,7 @@
 
 
 if ( ! defined( 'BLUE_PLANET_VERSION' ) ) {
-	define( 'BLUE_PLANET_VERSION', '3.9.0' );
+	define( 'BLUE_PLANET_VERSION', '3.9.1' );
 }
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :
@@ -153,7 +153,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider' . $min . '.css', false ,'3.2' );
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default' . $min . '.css', false ,'3.2' );
 			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider' . $min . '.js', array( 'jquery' ), '3.2', true );
-			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri().'/js/slider' . $min . '.js', array( 'jquery', 'nivo-slider-script' ), '2.0.0', true );
+			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri().'/js/slider' . $min . '.js', array( 'jquery', 'nivo-slider-script' ), BLUE_PLANET_VERSION, true );
 			$options = blue_planet_get_option_all();
 			wp_localize_script( 'blue-planet-theme-script-slider', 'BP_OPTIONS', $options );
 			wp_enqueue_script( 'blue-planet-theme-script-slider' );
