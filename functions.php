@@ -10,6 +10,11 @@ if ( ! defined( 'BLUE_PLANET_VERSION' ) ) {
 	define( 'BLUE_PLANET_VERSION', '3.9.1' );
 }
 
+// Load autoload.
+if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
+	require_once get_parent_theme_file_path( 'vendor/autoload.php' );
+}
+
 if ( ! function_exists( 'blue_planet_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
