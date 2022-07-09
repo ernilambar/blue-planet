@@ -1,59 +1,59 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 	'use strict';
 
-	grunt.initConfig({
+	grunt.initConfig( {
 		pkg: grunt.file.readJSON( 'package.json' ),
 
-		replace : {
+		replace: {
 			readme: {
 				options: {
 					patterns: [
 						{
 							match: /Stable tag:\s?(.+)/gm,
-							replacement: 'Stable tag: <%= pkg.version %>'
-						}
-					]
+							replacement: 'Stable tag: <%= pkg.version %>',
+						},
+					],
 				},
 				files: [
 					{
-						expand: true, flatten: true, src: ['readme.txt'], dest: './'
-					}
-				]
+						expand: true, flatten: true, src: [ 'readme.txt' ], dest: './',
+					},
+				],
 			},
 			style: {
 				options: {
 					patterns: [
 						{
 							match: /Version:\s?(.+)/gm,
-							replacement: 'Version: <%= pkg.version %>'
-						}
-					]
+							replacement: 'Version: <%= pkg.version %>',
+						},
+					],
 				},
 				files: [
 					{
-						expand: true, flatten: true, src: ['style.css'], dest: './'
-					}
-				]
+						expand: true, flatten: true, src: [ 'style.css' ], dest: './',
+					},
+				],
 			},
 			functions: {
 				options: {
 					patterns: [
 						{
 							match: /define\( \'BLUE_PLANET_VERSION\'\, \'(.+)\'/gm,
-							replacement: "define( 'BLUE_PLANET_VERSION', '<%= pkg.version %>'"
-						}
-					]
+							replacement: "define( 'BLUE_PLANET_VERSION', '<%= pkg.version %>'",
+						},
+					],
 				},
 				files: [
 					{
-						expand: true, flatten: true, src: ['functions.php'], dest: './'
-					}
-				]
-			}
-		}
-	});
+						expand: true, flatten: true, src: [ 'functions.php' ], dest: './',
+					},
+				],
+			},
+		},
+	} );
 
-	grunt.loadNpmTasks('grunt-replace');
+	grunt.loadNpmTasks( 'grunt-replace' );
 
-	grunt.registerTask('version', ['replace:readme', 'replace:style', 'replace:functions']);
+	grunt.registerTask( 'version', [ 'replace:readme', 'replace:style', 'replace:functions' ] );
 };
