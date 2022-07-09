@@ -1,5 +1,4 @@
 ( function( $, api ) {
-
 	/* === Dropdown Taxonomies Control === */
 
 	api.controlConstructor['dropdown-taxonomies'] = api.Control.extend( {
@@ -11,7 +10,6 @@
 					control.setting.set( $( this ).val() );
 				}
 			);
-		}
+		},
 	} );
-
-} )( jQuery, wp.customize );
+}( jQuery, wp.customize ) );

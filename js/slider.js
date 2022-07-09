@@ -1,10 +1,8 @@
 /* global BP_OPTIONS */
 ( function( $ ) {
-
 	'use strict';
 
-	$( document ).ready( function( $ ) {
-
+	$( document ).ready( function() {
 		// Secondary slider.
 		var controlNav = ( '1' === BP_OPTIONS.control_nav_2 ) ? true : false;
 		var directionNav = ( '1' === BP_OPTIONS.direction_nav_2 ) ? true : false;
@@ -13,13 +11,13 @@
 		var manualAdvance = ( '1' === BP_OPTIONS.slider_autoplay_2 ) ? false : true;
 		var effect = BP_OPTIONS.transition_effect_2;
 
-		$('#bp-secondary-slider').nivoSlider( {
+		$( '#bp-secondary-slider' ).nivoSlider( {
 			controlNav: controlNav,
 			directionNav: directionNav,
 			pauseTime: pauseTime,
 			effect: effect,
 			manualAdvance: manualAdvance,
-			animSpeed: animSpeed
+			animSpeed: animSpeed,
 		} );
 
 		// Main slider.
@@ -29,15 +27,13 @@
 		manualAdvance = ( '1' === BP_OPTIONS.slider_autoplay ) ? false : true;
 		effect = BP_OPTIONS.transition_effect;
 
-		$('#bp-main-slider').nivoSlider( {
+		$( '#bp-main-slider' ).nivoSlider( {
 			controlNav: false,
 			directionNav: directionNav,
 			pauseTime: pauseTime,
 			effect: effect,
 			manualAdvance: manualAdvance,
-			animSpeed: animSpeed
+			animSpeed: animSpeed,
 		} );
-
 	} );
-
-} )( jQuery );
+}( jQuery ) );
