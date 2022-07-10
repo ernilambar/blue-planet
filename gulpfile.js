@@ -1,6 +1,3 @@
-// Env.
-require( 'dotenv' ).config();
-
 // Config.
 var rootPath = './';
 
