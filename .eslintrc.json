@@ -9,10 +9,10 @@
 	},
 	"globals": {
 		"wp": true,
-		"jQuery": true,
-		"simpleLifeScreenReaderText": true
+		"jQuery": true
 	},
 	"rules": {
-		"no-console": "error"
+		"no-console": "error",
+		"vars-on-top": "warn"
 	}
 }
