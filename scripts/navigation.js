@@ -43,7 +43,7 @@
 	};
 
 	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	links = menu.getElementsByTagName( 'a' );
 	subMenus = menu.getElementsByTagName( 'ul' );
 
 	// Set menu items with submenus to aria-haspopup="true".
@@ -65,7 +65,6 @@
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
 		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
@@ -78,4 +77,4 @@
 			self = self.parentElement;
 		}
 	}
-} )();
+}() );
