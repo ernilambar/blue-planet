@@ -5,7 +5,7 @@
   "license": "GPL-2.0+",
   "repository": {
     "type": "git",
-    "url": "https://codeberg.org/ernilambar/blue-planet/"
+    "url": "https://github.com/ernilambar/blue-planet/"
   },
   "scripts": {
     "build": "gulp build",
