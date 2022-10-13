@@ -2,7 +2,7 @@
 
 Contributors: rabmalin
 Requires at least: 4.9
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.6
 Stable tag: 3.9.2
 License: GNU General Public License Version 3
@@ -28,7 +28,7 @@ Blue Planet includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 3.9.2 - Jul 9 2022 =
+= 3.9.2 - Oct 13 2022 =
 * Fix: Minor bug fixes
 
 = 3.9.1 - Jul 5 2022 =
