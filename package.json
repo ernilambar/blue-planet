@@ -20,6 +20,13 @@
     "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o",
     "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
+	"wpDeployer": {
+    "repoType": "theme",
+    "username": "rabmalin",
+    "buildDir": "deploy/blue-planet",
+    "earlierVersion": "3.9.1",
+    "deployAssets": false
+  },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^12.8.0",
     "bestzip": "^2.2.1",
@@ -34,12 +41,5 @@
     "node-wp-i18n": "^1.2.6",
     "shx": "^0.3.4",
     "wp-deployer": "^1.0.3"
-  },
-  "wpDeployer": {
-    "repoType": "theme",
-    "username": "rabmalin",
-    "buildDir": "deploy/blue-planet",
-    "earlierVersion": "3.9.1",
-    "deployAssets": false
   }
 }
