@@ -55,16 +55,16 @@
         },
         {
             "name": "ernilambar/wp-welcome",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ernilambar/wp-welcome.git",
-                "reference": "563fa973e88619c1339f93784ddbb1d4c4f3f7b0"
+                "reference": "f3cf2f82d2b5d4701d7c2b95417d2c2a1fdc061e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ernilambar/wp-welcome/zipball/563fa973e88619c1339f93784ddbb1d4c4f3f7b0",
-                "reference": "563fa973e88619c1339f93784ddbb1d4c4f3f7b0",
+                "url": "https://api.github.com/repos/ernilambar/wp-welcome/zipball/f3cf2f82d2b5d4701d7c2b95417d2c2a1fdc061e",
+                "reference": "f3cf2f82d2b5d4701d7c2b95417d2c2a1fdc061e",
                 "shasum": ""
             },
             "require": {
@@ -92,9 +92,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ernilambar/wp-welcome/issues",
-                "source": "https://github.com/ernilambar/wp-welcome/tree/1.0.2"
+                "source": "https://github.com/ernilambar/wp-welcome/tree/1.0.4"
             },
-            "time": "2022-10-13T09:53:56+00:00"
+            "time": "2023-02-13T07:42:14+00:00"
         }
     ],
     "packages-dev": [],
