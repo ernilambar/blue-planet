@@ -7,7 +7,7 @@
 
 
 if ( ! defined( 'BLUE_PLANET_VERSION' ) ) {
-	define( 'BLUE_PLANET_VERSION', '3.9.3' );
+	define( 'BLUE_PLANET_VERSION', '3.9.4' );
 }
 
 // Load autoload.
