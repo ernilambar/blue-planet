@@ -1,7 +1,7 @@
-( function( $ ) {
+( function ( $ ) {
 	'use strict';
 
-	$( document ).ready( function() {
+	$( document ).ready( function () {
 		// Mean menu.
 		$( 'nav#site-navigation' ).meanmenu( {
 			meanScreenWidth: '640',
@@ -9,7 +9,7 @@
 
 		// Goto top.
 		if ( $( '.scrollup' ).length > 0 ) {
-			$( window ).on( 'scroll', function() {
+			$( window ).on( 'scroll', function () {
 				if ( $( this ).scrollTop() > 100 ) {
 					$( '.scrollup' ).fadeIn();
 				} else {
@@ -17,10 +17,10 @@
 				}
 			} );
 
-			$( '.scrollup' ).on( 'click', function() {
+			$( '.scrollup' ).on( 'click', function () {
 				$( 'html, body' ).animate( { scrollTop: 0 }, 600 );
 				return false;
 			} );
 		}
 	} );
-}( jQuery ) );
+} )( jQuery );

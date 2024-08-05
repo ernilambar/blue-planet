@@ -10,8 +10,9 @@ var rename = require( 'gulp-rename' );
 // Uglify.
 var uglify = require( 'gulp-uglify' );
 
-gulp.task( 'scripts', function() {
-	return gulp.src( [ rootPath + 'scripts/*.js' ] )
+gulp.task( 'scripts', function () {
+	return gulp
+		.src( [ rootPath + 'scripts/*.js' ] )
 		.pipe( gulp.dest( 'js' ) )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( uglify() )

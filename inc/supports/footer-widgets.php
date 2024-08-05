@@ -83,6 +83,7 @@ class Blue_Planet_Footer_Widgets{
 
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
 			register_sidebar( array(
+				/* translators: %d: Column number. */
 				'name'          => sprintf( __( 'Footer Column %d', 'blue-planet' ), $i ),
 				'id'            => sprintf( 'footer-area-%d', $i ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',

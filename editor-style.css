@@ -96,7 +96,12 @@ code,
 kbd,
 tt,
 var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font:
+		15px Monaco,
+		Consolas,
+		"Andale Mono",
+		"DejaVu Sans Mono",
+		monospace;
 }
 abbr,
 acronym {

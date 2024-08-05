@@ -48,6 +48,6 @@ npm-debug.log
 # Project folders
 build/
 deploy/
-docs/
+js/
 node_modules/
 vendor/
