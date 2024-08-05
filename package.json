@@ -1,11 +1,20 @@
 {
 	"name": "blue-planet",
-	"title": "Blue Planet",
 	"version": "4.0.0",
-	"license": "GPL-2.0+",
+	"description": "Blue Planet",
+	"author": "Nilambar Sharma",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wordpress-theme"
+	],
+	"homepage": "https://github.com/ernilambar/blue-planet/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ernilambar/blue-planet/"
+	},
+	"bugs": {
+		"url": "https://github.com/ernilambar/blue-planet/issues"
 	},
 	"browserslist": "> 1%, not dead",
 	"packtor": {
@@ -21,18 +30,6 @@
 	},
 	"npmpackagejsonlint": {
 		"extends": "@wordpress/npm-package-json-lint-config"
-	},
-	"scripts": {
-		"build": "gulp build",
-		"version": "easy-replace-in-files",
-		"prewpdeploy": "pnpm run deploy",
-		"wpdeploy": "wp-deployer",
-		"format": "prettier \"**/*.{cjs,css,js,json,mjs}\" --write",
-		"pot": "composer run-script pot",
-		"clean": "rimraf build deploy js vendor",
-		"vendor": "composer install --no-dev --no-scripts -o",
-		"predeploy": "pnpm run clean && pnpm run vendor && pnpm run build",
-		"deploy": "packtor"
 	},
 	"wpDeployer": {
 		"repoType": "theme",
@@ -54,5 +51,18 @@
 		"prettier": "npm:wp-prettier@^3.0.3",
 		"rimraf": "^6.0.1",
 		"wp-deployer": "^1.0.3"
+	},
+	"scripts": {
+		"build": "gulp build",
+		"version": "easy-replace-in-files",
+		"lint-pkg-json": "npmPkgJsonLint .",
+		"format": "prettier \"**/*.{cjs,css,js,json,mjs}\" --write",
+		"pot": "composer run-script pot",
+		"prewpdeploy": "pnpm run deploy",
+		"wpdeploy": "wp-deployer",
+		"clean": "rimraf build deploy js vendor",
+		"vendor": "composer install --no-dev --no-scripts -o",
+		"predeploy": "pnpm run clean && pnpm run vendor && pnpm run build",
+		"deploy": "packtor"
 	}
 }
