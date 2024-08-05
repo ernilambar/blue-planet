@@ -27,46 +27,47 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 <?php do_action( 'blue_planet_after_body_open' ); ?>
 <a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'blue-planet' ); ?></a>
-  <div class="container">
-    <div class="container-open-wrapper">
-	    <?php do_action( 'blue_planet_after_container_open' ); ?>
-    </div>
+	<div class="container">
+	<div class="container-open-wrapper">
+		<?php do_action( 'blue_planet_after_container_open' ); ?>
+	</div>
 
-	  <div id="page" class="hfeed site">
+		<div id="page" class="hfeed site">
 
-	    <?php do_action( 'blue_planet_after_page_open' ); ?>
+		<?php do_action( 'blue_planet_after_page_open' ); ?>
 
 			<header id="masthead" class="site-header" role="banner">
 
-		    <?php do_action( 'blue_planet_after_masthead_open' ); ?>
+			<?php do_action( 'blue_planet_after_masthead_open' ); ?>
 
-		    <?php do_action( 'blue_planet_before_masthead_close' ); ?>
+			<?php do_action( 'blue_planet_before_masthead_close' ); ?>
 			</header><!-- #masthead -->
 
-	    <?php do_action( 'blue_planet_after_masthead_close' ); ?>
-	    <nav role="navigation" class="blueplanet-nav" id="site-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blue-planet' ); ?>">
+		<?php do_action( 'blue_planet_after_masthead_close' ); ?>
+		<nav role="navigation" class="blueplanet-nav" id="site-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'blue-planet' ); ?>">
 
-        <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) : ?>
+		<?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) : ?>
 
-	        	<button class="menu-toggle" aria-hidden="true"><?php esc_html_e( 'Primary Menu', 'blue-planet' ); ?></button>
+				<button class="menu-toggle" aria-hidden="true"><?php esc_html_e( 'Primary Menu', 'blue-planet' ); ?></button>
 					<?php
-					wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'menu_class'     => 'nav-menu',
-                        'menu_id'        => 'menu-top',
-                        'fallback_cb'    => 'blue_planet_primary_navigation_fallback',
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'menu_class'     => 'nav-menu',
+							'menu_id'        => 'menu-top',
+							'fallback_cb'    => 'blue_planet_primary_navigation_fallback',
 						)
 					);
 					?>
 
-        <?php endif; ?>
+		<?php endif; ?>
 
-	    </nav>
+		</nav>
 
 		<div class="clear"></div>
 
-    <?php do_action( 'blue_planet_before_content_open' ); ?>
+	<?php do_action( 'blue_planet_before_content_open' ); ?>
 
-    <div id="content" class="site-content">
+	<div id="content" class="site-content">
 
-    <?php do_action( 'blue_planet_after_content_open' ); ?>
+	<?php do_action( 'blue_planet_after_content_open' ); ?>

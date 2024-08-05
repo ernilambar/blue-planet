@@ -22,18 +22,23 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php get_template_part( 'content', 'search' ); ?>
 
 			<?php endwhile; ?>
 
 			<?php
-			the_posts_pagination( array(
-				'prev_text' => _x( '&larr; Previous', 'posts navigation', 'blue-planet' ),
-				'next_text' => _x( 'Next &rarr;',     'posts navigation', 'blue-planet' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>',
-			) );
+			the_posts_pagination(
+				array(
+					'prev_text'          => _x( '&larr; Previous', 'posts navigation', 'blue-planet' ),
+					'next_text'          => _x( 'Next &rarr;', 'posts navigation', 'blue-planet' ),
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>',
+				)
+			);
 			?>
 
 		<?php else : ?>

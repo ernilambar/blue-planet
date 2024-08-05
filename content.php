@@ -18,9 +18,9 @@
 	</header><!-- .entry-header -->
 
 	<?php
-	$content_layout          =  blue_planet_get_option( 'content_layout' );
-	$archive_image           =  blue_planet_get_option( 'archive_image' );
-	$archive_image_alignment =  blue_planet_get_option( 'archive_image_alignment' );
+	$content_layout          = blue_planet_get_option( 'content_layout' );
+	$archive_image           = blue_planet_get_option( 'archive_image' );
+	$archive_image_alignment = blue_planet_get_option( 'archive_image_alignment' );
 	?>
 
 	<div class="entry-content">
@@ -36,20 +36,24 @@
 
 		<?php else : ?>
 			<?php
-				the_content( sprintf(
+				the_content(
+					sprintf(
 					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s', 'blue-planet' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
+						wp_kses( __( 'Continue reading %s', 'blue-planet' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					)
+				);
 
-				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'blue-planet' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-				) );
+				wp_link_pages(
+					array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'blue-planet' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>%',
+						'separator'   => '<span class="screen-reader-text">, </span>',
+					)
+				);
 
 			?>
 		<?php endif; ?>

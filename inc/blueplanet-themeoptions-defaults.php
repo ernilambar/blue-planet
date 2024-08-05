@@ -18,19 +18,18 @@
 function blue_planet_get_option( $key ) {
 
 	$defaults = blue_planet_get_default_options();
-	$options = blue_planet_get_option_all();
+	$options  = blue_planet_get_option_all();
 
 	$output = '';
 
-	if ( array_key_exists( $key,  $defaults ) ) {
+	if ( array_key_exists( $key, $defaults ) ) {
 		$output = $defaults[ $key ];
 	}
 
-	if ( array_key_exists( $key,  $options ) ) {
+	if ( array_key_exists( $key, $options ) ) {
 		$output = $options[ $key ];
 	}
 	return $output;
-
 }
 
 /**
@@ -49,7 +48,6 @@ function blue_planet_get_option_all() {
 	$output = array_merge( $defaults, $output );
 
 	return $output;
-
 }
 
 /**
@@ -122,7 +120,7 @@ function blue_planet_get_default_options() {
 		'reset_theme_settings'         => 0,
 	);
 
-	for ( $i = 1; $i <= 5 ; $i++ ) {
+	for ( $i = 1; $i <= 5; $i++ ) {
 		$defaults[ 'main_slider_image_' . $i ]   = '';
 		$defaults[ 'main_slider_url_' . $i ]     = '';
 		$defaults[ 'main_slider_caption_' . $i ] = '';
@@ -130,5 +128,4 @@ function blue_planet_get_default_options() {
 	}
 
 	return $defaults;
-
 }

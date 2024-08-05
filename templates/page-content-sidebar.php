@@ -15,7 +15,10 @@ get_header(); ?>
 				do_action( 'blue_planet_after_main_open' );
 			?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 

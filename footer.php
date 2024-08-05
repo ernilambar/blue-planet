@@ -8,24 +8,25 @@
  */
 
 ?>
-    <?php do_action( 'blue_planet_before_content_close' ); ?>
+	<?php do_action( 'blue_planet_before_content_close' ); ?>
 	</div><!-- #content -->
-    <div class="clear"></div>
-    <?php do_action( 'blue_planet_after_content_close' ); ?>
+	<div class="clear"></div>
+	<?php do_action( 'blue_planet_after_content_close' ); ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-    <?php do_action( 'blue_planet_after_footer_open' ); ?>
+	<?php do_action( 'blue_planet_after_footer_open' ); ?>
 		<div class="site-info">
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'blue-planet' ); ?>">
 					<?php
-					wp_nav_menu( array(
-						'theme_location'  => 'footer',
-						'depth'           => 1,
-						'container'       => 'div',
-						'container_class' => 'footer-nav-wrapper',
-						'menu_class'      => 'footer-nav',
-						'fallback_cb'     => false,
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'footer',
+							'depth'           => 1,
+							'container'       => 'div',
+							'container_class' => 'footer-nav-wrapper',
+							'menu_class'      => 'footer-nav',
+							'fallback_cb'     => false,
 						)
 					);
 					?>
@@ -35,7 +36,7 @@
 
 		</div><!-- .site-info -->
 
-        <?php do_action( 'blue_planet_before_footer_close' ); ?>
+		<?php do_action( 'blue_planet_before_footer_close' ); ?>
 	</footer><!-- #colophon -->
 	<div class="footer-end-page">
 	<?php do_action( 'blue_planet_before_page_close' ); ?>

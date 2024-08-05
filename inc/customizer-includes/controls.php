@@ -52,11 +52,11 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 	 * @since 1.0.0
 	 */
 	public function content_template() {
-	?>
-      <# if ( data.label ) { #>
-      	<h3 class="bp-customize-heading">{{ data.label }}</h3>
-      <# } #>
-    <?php
+		?>
+		<# if ( data.label ) { #>
+			<h3 class="bp-customize-heading">{{ data.label }}</h3>
+		<# } #>
+		<?php
 	}
 }
 
@@ -104,15 +104,15 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 			}
 		}
 		$args['taxonomy'] = $our_taxonomy;
-		$this->taxonomy = esc_attr( $our_taxonomy );
+		$this->taxonomy   = esc_attr( $our_taxonomy );
 
-		$tax_args = array(
+		$tax_args       = array(
 			'hierarchical' => 0,
 			'taxonomy'     => $this->taxonomy,
 		);
 		$all_taxonomies = get_categories( $tax_args );
 
-		$choices = array();
+		$choices    = array();
 		$choices[0] = esc_html__( '&mdash; Select &mdash;', 'blue-planet' );
 		if ( ! empty( $all_taxonomies ) && ! is_wp_error( $all_taxonomies ) ) {
 			foreach ( $all_taxonomies as $tax ) {
