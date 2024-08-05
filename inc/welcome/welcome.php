@@ -9,17 +9,17 @@ use Nilambar\Welcome\Welcome;
 
 add_action(
 	'wp_welcome_init',
-	function() {
+	function () {
 		$obj = new Welcome( 'theme', 'blue-planet' );
 
 		$obj->set_page(
 			array(
-				'menu_title'  => esc_html__( 'Blue Planet', 'blue-planet' ),
-				'page_title'  => esc_html__( 'Blue Planet', 'blue-planet' ),
+				'menu_title'    => esc_html__( 'Blue Planet', 'blue-planet' ),
+				'page_title'    => esc_html__( 'Blue Planet', 'blue-planet' ),
 				/* translators: %s: Version */
 				'page_subtitle' => sprintf( esc_html__( 'Version: %s', 'blue-planet' ), BLUE_PLANET_VERSION ),
-				'menu_slug'   => 'blue-planet-welcome',
-				'parent_page' => 'themes.php',
+				'menu_slug'     => 'blue-planet-welcome',
+				'parent_page'   => 'themes.php',
 			)
 		);
 
@@ -166,26 +166,26 @@ add_action( 'wp_ajax_blue_planet_nsbl_get_posts', 'blue_planet_get_blog_posts_aj
  *
  * @since 1.0.0
  *
- * @param Welcome $object Instance of Welcome class.
+ * @param Welcome $obj Instance of Welcome class.
  */
-function blue_planet_render_welcome_page_sidebar( $object ) {
-	$object->render_sidebar_box(
+function blue_planet_render_welcome_page_sidebar( $obj ) {
+	$obj->render_sidebar_box(
 		array(
 			'title'        => 'Leave a Review',
-			'content'      => $object->get_stars() . sprintf( 'Are you are enjoying %s? We would appreciate a review.', $object->get_name() ),
+			'content'      => $obj->get_stars() . sprintf( 'Are you are enjoying %s? We would appreciate a review.', $obj->get_name() ),
 			'button_text'  => 'Submit Review',
 			'button_url'   => 'https://wordpress.org/support/theme/blue-planet/reviews/#new-post',
 			'button_class' => 'button',
 		),
-		$object
+		$obj
 	);
 
-	$object->render_sidebar_box(
+	$obj->render_sidebar_box(
 		array(
 			'title'   => 'Recent Blog Posts',
 			'content' => '<div class="ns-blog-list"></div>',
 		),
-		$object
+		$obj
 	);
 }
 

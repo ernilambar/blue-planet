@@ -61,7 +61,6 @@ function blue_planet_check_main_slider_status_cb( $control ) {
 	} else {
 		return false;
 	}
-
 }
 
 /**
@@ -79,7 +78,6 @@ function blue_planet_check_secondary_slider_status_cb( $control ) {
 	} else {
 		return false;
 	}
-
 }
 
 if ( ! function_exists( 'blue_planet_get_slider_transition_effects' ) ) :
@@ -115,7 +113,6 @@ if ( ! function_exists( 'blue_planet_get_slider_transition_effects' ) ) :
 			ksort( $output );
 		}
 		return $output;
-
 	}
 
 endif;
@@ -136,7 +133,6 @@ if ( ! function_exists( 'blue_planet_get_on_off_options' ) ) :
 			'0' => __( 'Off', 'blue-planet' ),
 		);
 		return $choices;
-
 	}
 
 endif;
@@ -158,7 +154,6 @@ if ( ! function_exists( 'blue_planet_get_show_hide_options' ) ) :
 			'0' => __( 'Hide', 'blue-planet' ),
 		);
 		return $choices;
-
 	}
 
 endif;
@@ -179,7 +174,6 @@ if ( ! function_exists( 'blue_planet_sanitize_number_absint' ) ) :
 
 		$input = absint( $input );
 		return ( $input ? $input : $setting->default );
-
 	}
 
 endif;
@@ -198,10 +192,9 @@ if ( ! function_exists( 'blue_planet_sanitize_select' ) ) :
 	 */
 	function blue_planet_sanitize_select( $input, $setting ) {
 
-		$input = esc_attr( $input );
+		$input   = esc_attr( $input );
 		$choices = $setting->manager->get_control( $setting->id )->choices;
 		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-
 	}
 
 endif;
@@ -224,7 +217,6 @@ if ( ! function_exists( 'blue_planet_get_image_alignment_options' ) ) :
 			'right'  => _x( 'Right', 'Alignment', 'blue-planet' ),
 		);
 		return $choices;
-
 	}
 
 endif;
@@ -245,7 +237,7 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 
 		global $_wp_additional_image_sizes;
 		$get_intermediate_image_sizes = get_intermediate_image_sizes();
-		$choices = array();
+		$choices                      = array();
 		if ( true === $add_disable ) {
 			$choices['disable'] = esc_html__( 'No Image', 'blue-planet' );
 		}
@@ -264,7 +256,7 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 			foreach ( $_wp_additional_image_sizes as $key => $size ) {
 				$choices[ $key ] = $key;
 				if ( true === $show_dimension ) {
-					$choices[ $key ] .= ' ('. $size['width'] . 'x' . $size['height'] . ')';
+					$choices[ $key ] .= ' (' . $size['width'] . 'x' . $size['height'] . ')';
 				}
 			}
 		}
@@ -278,7 +270,6 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 		}
 
 		return $choices;
-
 	}
 
 endif;

@@ -15,24 +15,29 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-            <?php
+			<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 			</header><!-- .page-header -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 
 			<?php endwhile; ?>
 
 			<?php
-			the_posts_pagination( array(
-				'prev_text' => _x( '&larr; Previous', 'posts navigation', 'blue-planet' ),
-				'next_text' => _x( 'Next &rarr;',     'posts navigation', 'blue-planet' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>',
-			) );
+			the_posts_pagination(
+				array(
+					'prev_text'          => _x( '&larr; Previous', 'posts navigation', 'blue-planet' ),
+					'next_text'          => _x( 'Next &rarr;', 'posts navigation', 'blue-planet' ),
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'blue-planet' ) . ' </span>',
+				)
+			);
 			?>
 
 		<?php else : ?>

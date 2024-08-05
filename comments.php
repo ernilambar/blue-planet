@@ -53,11 +53,13 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 42,
-				) );
+				wp_list_comments(
+					array(
+						'style'       => 'ol',
+						'short_ping'  => true,
+						'avatar_size' => 42,
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 
@@ -74,7 +76,7 @@ if ( post_password_required() ) {
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+		?>
 	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'blue-planet' ); ?></p>
 	<?php endif; ?>
 
