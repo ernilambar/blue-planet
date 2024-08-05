@@ -1,19 +1,19 @@
 <?php
 /**
- * Implementation of widgets.
+ * Implementation of widgets
  *
  * @package Blue_Planet
  */
 
+// Load base class.
 require_once get_template_directory() . '/lib/widget-base/class-widget-base.php';
 
 /**
- * Register widgets
+ * Register widgets.
  *
  * @since 1.0.0
  */
 function blue_planet_load_widgets() {
-
 	// Load Social widget.
 	register_widget( 'BP_Social_Widget' );
 
@@ -36,11 +36,12 @@ if ( ! class_exists( 'BP_Social_Widget' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		function __construct() {
-			$opts   = array(
+		public function __construct() {
+			$opts = array(
 				'classname'   => 'bp_social_widget',
 				'description' => __( 'Display Social links in your sidebar', 'blue-planet' ),
 			);
+
 			$fields = array(
 				'title'          => array(
 					'label' => __( 'Title:', 'blue-planet' ),
@@ -64,20 +65,19 @@ if ( ! class_exists( 'BP_Social_Widget' ) ) :
 		 * @param array $args     Display arguments.
 		 * @param array $instance Settings for the current widget instance.
 		 */
-		function widget( $args, $instance ) {
-
+		public function widget( $args, $instance ) {
 			$params = $this->get_params( $instance );
 
-			echo $args['before_widget'];
+			echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 			if ( ! empty( $params['title'] ) ) {
-				echo $args['before_title'] . $params['title'] . $args['after_title'];
+				echo $args['before_title'] . $params['title'] . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			// Render social links.
 			blue_planet_generate_social_links();
 
-			echo $args['after_widget'];
+			echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -95,11 +95,12 @@ if ( ! class_exists( 'BP_Advertisement_Widget' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		function __construct() {
-			$opts   = array(
+		public function __construct() {
+			$opts = array(
 				'classname'   => 'bp_advertisement_widget',
 				'description' => __( 'Widget for displaying ads', 'blue-planet' ),
 			);
+
 			$fields = array(
 				'title'        => array(
 					'label' => __( 'Title:', 'blue-planet' ),
@@ -150,30 +151,31 @@ if ( ! class_exists( 'BP_Advertisement_Widget' ) ) :
 		 * @param array $args     Display arguments.
 		 * @param array $instance Settings for the current widget instance.
 		 */
-		function widget( $args, $instance ) {
-
+		public function widget( $args, $instance ) {
 			$params = $this->get_params( $instance );
 
-			echo $args['before_widget'];
+			echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 			if ( ! empty( $params['title'] ) ) {
-				echo $args['before_title'] . $params['title'] . $args['after_title'];
+				echo $args['before_title'] . $params['title'] . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			if ( ! empty( $params['adcode'] ) ) {
-				echo $params['adcode'];
+				echo $params['adcode']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			} else {
 				$link_open  = '';
 				$link_close = '';
+
 				if ( ! empty( $params['href'] ) ) {
 					$link_open  = '<a href="' . esc_url( $params['href'] )
 					. '" ' . ( ( true === $params['target'] ) ? ' target="_blank" ' : '' ) . '>';
-					$link_close = '</a>';
+					$link_close = '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
-				echo $link_open . '<img src="' . esc_url( $params['image'] ) . '" alt="' . esc_attr( $params['alt'] ) . '" />' . $link_close;
+
+				echo $link_open . '<img src="' . esc_url( $params['image'] ) . '" alt="' . esc_attr( $params['alt'] ) . '" />' . $link_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-			echo $args['after_widget'];
+			echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;

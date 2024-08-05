@@ -12,10 +12,25 @@
  */
 class Blue_Planet_Footer_Widgets {
 
+	/**
+	 * Maximum widgets.
+	 *
+	 * @var int
+	 */
 	protected $max_widgets = 0;
 
+	/**
+	 * Active widgets.
+	 *
+	 * @var int
+	 */
 	protected $active_widgets = 0;
 
+	/**
+	 * Theme prefix.
+	 *
+	 * @var string
+	 */
 	protected $theme_prefix = 'blue_planet';
 
 	/**
@@ -23,7 +38,7 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function __construct() {
+	public function __construct() {
 
 		$this->setup();
 		$this->init();
@@ -34,7 +49,7 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function setup() {
+	public function setup() {
 
 		$support = get_theme_support( 'footer-widgets' );
 		if ( empty( $support ) ) {
@@ -52,7 +67,7 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function init() {
+	public function init() {
 
 		if ( $this->max_widgets < 1 ) {
 			return;
@@ -75,7 +90,7 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function footer_widgets_init() {
+	public function footer_widgets_init() {
 
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
 			register_sidebar(
@@ -114,8 +129,10 @@ class Blue_Planet_Footer_Widgets {
 	 * Add custom class in widgets.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param string $input CSS class.
 	 */
-	function custom_footer_widget_class( $input ) {
+	public function custom_footer_widget_class( $input ) {
 
 		$footer_widgets_number = $this->active_widgets;
 
@@ -150,20 +167,20 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function add_footer_widgets() {
-
+	public function add_footer_widgets() {
 		$flag_apply_footer_widgets_content = apply_filters( $this->theme_prefix . '_filter_footer_widgets', true );
+
 		if ( true !== $flag_apply_footer_widgets_content ) {
 			return false;
 		}
 
-		$args                   = array(
+		$args = array(
 			'container' => 'div',
 			'before'    => '<div class="row">',
 			'after'     => '</div><!-- .row -->',
 		);
-		$footer_widgets_content = $this->get_footer_widgets_content( $args );
-		echo $footer_widgets_content;
+
+		echo $this->get_footer_widgets_content( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -171,7 +188,7 @@ class Blue_Planet_Footer_Widgets {
 	 *
 	 * @since 1.0.0
 	 */
-	function all_active_widgets() {
+	public function all_active_widgets() {
 
 		$arr = array();
 
@@ -187,10 +204,12 @@ class Blue_Planet_Footer_Widgets {
 	 * Returns footer widget contents.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param array $args Arguments.
 	 */
-	function get_footer_widgets_content( $args ) {
+	public function get_footer_widgets_content( $args ) {
+		$number = $this->active_widgets;
 
-		$number             = $this->active_widgets;
 		$all_active_widgets = $this->all_active_widgets();
 
 		// Defaults.
@@ -228,23 +247,23 @@ class Blue_Planet_Footer_Widgets {
 			);
 		}
 
-		echo $container_open;
+		echo $container_open; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		echo $args['before'];
+		echo $args['before']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		for ( $i = 1; $i <= $number; $i++ ) {
 			$item_class  = apply_filters( $this->theme_prefix . '_filter_footer_widget_class', '', $i );
 			$div_classes = implode( ' ', array( $item_class, $args['wrap_class'] ) );
 
-			echo '<div class="' . $div_classes . '">';
+			echo '<div class="' . esc_attr( $div_classes ) . '">';
 			$sidebar_name = 'footer-area-' . $all_active_widgets[ $i - 1 ];
 			dynamic_sidebar( $sidebar_name );
-			echo '</div><!-- .' . $args['wrap_class'] . ' -->';
+			echo '</div><!-- .' . esc_attr( $args['wrap_class'] ) . ' -->';
 		}
 
-		echo $args['after'];
+		echo $args['after']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		echo $container_close;
+		echo $container_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		$output = ob_get_contents();
 		ob_end_clean();
@@ -252,5 +271,4 @@ class Blue_Planet_Footer_Widgets {
 	}
 }
 
-// Initialize.
 $blue_planet_footer_widgets = new Blue_Planet_Footer_Widgets();

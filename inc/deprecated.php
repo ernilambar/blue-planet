@@ -7,7 +7,6 @@ function blue_planet_paging_nav() {}
 
 function blue_planet_post_nav() {}
 
-
 /**
  * Get default theme options.
  *

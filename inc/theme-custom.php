@@ -391,9 +391,8 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
 							</div>
 					</div>
 			<?php
-		} // if ( ! empty( $header_image ) )
+		}
 		else {
-			// if no header image
 			?>
 			<div class="only-site-branding">
 				<div class="site-branding">
@@ -406,7 +405,7 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
 						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</div>
-			</div>  <!-- .only-site-branding -->
+			</div><!-- .only-site-branding -->
 			<?php
 		}
 		?>

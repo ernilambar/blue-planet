@@ -2,11 +2,6 @@
 /**
  * The template for displaying Comments.
  *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to blue_planet_comment() which is
- * located in the inc/template-tags.php file.
- *
  * @package Blue_Planet
  */
 
@@ -29,15 +24,15 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'blue-planet' ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'blue-planet' ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf(
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'blue-planet' ) ),
-					number_format_i18n( $comment_count ),
-					'<span>' . get_the_title() . '</span>'
+					number_format_i18n( $comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
 			?>
@@ -49,7 +44,7 @@ if ( post_password_required() ) {
 			<div class="nav-previous"><?php previous_comments_link( '&larr; ' . __( 'Older Comments', 'blue-planet' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'blue-planet' ) . ' &rarr;' ); ?></div>
 		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
 
 		<ol class="comment-list">
 			<?php
@@ -69,9 +64,9 @@ if ( post_password_required() ) {
 			<div class="nav-previous"><?php previous_comments_link( '&larr; ' . __( 'Older Comments', 'blue-planet' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'blue-planet' ) . ' &rarr;' ); ?></div>
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
 
-	<?php endif; // End have_comments()? ?>
+	<?php endif; ?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?

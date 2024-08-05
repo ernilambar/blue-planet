@@ -56,7 +56,7 @@ function blue_planet_sanitize_checkbox_input( $input ) {
 function blue_planet_check_main_slider_status_cb( $control ) {
 
 	$current_value = $control->manager->get_setting( 'blueplanet_options[slider_status]' )->value();
-	if ( in_array( $current_value, array( 'home', 'all' ) ) ) {
+	if ( in_array( $current_value, array( 'home', 'all' ), true ) ) {
 		return true;
 	} else {
 		return false;
@@ -234,13 +234,16 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 	 * @return array Image size options.
 	 */
 	function blue_planet_get_image_sizes_options( $add_disable = true, $allowed = array(), $show_dimension = true ) {
-
 		global $_wp_additional_image_sizes;
+
 		$get_intermediate_image_sizes = get_intermediate_image_sizes();
-		$choices                      = array();
+
+		$choices = array();
+
 		if ( true === $add_disable ) {
 			$choices['disable'] = esc_html__( 'No Image', 'blue-planet' );
 		}
+
 		$choices['thumbnail'] = esc_html__( 'Thumbnail', 'blue-planet' );
 		$choices['medium']    = esc_html__( 'Medium', 'blue-planet' );
 		$choices['large']     = esc_html__( 'Large', 'blue-planet' );
@@ -255,6 +258,7 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 		if ( ! empty( $_wp_additional_image_sizes ) && is_array( $_wp_additional_image_sizes ) ) {
 			foreach ( $_wp_additional_image_sizes as $key => $size ) {
 				$choices[ $key ] = $key;
+
 				if ( true === $show_dimension ) {
 					$choices[ $key ] .= ' (' . $size['width'] . 'x' . $size['height'] . ')';
 				}
@@ -263,7 +267,7 @@ if ( ! function_exists( 'blue_planet_get_image_sizes_options' ) ) :
 
 		if ( ! empty( $allowed ) ) {
 			foreach ( $choices as $key => $value ) {
-				if ( ! in_array( $key, $allowed ) ) {
+				if ( ! in_array( $key, $allowed, true ) ) {
 					unset( $choices[ $key ] );
 				}
 			}

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Theme functions
+ *
+ * @package Blue_Planet
+ */
 
 if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
 

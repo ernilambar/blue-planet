@@ -1,9 +1,10 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Custom template tags for this theme
  *
  * @package Blue_Planet
  */
+
 if ( ! function_exists( 'blue_planet_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
@@ -32,7 +33,7 @@ if ( ! function_exists( 'blue_planet_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link comments">';
@@ -46,7 +47,8 @@ endif;
  * Returns true if a blog has more than 1 category.
  */
 function blue_planet_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	$all_the_cool_cats = get_transient( 'all_the_cool_cats' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories(
 			array(
@@ -90,13 +92,13 @@ if ( ! function_exists( 'blue_planet_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'blue-planet' ) );
 			if ( $categories_list && blue_planet_categorized_blog() ) {
-				printf( '<span class="cat-links">%s</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">%s</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'blue-planet' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links">%s</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">%s</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
