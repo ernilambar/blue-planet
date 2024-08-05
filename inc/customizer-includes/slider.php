@@ -17,6 +17,7 @@ $wp_customize->add_panel( 'blue_planet_slider_panel',
 $wp_customize->add_section( 'blue_planet_slider_main',
 	array(
 	  'title'       => __( 'Main Slider', 'blue-planet' ),
+		/* translators: 1: Banner slider width, 2: Banner slider height. */
 	  'description' => sprintf( __( 'Recommended image size for banner slider : %1$dpx X %2$dpx', 'blue-planet' ), 1140, 250 ),
 	  'priority'    => 10,
 	  'capability'  => 'edit_theme_options',
@@ -167,6 +168,7 @@ for ( $i = 1; $i <= 5 ; $i++ ) {
 		)
 	);
 	$wp_customize->add_control( new Blue_Planet_Customize_Heading_Control( $wp_customize, 'blueplanet_options[main_slider_block_message_' . $i . ']', array(
+		/* translators: %d: Slide number. */
 		'label'    => sprintf( __( 'Slide - %d', 'blue-planet' ), $i ),
 		'name'     => 'blueplanet_options[main_slider_block_message_' . $i . ']',
 		'section'  => 'blue_planet_slider_main',
