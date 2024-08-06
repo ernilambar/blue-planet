@@ -1,6 +1,6 @@
 <?php
 /**
- * Customizer Slider panel.
+ * Customizer Slider panel
  *
  * @package Blue_Planet
  */
@@ -14,6 +14,7 @@ $wp_customize->add_panel(
 		'capability' => 'edit_theme_options',
 	)
 );
+
 // Main Slider Section.
 $wp_customize->add_section(
 	'blue_planet_slider_main',
@@ -26,6 +27,7 @@ $wp_customize->add_section(
 		'panel'       => 'blue_planet_slider_panel',
 	)
 );
+
 // Setting - slider_status.
 $wp_customize->add_setting(
 	'blueplanet_options[slider_status]',
@@ -298,6 +300,7 @@ $wp_customize->add_section(
 		'panel'      => 'blue_planet_slider_panel',
 	)
 );
+
 // Setting - slider_status_2.
 $wp_customize->add_setting(
 	'blueplanet_options[slider_status_2]',
@@ -347,6 +350,7 @@ $wp_customize->add_control(
 		),
 	)
 );
+
 // Setting - slider_category_2.
 $wp_customize->add_setting(
 	'blueplanet_options[slider_category_2]',
@@ -373,7 +377,6 @@ $wp_customize->add_control(
 	)
 );
 
-
 // Setting - transition_effect_2.
 $wp_customize->add_setting(
 	'blueplanet_options[transition_effect_2]',
@@ -395,6 +398,7 @@ $wp_customize->add_control(
 		'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
 	)
 );
+
 // Setting - control_nav_2.
 $wp_customize->add_setting(
 	'blueplanet_options[control_nav_2]',
@@ -416,6 +420,7 @@ $wp_customize->add_control(
 		'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
 	)
 );
+
 // Setting - direction_nav_2.
 $wp_customize->add_setting(
 	'blueplanet_options[direction_nav_2]',
@@ -437,6 +442,7 @@ $wp_customize->add_control(
 		'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
 	)
 );
+
 // Setting - slider_caption_2.
 $wp_customize->add_setting(
 	'blueplanet_options[slider_caption_2]',
@@ -458,6 +464,7 @@ $wp_customize->add_control(
 		'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
 	)
 );
+
 // Setting - slider_autoplay_2.
 $wp_customize->add_setting(
 	'blueplanet_options[slider_autoplay_2]',
@@ -479,6 +486,7 @@ $wp_customize->add_control(
 		'active_callback' => 'blue_planet_check_secondary_slider_status_cb',
 	)
 );
+
 // Setting - transition_delay_2.
 $wp_customize->add_setting(
 	'blueplanet_options[transition_delay_2]',
@@ -505,6 +513,7 @@ $wp_customize->add_control(
 		),
 	)
 );
+
 // Setting - transition_length_2.
 $wp_customize->add_setting(
 	'blueplanet_options[transition_length_2]',
