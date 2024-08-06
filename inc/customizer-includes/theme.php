@@ -25,27 +25,6 @@
 		)
 	);
 
-	// Setting - custom_css.
-	$wp_customize->add_setting(
-		'blueplanet_options[custom_css]',
-		array(
-			'default'              => $new_defaults['custom_css'],
-			'capability'           => 'edit_theme_options',
-			'sanitize_callback'    => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses',
-		)
-	);
-	$wp_customize->add_control(
-		'blueplanet_options[custom_css]',
-		array(
-			'label'    => __( 'Custom CSS', 'blue-planet' ),
-			'section'  => 'blue_planet_options_general',
-			'settings' => 'blueplanet_options[custom_css]',
-			'type'     => 'textarea',
-			'priority' => 20,
-		)
-	);
-
 	// Setting - search_placeholder.
 	$wp_customize->add_setting(
 		'blueplanet_options[search_placeholder]',

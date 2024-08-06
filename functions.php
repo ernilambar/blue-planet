@@ -140,7 +140,6 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 	 * Enqueue scripts and styles.
 	 */
 	function blue_planet_scripts() {
-
 		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri() . '/thirdparty/bootstrap/css/bootstrap' . $min . '.css', false, '3.3.6' );
@@ -149,11 +148,9 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 		wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri(), array(), BLUE_PLANET_VERSION );
 
 		$banner_background_color = blue_planet_get_option( 'banner_background_color' );
-		$custom_css              = blue_planet_get_option( 'custom_css' );
-		$custom_style            = 'header#masthead{background-color:' . esc_attr( $banner_background_color ) . ';}';
-		if ( ! empty( $custom_css ) ) {
-			$custom_style .= $custom_css;
-		}
+
+		$custom_style = 'header#masthead{background-color:' . esc_attr( $banner_background_color ) . ';}';
+
 		wp_add_inline_style( 'blue-planet-style', $custom_style );
 
 		wp_enqueue_script( 'blue-planet-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array(), '20120206', true );
@@ -169,10 +166,8 @@ if ( ! function_exists( 'blue_planet_scripts' ) ) :
 			wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri() . '/thirdparty/nivoslider/nivo-slider' . $min . '.css', false, '3.2' );
 			wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri() . '/thirdparty/nivoslider/themes/default/default' . $min . '.css', false, '3.2' );
 			wp_enqueue_script( 'nivo-slider-script', get_template_directory_uri() . '/thirdparty/nivoslider/jquery.nivo.slider' . $min . '.js', array( 'jquery' ), '3.2', true );
-			wp_register_script( 'blue-planet-theme-script-slider', get_template_directory_uri() . '/js/slider' . $min . '.js', array( 'jquery', 'nivo-slider-script' ), BLUE_PLANET_VERSION, true );
-			$options = blue_planet_get_option_all();
-			wp_localize_script( 'blue-planet-theme-script-slider', 'BP_OPTIONS', $options );
-			wp_enqueue_script( 'blue-planet-theme-script-slider' );
+			wp_enqueue_script( 'blue-planet-theme-script-slider', get_template_directory_uri() . '/js/slider' . $min . '.js', array( 'jquery', 'nivo-slider-script' ), BLUE_PLANET_VERSION, true );
+			wp_localize_script( 'blue-planet-theme-script-slider', 'BP_OPTIONS', blue_planet_get_option_all() );
 		}
 
 		wp_enqueue_script( 'meanmenu-script', get_template_directory_uri() . '/thirdparty/meanmenu/jquery.meanmenu' . $min . '.js', array( 'jquery' ), '2.0.6', true );
@@ -185,38 +180,11 @@ endif;
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 
 require get_template_directory() . '/inc/utils.php';
-
-/**
- * Include customizer settings.
- */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Include custom helper functions.
- */
 require get_template_directory() . '/inc/theme-functions.php';
-/**
- * Include custom theme hooks.
- */
 require get_template_directory() . '/inc/templates.php';
 require get_template_directory() . '/inc/theme-custom.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Load Jetpack compatibility file.
- */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load Theme Widgets.
- */
 require get_template_directory() . '/inc/widgets.php';
-
-/**
- * Load welcome.
- */
 require get_template_directory() . '/inc/welcome/welcome.php';

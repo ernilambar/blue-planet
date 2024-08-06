@@ -56,7 +56,6 @@ function blue_planet_get_option_all() {
  */
 function blue_planet_get_default_options() {
 	$defaults = array(
-		'custom_css'                   => '',
 		'flg_enable_goto_top'          => 1,
 		'banner_background_color'      => '#00ADB3',
 		'search_placeholder'           => esc_html__( 'Search...', 'blue-planet' ),

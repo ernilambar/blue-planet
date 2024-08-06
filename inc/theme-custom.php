@@ -10,6 +10,8 @@ use Nilambar\AdminNotice\Notice;
 /**
  * Adds custom classes to the array of body classes.
  *
+ * @since 1.0.0
+ *
  * @param array $classes Classes for the body element.
  * @return array Body classes
  */
@@ -132,8 +134,6 @@ endif;
 
 add_action( 'blue_planet_credits', 'blue_planet_copyright_text_content' );
 
-
-
 /**
  * Add admin notice.
  *
@@ -158,6 +158,8 @@ add_action( 'admin_init', 'blue_planet_add_admin_notice' );
  * This does not enqueue the script because it is tiny and because it is only for IE11,
  * thus it does not warrant having an entire dedicated blocking script being loaded.
  *
+ * @since 2.0.0
+ *
  * @link https://git.io/vWdr2
  */
 function blue_planet_skip_link_focus_fix() {
@@ -170,7 +172,6 @@ function blue_planet_skip_link_focus_fix() {
 }
 
 add_action( 'wp_print_footer_scripts', 'blue_planet_skip_link_focus_fix' );
-
 
 if ( ! function_exists( 'blue_planet_header_social' ) ) :
 
@@ -231,7 +232,7 @@ if ( ! function_exists( 'blue_planet_custom_content_width' ) ) :
 	/**
 	 * Custom content width.
 	 *
-	 * @since 2.3
+	 * @since 2.3.0
 	 */
 	function blue_planet_custom_content_width() {
 
@@ -253,18 +254,21 @@ if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
 	/**
 	 * Add image in single post.
 	 *
-	 * @since 3.0
+	 * @since 3.0.0
 	 */
 	function blue_planet_add_image_in_single_display() {
 
 		global $post;
 		if ( has_post_thumbnail() ) {
-			$single_image           = blue_planet_get_option( 'single_image' );
+			$single_image = blue_planet_get_option( 'single_image' );
+
 			$single_image_alignment = blue_planet_get_option( 'single_image_alignment' );
+
 			if ( 'disable' !== $single_image ) {
 				$args = array(
 					'class' => 'align' . $single_image_alignment,
 				);
+
 				the_post_thumbnail( $single_image, $args );
 			}
 		}
@@ -273,39 +277,3 @@ if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
 endif;
 
 add_action( 'blue_planet_single_image', 'blue_planet_add_image_in_single_display' );
-
-if ( ! function_exists( 'blue_planet_import_custom_css' ) ) :
-
-	/**
-	 * Import Custom CSS.
-	 *
-	 * @since 3.5.0
-	 */
-	function blue_planet_import_custom_css() {
-
-		// Bail if not WP 4.7.
-		if ( ! function_exists( 'wp_get_custom_css_post' ) ) {
-			return;
-		}
-
-		$custom_css = blue_planet_get_option( 'custom_css' );
-
-		// Bail if there is no Custom CSS.
-		if ( empty( $custom_css ) ) {
-			return;
-		}
-
-		$core_css = wp_get_custom_css();
-		$return   = wp_update_custom_css_post( $core_css . $custom_css );
-
-		if ( ! is_wp_error( $return ) ) {
-
-			// Remove from theme.
-			$options               = blue_planet_get_option_all();
-			$options['custom_css'] = '';
-			set_theme_mod( 'blueplanet_options', $options );
-		}
-	}
-endif;
-
-add_action( 'after_setup_theme', 'blue_planet_import_custom_css', 99 );

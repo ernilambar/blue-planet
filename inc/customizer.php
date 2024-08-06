@@ -133,21 +133,3 @@ if ( ! function_exists( 'blue_planet_customizer_reset_callback' ) ) :
 endif;
 
 add_action( 'customize_save_after', 'blue_planet_customizer_reset_callback' );
-
-/**
- * Hide Custom CSS.
- *
- * @since 3.5.0
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function blue_planet_hide_custom_css( $wp_customize ) {
-	// Bail if not WP 4.7.
-	if ( ! function_exists( 'wp_get_custom_css_post' ) ) {
-		return;
-	}
-
-	$wp_customize->remove_control( 'blueplanet_options[custom_css]' );
-}
-
-// add_action( 'customize_register', 'blue_planet_hide_custom_css', 99 );
