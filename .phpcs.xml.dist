@@ -16,7 +16,6 @@
 	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*lib/*</exclude-pattern>
-	<exclude-pattern>*/inc/theme-custom.php</exclude-pattern>
 	<exclude-pattern>*\.(css|js)</exclude-pattern>
 
 	<!-- How to scan -->
