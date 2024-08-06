@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom theme functions.
+ * Custom theme functions
  *
  * @package Blue_Planet
  */
@@ -12,7 +12,6 @@
  * @return array Body classes
  */
 function blue_planet_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
@@ -42,7 +41,8 @@ if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 
 		if ( 'post' === get_post_type( $post_id ) ) {
 			$content .= '<strong>' . __( 'Recommended image sizes', 'blue-planet' ) . '</strong><br/>';
-						/* translators: 1: Slider width, 2: Slider height. */
+
+			/* translators: 1: Slider width, 2: Slider height. */
 			$content .= '<br/>' . sprintf( __( 'Secondary Slider : %1$dpx X %2$dpx', 'blue-planet' ), 720, 350 );
 		}
 
@@ -51,7 +51,6 @@ if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
 endif;
 
 add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction', 10, 2 );
-
 
 if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 
@@ -64,14 +63,16 @@ if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 	 * @return string The excerpt.
 	 */
 	function blue_planet_excerpt_readmore( $more ) {
-
 		global $post;
+
 		$read_more_text = blue_planet_get_option( 'read_more_text' );
+
 		if ( ! empty( $read_more_text ) ) {
-			$more = '...';
+			$more = '&hellip;';
 		}
 
 		$output = $more . ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="readmore">' . esc_attr( $read_more_text ) . '<span class="screen-reader-text">"' . esc_html( get_the_title() ) . '"</span></a>';
+
 		$output = apply_filters( 'blue_planet_filter_read_more_content', $output );
 
 		return $output;
