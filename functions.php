@@ -184,6 +184,8 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 
+require get_template_directory() . '/inc/utils.php';
+
 /**
  * Include customizer settings.
  */
@@ -196,8 +198,8 @@ require get_template_directory() . '/inc/theme-functions.php';
 /**
  * Include custom theme hooks.
  */
+require get_template_directory() . '/inc/templates.php';
 require get_template_directory() . '/inc/theme-custom.php';
-require get_template_directory() . '/inc/custom-hooks.php';
 
 /**
  * Custom template tags for this theme.
