@@ -73,7 +73,7 @@ if ( ! function_exists( 'blue_planet_setup' ) ) :
 		);
 
 		// Load up theme options defaults.
-		require_once get_template_directory() . '/inc/blueplanet-themeoptions-defaults.php';
+		require_once get_template_directory() . '/inc/themeoptions-defaults.php';
 
 		// Editor style.
 		add_editor_style();
@@ -190,11 +190,6 @@ add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Deprecated functions.
- */
-require get_template_directory() . '/inc/deprecated.php';
-
-/**
  * Include custom helper functions.
  */
 require get_template_directory() . '/inc/theme-functions.php';
@@ -202,6 +197,7 @@ require get_template_directory() . '/inc/theme-functions.php';
  * Include custom theme hooks.
  */
 require get_template_directory() . '/inc/theme-custom.php';
+require get_template_directory() . '/inc/custom-hooks.php';
 
 /**
  * Custom template tags for this theme.
