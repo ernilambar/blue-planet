@@ -119,9 +119,7 @@ if ( ! function_exists( 'blue_planet_customizer_reset_callback' ) ) :
 	function blue_planet_customizer_reset_callback() {
 		$reset_theme_settings = blue_planet_get_option( 'reset_theme_settings' );
 
-		// TODO.
-		if ( 1 == $reset_theme_settings ) { // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
-
+		if ( 1 === $reset_theme_settings ) {
 			// Reset custom theme options.
 			set_theme_mod( 'blueplanet_options', array() );
 
@@ -152,4 +150,4 @@ function blue_planet_hide_custom_css( $wp_customize ) {
 	$wp_customize->remove_control( 'blueplanet_options[custom_css]' );
 }
 
-add_action( 'customize_register', 'blue_planet_hide_custom_css', 99 );
+// add_action( 'customize_register', 'blue_planet_hide_custom_css', 99 );
