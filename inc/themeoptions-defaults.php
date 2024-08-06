@@ -1,8 +1,6 @@
 <?php
 /**
- * Theme defaults.
- *
- * Set the default values for all the settings. If no user-defined values is available for any setting, these defaults will be used.
+ * Theme defaults
  *
  * @package Blue_Planet
  */
@@ -16,7 +14,6 @@
  * @return mixed Option value.
  */
 function blue_planet_get_option( $key ) {
-
 	$defaults = blue_planet_get_default_options();
 	$options  = blue_planet_get_option_all();
 
@@ -29,6 +26,7 @@ function blue_planet_get_option( $key ) {
 	if ( array_key_exists( $key, $options ) ) {
 		$output = $options[ $key ];
 	}
+
 	return $output;
 }
 
@@ -40,7 +38,6 @@ function blue_planet_get_option( $key ) {
  * @return array Theme options.
  */
 function blue_planet_get_option_all() {
-
 	$defaults = blue_planet_get_default_options();
 
 	$output = get_theme_mod( 'blueplanet_options', $defaults );
@@ -58,7 +55,6 @@ function blue_planet_get_option_all() {
  * @return array Default theme options.
  */
 function blue_planet_get_default_options() {
-
 	$defaults = array(
 		'custom_css'                   => '',
 		'flg_enable_goto_top'          => 1,
