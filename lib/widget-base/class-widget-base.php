@@ -34,29 +34,29 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 	 * @param array  $control_options Optional. Widget control options.
 	 * @param array  $fields Fields.
 	 */
-	function __construct( $id_base, $name, $widget_options = array(), $control_options = array(), $fields = array() ) {
+	public function __construct( $id_base, $name, $widget_options = array(), $control_options = array(), $fields = array() ) {
 
 		$this->fields = $fields;
 
 		parent::__construct( $id_base, $name, $widget_options, $control_options );
-
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
 
 		foreach ( $this->fields as $key => $field ) {
+			$field_type = isset( $field['type'] ) ? $field['type'] : 'text';
 
-			$instance[ $key ] = $this->sanitize( $key, $field, $new_instance[ $key ] );
+			$inst_default_val = in_array( $field_type, array( 'checkbox' ), true ) ? false : '';
 
+			$instance[ $key ] = $this->sanitize( $key, $field, array_key_exists( $key, $new_instance ) ? $new_instance[ $key ] : $inst_default_val );
 		}
 
 		return $instance;
-
 	}
 
-	function sanitize( $key, $field, $value ) {
+	public function sanitize( $key, $field, $value ) {
 
 		$field_type = 'text';
 		if ( isset( $field['type'] ) ) {
@@ -66,13 +66,13 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 			$field['default'] = null;
 		}
 
-		$output  = null;
+		$output = null;
 		switch ( $field_type ) {
 			case 'text':
 				$output = sanitize_text_field( $value );
 				break;
 			case 'url':
-				$output = esc_url_raw( $value );
+				$output = esc_url_raw( (string) $value );
 				break;
 			case 'email':
 				$output = sanitize_email( $value );
@@ -83,9 +83,9 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 				} else {
 					$number = intval( $value );
 				}
-				$min    = ( isset( $field['min'] ) ? $field['min'] : $number );
-				$max    = ( isset( $field['max'] ) ? $field['max'] : $number );
-				$step   = ( isset( $field['step'] ) ? $field['step'] : 1 );
+				$min  = ( isset( $field['min'] ) ? $field['min'] : $number );
+				$max  = ( isset( $field['max'] ) ? $field['max'] : $number );
+				$step = ( isset( $field['step'] ) ? $field['step'] : 1 );
 				if ( $min === $max ) {
 					// Simple number.
 					$output = ( $number ) ? $number : $field['default'];
@@ -99,21 +99,21 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$output = $value;
 				} else {
 					$sanitized_value = wp_kses_post( $value );
-					$output = balanceTags( $sanitized_value , true );
+					$output          = balanceTags( $sanitized_value, true );
 				}
 				break;
 			case 'select':
 			case 'radio':
-				$input = esc_attr( $value );
+				$input   = esc_attr( $value );
 				$choices = $field['options'];
-				$output = array_key_exists( $input, $choices ) ? $input : $field['default'];
+				$output  = array_key_exists( $input, $choices ) ? $input : $field['default'];
 				break;
 			case 'checkbox':
 				$output = ! empty( $value );
 				break;
 			case 'dropdown-pages':
 				$page_id = absint( $value );
-				$output = ( 'page' === get_post_type( $page_id ) && 'publish' === get_post_status( $page_id ) ) ? $page_id : $field['default'];
+				$output  = ( 'page' === get_post_type( $page_id ) && 'publish' === get_post_status( $page_id ) ) ? $page_id : $field['default'];
 				break;
 			case 'dropdown-taxonomies':
 				$output = absint( $value );
@@ -123,19 +123,20 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 				break;
 		}
 		return $output;
-
 	}
 
-	function render_field( $key, $field, $instance ) {
-
+	public function render_field( $key, $field, $instance ) {
 		$value = null;
+
 		if ( isset( $instance[ $key ] ) ) {
 			$value = $instance[ $key ];
 		}
+
 		$field_type = 'text';
 		if ( isset( $field['type'] ) ) {
 			$field_type = esc_attr( $field['type'] );
 		}
+
 		if ( ! isset( $field['class'] ) ) {
 			$field['class'] = '';
 		}
@@ -157,34 +158,35 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		if ( ! isset( $field['rows'] ) || absint( $field['rows'] ) < 1 ) {
 			$field['rows'] = 4;
 		}
+
 		switch ( $field_type ) {
 			case 'text':
 			case 'url':
 			case 'number':
 			case 'email':
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-	                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label>
-                    <input
-                    type="<?php echo esc_attr( $field_type ); ?>"
-                    id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-                    name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-                    value="<?php echo esc_attr( $value ); ?>"
-                    class="<?php echo esc_attr( $field['class'] ); ?>"
-                    style="<?php echo esc_attr( $field['css'] ); ?>"
-                    placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
-                    <?php echo ( isset( $field['min'] ) ) ? ' min="' . esc_attr( $field['min'] ). '" ' : '' ; ?>
-                    <?php echo ( isset( $field['max'] ) ) ? ' max="' . esc_attr( $field['max'] ). '" ' : '' ; ?>
-                    <?php echo ( isset( $field['step'] ) ) ? ' step="' . esc_attr( $field['step'] ). '" ' : '' ; ?>
-                    <?php echo ( true === $field['readonly'] ) ? ' readonly ' : '' ; ?>
-                    />
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label>
+					<input
+					type="<?php echo esc_attr( $field_type ); ?>"
+					id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+					value="<?php echo esc_attr( $value ); ?>"
+					class="<?php echo esc_attr( $field['class'] ); ?>"
+					style="<?php echo esc_attr( $field['css'] ); ?>"
+					placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
+					<?php echo ( isset( $field['min'] ) ) ? ' min="' . esc_attr( $field['min'] ) . '" ' : ''; ?>
+					<?php echo ( isset( $field['max'] ) ) ? ' max="' . esc_attr( $field['max'] ) . '" ' : ''; ?>
+					<?php echo ( isset( $field['step'] ) ) ? ' step="' . esc_attr( $field['step'] ) . '" ' : ''; ?>
+					<?php echo ( true === $field['readonly'] ) ? ' readonly ' : ''; ?>
+					/>
 
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
 
-                </p>
-                <?php
+				</p>
+				<?php
 				break;
 
 			case 'heading':
@@ -193,10 +195,10 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$css = $field['css'];
 				}
 				?>
-                <h4 class="widefat <?php echo esc_attr( $field['class'] ); ?>" style="<?php echo esc_attr( $css ); ?>">
-                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                </h4>
-                <?php
+				<h4 class="widefat <?php echo esc_attr( $field['class'] ); ?>" style="<?php echo esc_attr( $css ); ?>">
+					<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+				</h4>
+				<?php
 				break;
 
 			case 'message':
@@ -205,10 +207,10 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$css = $field['css'];
 				}
 				?>
-                <div class="widefat field-message <?php echo esc_attr( $field['class'] ); ?>" style="<?php echo esc_attr( $css ); ?>">
-                    <?php echo $field['label']; ?>
-                </div>
-                <?php
+				<div class="widefat field-message <?php echo esc_attr( $field['class'] ); ?>" style="<?php echo esc_attr( $css ); ?>">
+					<?php echo wp_kses_post( $field['label'] ); ?>
+				</div>
+				<?php
 				break;
 
 			case 'divider':
@@ -217,148 +219,148 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$css = $field['css'];
 				}
 				?>
-	               <hr style="<?php echo esc_attr( $css ); ?>" />
-                <?php
+					<hr style="<?php echo esc_attr( $css ); ?>" />
+				<?php
 				break;
 
 			case 'textarea':
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-	                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label>
-                    <textarea
-                    type="text"
-                    rows="<?php echo absint( $field['rows'] ); ?>"
-                    id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-                    name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-                    class="<?php echo esc_attr( $field['class'] ); ?>"
-                    style="<?php echo esc_attr( $field['css'] ); ?>"
-                    placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
-                    <?php echo ( true === $field['readonly'] ) ? ' readonly ' : '' ; ?>
-                    ><?php echo esc_textarea( $value ); ?></textarea>
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label>
+					<textarea
+					type="text"
+					rows="<?php echo absint( $field['rows'] ); ?>"
+					id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+					class="<?php echo esc_attr( $field['class'] ); ?>"
+					style="<?php echo esc_attr( $field['css'] ); ?>"
+					placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>"
+					<?php echo ( true === $field['readonly'] ) ? ' readonly ' : ''; ?>
+					><?php echo esc_textarea( (string) $value ); ?></textarea>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			case 'checkbox':
 				?>
-                <p>
-                    <input
-                    type="checkbox"
-                    id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-                    name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-                    class="<?php echo esc_attr( $field['class'] ); ?>"
-                    style="<?php echo esc_attr( $field['css'] ); ?>"
-                    <?php checked( ! empty( $value ) ); ?>
-                    />
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-                    	<span class="field-label"><?php echo esc_html( $field['label'] ); ?></span>
-                    </label>
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+				<p>
+					<input
+					type="checkbox"
+					id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+					class="<?php echo esc_attr( $field['class'] ); ?>"
+					style="<?php echo esc_attr( $field['css'] ); ?>"
+					<?php checked( ! empty( $value ) ); ?>
+					/>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><?php echo esc_html( $field['label'] ); ?></span>
+					</label>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			case 'radio':
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-                    	<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label><br/>
-                    <?php if ( ! empty( $field['options'] ) ) : ?>
-                    	<?php foreach ( $field['options'] as $k => $v ) : ?>
-                    		<label for="<?php echo esc_attr( $this->get_field_id( $key ) . '-' . $k ); ?>">
-                    		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $key ) . '-' . $k ); ?>" value="<?php echo esc_attr( $k ); ?>" <?php checked( $k, $value ) ?> /><?php echo esc_html( $v ); ?>
-                    		</label>&nbsp;&nbsp;
-                    	<?php endforeach; ?>
-                    <?php endif ?>
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label><br/>
+					<?php if ( ! empty( $field['options'] ) ) : ?>
+						<?php foreach ( $field['options'] as $k => $v ) : ?>
+							<label for="<?php echo esc_attr( $this->get_field_id( $key ) . '-' . $k ); ?>">
+							<input type="radio" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $key ) . '-' . $k ); ?>" value="<?php echo esc_attr( $k ); ?>" <?php checked( $k, $value ); ?> /><?php echo esc_html( $v ); ?>
+							</label>&nbsp;&nbsp;
+						<?php endforeach; ?>
+					<?php endif ?>
 
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			case 'select':
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-	                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label>
-                    <select
-                    type="text"
-                    id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-                    name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-                    class="<?php echo esc_attr( $field['class'] ); ?>"
-                    style="<?php echo esc_attr( $field['css'] ); ?>"
-                    >
-                    <?php if ( ! empty( $field['options'] ) ) : ?>
-                    	<?php foreach ( $field['options'] as $option_key => $label ) : ?>
-		                    <option value="<?php echo esc_attr( $option_key ); ?>" <?php selected( $option_key, $value ); ?>><?php echo esc_html( $label ); ?></option>
-                    	<?php endforeach; ?>
-                    <?php endif ?>
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label>
+					<select
+					type="text"
+					id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+					class="<?php echo esc_attr( $field['class'] ); ?>"
+					style="<?php echo esc_attr( $field['css'] ); ?>"
+					>
+					<?php if ( ! empty( $field['options'] ) ) : ?>
+						<?php foreach ( $field['options'] as $option_key => $label ) : ?>
+							<option value="<?php echo esc_attr( $option_key ); ?>" <?php selected( $option_key, $value ); ?>><?php echo esc_html( $label ); ?></option>
+						<?php endforeach; ?>
+					<?php endif ?>
 
-                    </select>
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+					</select>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			case 'dropdown-taxonomies':
 				$args                    = array();
 				$args['selected']        = esc_attr( $value );
-				$args['taxonomy']        = ( isset( $field['taxonomy'] ) ) ? esc_attr( $field['taxonomy'] ) : 'category' ;
+				$args['taxonomy']        = ( isset( $field['taxonomy'] ) ) ? esc_attr( $field['taxonomy'] ) : 'category';
 				$args['name']            = esc_attr( $this->get_field_name( $key ) );
 				$args['id']              = esc_attr( $this->get_field_id( $key ) );
-				$args['show_option_all'] = ( isset( $field['show_option_all'] ) ) ? esc_html( $field['show_option_all'] ) : '' ;
-				$args['class']           = ( isset( $field['class'] ) ) ? esc_attr( $field['class'] ) : '' ;
+				$args['show_option_all'] = ( isset( $field['show_option_all'] ) ) ? esc_html( $field['show_option_all'] ) : '';
+				$args['class']           = ( isset( $field['class'] ) ) ? esc_attr( $field['class'] ) : '';
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-	                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label>
-                    <?php wp_dropdown_categories( $args ); ?>
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label>
+					<?php wp_dropdown_categories( $args ); ?>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			case 'dropdown-pages':
-				$args                    = array();
-				$args['selected']        = $value;
-				$args['taxonomy']        = ( isset( $field['taxonomy'] ) ) ? esc_attr( $field['taxonomy'] ) : 'category' ;
-				$args['name']            = esc_attr( $this->get_field_name( $key ) );
-				$args['id']              = esc_attr( $this->get_field_id( $key ) );
-				$args['show_option_none'] = ( isset( $field['show_option_none'] ) ) ? esc_html( $field['show_option_none'] ) : '' ;
-				$args['class']           = ( isset( $field['class'] ) ) ? esc_attr( $field['class'] ) : '' ;
+				$args = array();
+
+				$args['selected']         = $value;
+				$args['taxonomy']         = ( isset( $field['taxonomy'] ) ) ? esc_attr( $field['taxonomy'] ) : 'category';
+				$args['name']             = esc_attr( $this->get_field_name( $key ) );
+				$args['id']               = esc_attr( $this->get_field_id( $key ) );
+				$args['show_option_none'] = ( isset( $field['show_option_none'] ) ) ? esc_html( $field['show_option_none'] ) : '';
+				$args['class']            = ( isset( $field['class'] ) ) ? esc_attr( $field['class'] ) : '';
 				?>
-                <p>
-                    <label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-	                    <span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
-                    </label>
-                    <?php wp_dropdown_pages( $args ); ?>
-                    <?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
-                </p>
-                <?php
+				<p>
+					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<span class="field-label"><strong><?php echo esc_html( $field['label'] ); ?></strong></span>
+					</label>
+					<?php wp_dropdown_pages( $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php $this->render_description( $field, $this->get_field_id( $key ) ); ?>
+				</p>
+				<?php
 				break;
 
 			default:
 				break;
 		}
 	}
-	function form( $instance ) {
+
+	public function form( $instance ) {
 
 		$instance = $this->add_defaults( $instance );
 
 		foreach ( $this->fields as $key => $field ) {
-
 			$this->render_field( $key, $field, $instance );
-
 		}
-
 	}
-	function render_description( $field, $id = '' ) {
+
+	public function render_description( $field, $id = '' ) {
 		if ( ! isset( $field['description'] ) && empty( $field['description'] ) ) {
 			return;
 		}
@@ -372,10 +374,9 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 			<span class="field-description"><em><?php echo esc_html( $field['description'] ); ?></em></span>
 		</label>
 		<?php
-
 	}
 
-	function add_defaults( $instance ) {
+	public function add_defaults( $instance ) {
 
 		$default_arr = array();
 		if ( ! empty( $this->fields ) ) {
@@ -384,7 +385,6 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 				if ( ! isset( $instance[ $key ] ) && isset( $field['default'] ) ) {
 					$default_arr[ $key ] = $field['default'];
 				}
-
 			}
 		}
 		$instance = array_merge( $default_arr, $instance );
@@ -392,7 +392,7 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		return $instance;
 	}
 
-	function get_params( $instance ) {
+	public function get_params( $instance ) {
 		$output = array();
 		if ( ! empty( $this->fields ) ) {
 			if ( isset( $instance['title'] ) ) {

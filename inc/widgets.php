@@ -167,12 +167,14 @@ if ( ! class_exists( 'BP_Advertisement_Widget' ) ) :
 				$link_close = '';
 
 				if ( ! empty( $params['href'] ) ) {
-					$link_open  = '<a href="' . esc_url( $params['href'] )
+					$link_open  = '<a href="' . esc_url( (string) $params['href'] )
 					. '" ' . ( ( true === $params['target'] ) ? ' target="_blank" ' : '' ) . '>';
 					$link_close = '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 
-				echo $link_open . '<img src="' . esc_url( $params['image'] ) . '" alt="' . esc_attr( $params['alt'] ) . '" />' . $link_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				if ( ! empty( $params['image'] ) ) {
+					echo $link_open . '<img src="' . esc_url( (string) $params['image'] ) . '" alt="' . esc_attr( $params['alt'] ) . '" />' . $link_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
 			}
 
 			echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
