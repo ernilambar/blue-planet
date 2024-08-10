@@ -40,7 +40,6 @@
 	<rule ref="WordPress">
 		<exclude name="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents"/>
 		<exclude name="Generic.Files.OneObjectStructurePerFile.MultipleFound"/>
-		<exclude name="Universal.Files.SeparateFunctionsFromOO.Mixed"/>
 	</rule>
 
 	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
