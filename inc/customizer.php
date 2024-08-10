@@ -6,10 +6,10 @@
  */
 
 // Customizer helper functions.
-require get_template_directory() . '/inc/customizer-includes/helper.php';
+require_once get_template_directory() . '/inc/customizer-includes/helper.php';
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * Register custom controls, settings and options.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -18,19 +18,20 @@ function blue_planet_customize_register( $wp_customize ) {
 	$options      = blue_planet_get_option_all();
 
 	// Custom Controls.
-	require get_template_directory() . '/inc/customizer-includes/controls.php';
+	require_once get_template_directory() . '/inc/controls/class-heading-control.php';
+	require_once get_template_directory() . '/inc/controls/class-dropdown-taxonomies-control.php';
 
 	$wp_customize->register_control_type( 'Blue_Planet_Customize_Heading_Control' );
 	$wp_customize->register_control_type( 'Blue_Planet_Customize_Dropdown_Taxonomies_Control' );
 
 	// Theme Settings.
-	require get_template_directory() . '/inc/customizer-includes/theme.php';
+	require_once get_template_directory() . '/inc/customizer-includes/theme.php';
 
 	// Slider Settings.
-	require get_template_directory() . '/inc/customizer-includes/slider.php';
+	require_once get_template_directory() . '/inc/customizer-includes/slider.php';
 
 	// Reset Settings.
-	require get_template_directory() . '/inc/customizer-includes/reset.php';
+	require_once get_template_directory() . '/inc/customizer-includes/reset.php';
 }
 
 add_action( 'customize_register', 'blue_planet_customize_register' );
