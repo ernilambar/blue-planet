@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom theme functions
+ * Template related functions
  *
  * @package Blue_Planet
  */

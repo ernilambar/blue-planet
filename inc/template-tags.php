@@ -79,6 +79,7 @@ function blue_planet_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
+
 add_action( 'edit_category', 'blue_planet_category_transient_flusher' );
 add_action( 'save_post', 'blue_planet_category_transient_flusher' );
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme supports.
+ * Theme supports
  *
  * @package Blue_Planet
  */

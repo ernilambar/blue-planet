@@ -35,14 +35,21 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 	 * @param array  $fields Fields.
 	 */
 	public function __construct( $id_base, $name, $widget_options = array(), $control_options = array(), $fields = array() ) {
-
 		$this->fields = $fields;
 
 		parent::__construct( $id_base, $name, $widget_options, $control_options );
 	}
 
+	/**
+	 * Update widget.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $new_instance New widget instance.
+	 * @param array $old_instance Old widget instance.
+	 * @return array Modified widget instance.
+	 */
 	public function update( $new_instance, $old_instance ) {
-
 		$instance = $old_instance;
 
 		foreach ( $this->fields as $key => $field ) {
@@ -56,27 +63,42 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		return $instance;
 	}
 
+	/**
+	 * Sanitize field.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $key Key.
+	 * @param string $field Widget field.
+	 * @param mixed  $value Value.
+	 * @return mixed Sanitized value.
+	 */
 	public function sanitize( $key, $field, $value ) {
-
 		$field_type = 'text';
+
 		if ( isset( $field['type'] ) ) {
 			$field_type = esc_attr( $field['type'] );
 		}
+
 		if ( ! isset( $field['default'] ) ) {
 			$field['default'] = null;
 		}
 
 		$output = null;
+
 		switch ( $field_type ) {
 			case 'text':
 				$output = sanitize_text_field( $value );
 				break;
+
 			case 'url':
 				$output = esc_url_raw( (string) $value );
 				break;
+
 			case 'email':
 				$output = sanitize_email( $value );
 				break;
+
 			case 'number':
 				if ( isset( $field['absolute'] ) && true === $field['absolute'] ) {
 					$number = absint( $value );
@@ -86,6 +108,7 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 				$min  = ( isset( $field['min'] ) ? $field['min'] : $number );
 				$max  = ( isset( $field['max'] ) ? $field['max'] : $number );
 				$step = ( isset( $field['step'] ) ? $field['step'] : 1 );
+
 				if ( $min === $max ) {
 					// Simple number.
 					$output = ( $number ) ? $number : $field['default'];
@@ -94,6 +117,7 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$output = $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $field['default'];
 				}
 				break;
+
 			case 'textarea':
 				if ( current_user_can( 'unfiltered_html' ) ) {
 					$output = $value;
@@ -102,29 +126,44 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 					$output          = balanceTags( $sanitized_value, true );
 				}
 				break;
+
 			case 'select':
 			case 'radio':
 				$input   = esc_attr( $value );
 				$choices = $field['options'];
 				$output  = array_key_exists( $input, $choices ) ? $input : $field['default'];
 				break;
+
 			case 'checkbox':
 				$output = ! empty( $value );
 				break;
+
 			case 'dropdown-pages':
 				$page_id = absint( $value );
 				$output  = ( 'page' === get_post_type( $page_id ) && 'publish' === get_post_status( $page_id ) ) ? $page_id : $field['default'];
 				break;
+
 			case 'dropdown-taxonomies':
 				$output = absint( $value );
 				break;
+
 			default:
-				$output = esc_attr( $value );
+				$output = sanitize_text_field( $value );
 				break;
 		}
+
 		return $output;
 	}
 
+	/**
+	 * Render field.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $key      Key.
+	 * @param string $field    Widget field.
+	 * @param array  $instance Widget instance.
+	 */
 	public function render_field( $key, $field, $instance ) {
 		$value = null;
 
@@ -133,6 +172,7 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		}
 
 		$field_type = 'text';
+
 		if ( isset( $field['type'] ) ) {
 			$field_type = esc_attr( $field['type'] );
 		}
@@ -140,21 +180,27 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		if ( ! isset( $field['class'] ) ) {
 			$field['class'] = '';
 		}
+
 		if ( ! isset( $field['placeholder'] ) ) {
 			$field['placeholder'] = '';
 		}
+
 		if ( ! isset( $field['css'] ) ) {
 			$field['css'] = '';
 		}
+
 		if ( ! isset( $field['description'] ) ) {
 			$field['description'] = '';
 		}
+
 		if ( ! isset( $field['readonly'] ) ) {
 			$field['readonly'] = false;
 		}
+
 		if ( ! isset( $field['options'] ) ) {
 			$field['options'] = array();
 		}
+
 		if ( ! isset( $field['rows'] ) || absint( $field['rows'] ) < 1 ) {
 			$field['rows'] = 4;
 		}
@@ -351,8 +397,15 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		}
 	}
 
+	/**
+	 * Outputs the settings form.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $instance Widget instance.
+	 * @return void
+	 */
 	public function form( $instance ) {
-
 		$instance = $this->add_defaults( $instance );
 
 		foreach ( $this->fields as $key => $field ) {
@@ -360,15 +413,24 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		}
 	}
 
+	/**
+	 * Render field description.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $field Field details.
+	 * @param string $id ID.
+	 */
 	public function render_description( $field, $id = '' ) {
 		if ( ! isset( $field['description'] ) && empty( $field['description'] ) ) {
 			return;
 		}
+
 		$custom_style = 'clear:both;display:block;';
+
 		if ( isset( $field['adjacent'] ) && true === $field['adjacent'] ) {
 			$custom_style = 'margin-left:5px;';
 		}
-
 		?>
 		<label for="<?php echo esc_attr( $id ); ?>" style="<?php echo esc_attr( $custom_style ); ?>">
 			<span class="field-description"><em><?php echo esc_html( $field['description'] ); ?></em></span>
@@ -376,30 +438,49 @@ class Blue_Planet_Widget_Base extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Add defaults to widget instance.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $instance Widget instance.
+	 * @return array Updated instance.
+	 */
 	public function add_defaults( $instance ) {
-
 		$default_arr = array();
+
 		if ( ! empty( $this->fields ) ) {
 			foreach ( $this->fields as $key => $field ) {
 				$default_arr[ $key ] = null;
+
 				if ( ! isset( $instance[ $key ] ) && isset( $field['default'] ) ) {
 					$default_arr[ $key ] = $field['default'];
 				}
 			}
 		}
-		$instance = array_merge( $default_arr, $instance );
 
-		return $instance;
+		return array_merge( $default_arr, $instance );
 	}
 
+	/**
+	 * Returns widget field values.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $instance Widget instance.
+	 * @return array Widget values.
+	 */
 	public function get_params( $instance ) {
 		$output = array();
+
 		if ( ! empty( $this->fields ) ) {
 			if ( isset( $instance['title'] ) ) {
 				$instance['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 			}
+
 			$output = $this->add_defaults( $instance );
 		}
+
 		return $output;
 	}
 }

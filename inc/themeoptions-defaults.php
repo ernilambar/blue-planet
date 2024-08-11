@@ -65,7 +65,7 @@ function blue_planet_get_default_options() {
 		'flg_hide_powered_by'          => 0,
 		'flg_hide_footer_social_icons' => 0,
 		'default_layout'               => 'right-sidebar',
-		'content_layout'               => 'excerpt', // Archive layout.
+		'content_layout'               => 'excerpt',
 		'archive_image'                => 'large',
 		'archive_image_alignment'      => 'center',
 		'single_image'                 => 'large',
@@ -111,7 +111,6 @@ function blue_planet_get_default_options() {
 		'social_forrst'                => '',
 		'social_stumbleupon'           => '',
 		'social_digg'                  => '',
-
 		'reset_theme_settings'         => 0,
 	);
 
