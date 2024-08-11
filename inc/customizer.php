@@ -37,28 +37,6 @@ function blue_planet_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'blue_planet_customize_register' );
 
 /**
- * Render the site title for the selective refresh partial.
- *
- * @since 3.3.0
- *
- * @return void
- */
-function blue_planet_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site title for the selective refresh partial.
- *
- * @since 3.3.0
- *
- * @return void
- */
-function blue_planet_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
  * Customizer partials.
  *
  * @since 3.3.0
@@ -66,11 +44,6 @@ function blue_planet_customize_partial_blogdescription() {
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
-	// Abort if selective refresh is not available.
-	if ( ! isset( $wp_customize->selective_refresh ) ) {
-		return;
-	}
-
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
@@ -80,7 +53,9 @@ function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
 		array(
 			'selector'            => '.site-title a',
 			'container_inclusive' => false,
-			'render_callback'     => 'blue_planet_customize_partial_blogname',
+			'render_callback'     => function () {
+				bloginfo( 'name' );
+			},
 		)
 	);
 
@@ -90,7 +65,9 @@ function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
 		array(
 			'selector'            => '.site-description',
 			'container_inclusive' => false,
-			'render_callback'     => 'blue_planet_customize_partial_blogdescription',
+			'render_callback'     => function () {
+				bloginfo( 'description' );
+			},
 		)
 	);
 }

@@ -39,8 +39,8 @@
 		"deployAssets": false
 	},
 	"devDependencies": {
-		"@wordpress/npm-package-json-lint-config": "^5.4.0",
-		"@wordpress/prettier-config": "^4.4.0",
+		"@wordpress/npm-package-json-lint-config": "^5.5.0",
+		"@wordpress/prettier-config": "^4.5.0",
 		"browser-sync": "^3.0.2",
 		"easy-replace-in-files": "^1.0.3",
 		"gulp": "^5.0.0",

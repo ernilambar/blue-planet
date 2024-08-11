@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: blue-planet\n"
 
 #. Theme Name of the theme
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer-includes/controls.php:116
+#: inc/controls/class-dropdown-taxonomies-control.php:65
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgid "Slider URL"
 msgstr ""
 
 #: inc/customizer-includes/slider.php:283
-#: inc/widgets.php:131
+#: inc/widgets/class-bp-advertisement-widget.php:55
 msgid "Open Link in New Window"
 msgstr ""
 
@@ -617,54 +617,54 @@ msgstr ""
 msgid "Version: %s"
 msgstr ""
 
-#: inc/widgets.php:42
-msgid "Display Social links in your sidebar"
-msgstr ""
-
-#: inc/widgets.php:47
-#: inc/widgets.php:106
-msgid "Title:"
-msgstr ""
-
-#: inc/widgets.php:52
-msgid "This widget will display social links from Theme Options."
-msgstr ""
-
-#: inc/widgets.php:57
-msgid "Blue Planet Social"
-msgstr ""
-
-#: inc/widgets.php:101
+#: inc/widgets/class-bp-advertisement-widget.php:25
 msgid "Widget for displaying ads"
 msgstr ""
 
-#: inc/widgets.php:111
+#: inc/widgets/class-bp-advertisement-widget.php:30
+#: inc/widgets/class-bp-social-widget.php:30
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/class-bp-advertisement-widget.php:35
 msgid "Ad Code:"
 msgstr ""
 
-#: inc/widgets.php:116
+#: inc/widgets/class-bp-advertisement-widget.php:40
 msgctxt "Ad Widget"
 msgid "OR"
 msgstr ""
 
-#: inc/widgets.php:120
+#: inc/widgets/class-bp-advertisement-widget.php:44
 msgid "Image:"
 msgstr ""
 
-#: inc/widgets.php:123
+#: inc/widgets/class-bp-advertisement-widget.php:47
 msgid "Enter full image URL."
 msgstr ""
 
-#: inc/widgets.php:126
+#: inc/widgets/class-bp-advertisement-widget.php:50
 msgid "Link URL:"
 msgstr ""
 
-#: inc/widgets.php:137
+#: inc/widgets/class-bp-advertisement-widget.php:61
 msgid "Alt Text:"
 msgstr ""
 
-#: inc/widgets.php:143
+#: inc/widgets/class-bp-advertisement-widget.php:67
 msgid "Blue Planet Advertisement"
+msgstr ""
+
+#: inc/widgets/class-bp-social-widget.php:25
+msgid "Display Social links in your sidebar"
+msgstr ""
+
+#: inc/widgets/class-bp-social-widget.php:35
+msgid "This widget will display social links from Theme Options."
+msgstr ""
+
+#: inc/widgets/class-bp-social-widget.php:40
+msgid "Blue Planet Social"
 msgstr ""
 
 #. translators: %s: Search query.
