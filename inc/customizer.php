@@ -17,6 +17,9 @@ function blue_planet_customize_register( $wp_customize ) {
 	$new_defaults = blue_planet_get_default_options();
 	$options      = blue_planet_get_option_all();
 
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
 	// Custom Controls.
 	require_once get_template_directory() . '/inc/controls/class-heading-control.php';
 	require_once get_template_directory() . '/inc/controls/class-dropdown-taxonomies-control.php';
@@ -32,20 +35,6 @@ function blue_planet_customize_register( $wp_customize ) {
 
 	// Reset Settings.
 	require_once get_template_directory() . '/inc/customizer-includes/reset.php';
-}
-
-add_action( 'customize_register', 'blue_planet_customize_register' );
-
-/**
- * Customizer partials.
- *
- * @since 3.3.0
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	// Partial blogname.
 	$wp_customize->selective_refresh->add_partial(
@@ -72,7 +61,7 @@ function blue_planet_customizer_partials( WP_Customize_Manager $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', 'blue_planet_customizer_partials', 99 );
+add_action( 'customize_register', 'blue_planet_customize_register' );
 
 /**
  * Register customizer controls scripts.

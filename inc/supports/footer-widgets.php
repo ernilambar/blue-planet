@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer Widgets support.
+ * Footer Widgets support
  *
  * @package Blue_Planet
  */
@@ -39,7 +39,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-
 		$this->setup();
 		$this->init();
 	}
@@ -50,14 +49,16 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	public function setup() {
-
 		$support = get_theme_support( 'footer-widgets' );
+
 		if ( empty( $support ) ) {
 			return;
 		}
+
 		if ( absint( $support[0] ) < 1 ) {
 			return;
 		}
+
 		$this->max_widgets    = absint( $support[0] );
 		$this->active_widgets = $this->get_number_of_active_widgets();
 	}
@@ -68,7 +69,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	public function init() {
-
 		if ( $this->max_widgets < 1 ) {
 			return;
 		}
@@ -77,7 +77,6 @@ class Blue_Planet_Footer_Widgets {
 		add_action( 'widgets_init', array( $this, 'footer_widgets_init' ), 20 );
 
 		if ( $this->active_widgets > 0 ) {
-
 			// Add footer widgets in front end.
 			add_action( $this->theme_prefix . '_after_content_close', array( $this, 'add_footer_widgets' ) );
 			// Add custom class in widgets.
@@ -91,7 +90,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	public function footer_widgets_init() {
-
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
 			register_sidebar(
 				array(
@@ -113,7 +111,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	private function get_number_of_active_widgets() {
-
 		$count = 0;
 
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
@@ -133,7 +130,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @param string $input CSS class.
 	 */
 	public function custom_footer_widget_class( $input ) {
-
 		$footer_widgets_number = $this->active_widgets;
 
 		if ( $footer_widgets_number > 0 ) {
@@ -189,7 +185,6 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 */
 	public function all_active_widgets() {
-
 		$arr = array();
 
 		for ( $i = 1; $i <= $this->max_widgets; $i++ ) {
@@ -197,6 +192,7 @@ class Blue_Planet_Footer_Widgets {
 				$arr[] = $i;
 			}
 		}
+
 		return $arr;
 	}
 
@@ -206,6 +202,7 @@ class Blue_Planet_Footer_Widgets {
 	 * @since 1.0.0
 	 *
 	 * @param array $args Arguments.
+	 * @return string Content.
 	 */
 	public function get_footer_widgets_content( $args ) {
 		$number = $this->active_widgets;
@@ -225,9 +222,11 @@ class Blue_Planet_Footer_Widgets {
 				'after'           => '',
 			)
 		);
+
 		$args = apply_filters( $this->theme_prefix . '_filter_footer_widgets_args', $args );
 
 		ob_start();
+
 		$container_open  = '';
 		$container_close = '';
 
@@ -240,6 +239,7 @@ class Blue_Planet_Footer_Widgets {
 				( $args['container_style'] ) ? 'style="' . esc_attr( $args['container_style'] ) . '"' : ''
 			);
 		}
+
 		if ( ! empty( $args['container_class'] ) || ! empty( $args['container_id'] ) ) {
 			$container_close = sprintf(
 				'</%s>',
@@ -265,8 +265,8 @@ class Blue_Planet_Footer_Widgets {
 
 		echo $container_close; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		$output = ob_get_contents();
-		ob_end_clean();
+		$output = ob_get_clean();
+
 		return $output;
 	}
 }

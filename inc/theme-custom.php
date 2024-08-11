@@ -31,28 +31,25 @@ function blue_planet_body_classes( $classes ) {
 
 add_filter( 'body_class', 'blue_planet_body_classes' );
 
-if ( ! function_exists( 'blue_planet_featured_image_instruction' ) ) :
-	/**
-	 * Message to show in the Featured Image Meta box.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $content Admin post thumbnail HTML markup.
-	 * @param int    $post_id Post ID.
-	 * @return string HTML.
-	 */
-	function blue_planet_featured_image_instruction( $content, $post_id ) {
+/**
+ * Message to show in the Featured Image Meta box.
+ *
+ * @since 1.0.0
+ *
+ * @param string $content Admin post thumbnail HTML markup.
+ * @param int    $post_id Post ID.
+ * @return string HTML.
+ */
+function blue_planet_featured_image_instruction( $content, $post_id ) {
+	if ( 'post' === get_post_type( $post_id ) ) {
+		$content .= '<strong>' . esc_html__( 'Recommended image sizes', 'blue-planet' ) . '</strong><br/>';
 
-		if ( 'post' === get_post_type( $post_id ) ) {
-			$content .= '<strong>' . __( 'Recommended image sizes', 'blue-planet' ) . '</strong><br/>';
-
-			/* translators: 1: Slider width, 2: Slider height. */
-			$content .= '<br/>' . sprintf( __( 'Secondary Slider : %1$dpx X %2$dpx', 'blue-planet' ), 720, 350 );
-		}
-
-		return $content;
+		/* translators: 1: Slider width, 2: Slider height. */
+		$content .= '<br/>' . sprintf( esc_html__( 'Secondary Slider : %1$dpx X %2$dpx', 'blue-planet' ), 720, 350 );
 	}
-endif;
+
+	return $content;
+}
 
 add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction', 10, 2 );
 
@@ -85,6 +82,7 @@ if ( ! function_exists( 'blue_planet_excerpt_readmore' ) ) :
 
 		return $output;
 	}
+
 endif;
 
 add_filter( 'excerpt_more', 'blue_planet_excerpt_readmore' );
@@ -140,7 +138,6 @@ add_action( 'blue_planet_credits', 'blue_planet_copyright_text_content' );
  * @since 3.9.1
  */
 function blue_planet_add_admin_notice() {
-	// Setup notice.
 	Notice::init(
 		array(
 			'slug' => 'blue-planet',
@@ -273,7 +270,6 @@ if ( ! function_exists( 'blue_planet_add_image_in_single_display' ) ) :
 			}
 		}
 	}
-
 endif;
 
 add_action( 'blue_planet_single_image', 'blue_planet_add_image_in_single_display' );

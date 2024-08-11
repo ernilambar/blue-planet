@@ -1,6 +1,6 @@
 <?php
 /**
- * Implementation of widgets
+ * Widgets implementation
  *
  * @package Blue_Planet
  */

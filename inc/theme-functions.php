@@ -16,11 +16,13 @@ if ( ! function_exists( 'blue_planet_layout_setup_class' ) ) :
 	 */
 	function blue_planet_layout_setup_class() {
 		$default_layout = blue_planet_get_option( 'default_layout' );
+
 		if ( 'right-sidebar' === $default_layout ) {
 			$class = ' pull-left ';
 		} else {
 			$class = ' pull-right ';
 		}
+
 		return $class;
 	}
 endif;
@@ -49,7 +51,6 @@ if ( ! function_exists( 'blue_planet_primary_navigation_fallback' ) ) :
 
 endif;
 
-
 if ( ! function_exists( 'blue_planet_get_main_slider_details' ) ) :
 
 	/**
@@ -60,9 +61,9 @@ if ( ! function_exists( 'blue_planet_get_main_slider_details' ) ) :
 	 * @return array Main slider details.
 	 */
 	function blue_planet_get_main_slider_details() {
+		$output = array();
 
 		$bp_options = blue_planet_get_option_all();
-		$output     = array();
 
 		for ( $i = 1; $i <= 5; $i++ ) {
 			if ( isset( $bp_options[ 'main_slider_image_' . $i ] ) && ! empty( $bp_options[ 'main_slider_image_' . $i ] ) ) {
@@ -89,13 +90,17 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 	 * @since 1.0.0
 	 */
 	function blue_planet_generate_social_links() {
-		$bp_options   = blue_planet_get_option_all();
+		$bp_options = blue_planet_get_option_all();
+
 		$social_array = array();
+
 		if ( ! empty( $bp_options ) ) {
 			foreach ( $bp_options as $key => $val ) {
 				$pos = strpos( $key, 'social_' );
+
 				if ( false !== $pos && 0 === $pos && ! empty( $val ) ) {
-					$new_key                  = str_replace( 'social_', '', $key );
+					$new_key = str_replace( 'social_', '', $key );
+
 					$social_array[ $new_key ] = $val;
 				}
 			}
@@ -104,12 +109,15 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 		if ( ! empty( $social_array ) ) {
 			echo '<div class="social-wrapper-outer">';
 			echo '<div class="social-wrapper">';
+
 			$link_target = apply_filters( 'blue_planet_filter_social_sites_link_target', '_blank' );
+
 			foreach ( $social_array as $key => $site ) {
 				switch ( $key ) {
 					case 'email':
 						echo '<a class="social-email" href="mailto:' . esc_attr( $site ) . '"></a>';
 						break;
+
 					case 'skype':
 						echo '<a class="social-skype" href="skype:' . esc_attr( $site ) . '?call"></a>';
 						break;
@@ -119,6 +127,7 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 						break;
 				}
 			}
+
 			echo '</div><!-- .social-wrapper -->';
 			echo '</div><!-- .social-wrapper-outer -->';
 		}
@@ -129,25 +138,26 @@ if ( ! function_exists( 'blue_planet_header_style' ) ) :
 
 	/**
 	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @since 1.0.0
 	 */
 	function blue_planet_header_style() {
-		$header_text_color         = get_header_textcolor();
-		$header_text_color         = ltrim( $header_text_color, '#' );
+		$header_text_color = get_header_textcolor();
+		$header_text_color = ltrim( $header_text_color, '#' );
+
 		$default_header_text_color = get_theme_support( 'custom-header', 'default-text-color' );
 		$default_header_text_color = ltrim( $default_header_text_color, '#' );
 
-		/*
-		 * If no custom options for text are set, let's bail.
-		 */
+		// Bail if no custom options for text are set.
 		if ( $default_header_text_color === $header_text_color ) {
 			return;
 		}
 
-		// If we get this far, we have custom styles. Let's do this.
+		// If we get this far, we have custom styles.
 		?>
 		<style type="text/css">
 		<?php
-			// Has the text been hidden?
+		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>
 			.site-title,
